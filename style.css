@@ -1,0 +1,336 @@
+/* ===================================
+   RESET ET BASE
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #3E3226;
+    background: #FFF9F0;
+}
+
+/* ===================================
+   NAVIGATION
+   =================================== */
+nav {
+    background: linear-gradient(135deg, #8B7355 0%, #6B5444 100%);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+    background: linear-gradient(135deg, #D4C4B0 0%, #8B7355 100%);
+    color: #3E3226;
+    padding: 120px 20px 80px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   SECTIONS GÉNÉRALES
+   =================================== */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #6B5444;
+}
+
+/* ===================================
+   À PROPOS
+   =================================== */
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #8B7355;
+}
+
+/* ===================================
+   COMPÉTENCES
+   =================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: #FAF7F2;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(107, 84, 68, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #E8DFD0;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(107, 84, 68, 0.2);
+}
+
+.skill-card h3 {
+    color: #6B5444;
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   PROJETS
+   =================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #FAF7F2;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(107, 84, 68, 0.1);
+    transition: transform 0.3s;
+    border: 1px solid #E8DFD0;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+#projets>img {
+    display: block;
+    margin: -20px auto 30px;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #D4C4B0 0%, #8B7355 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3E3226;
+    font-size: 1.5rem;
+}
+
+.project-image img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: #6B5444;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ===================================
+   EXPÉRIENCES (Stages & Job étudiant)
+   =================================== */
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.experience-card {
+    background: #FAF7F2;
+    border: 1px solid #E8DFD0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(107, 84, 68, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(107, 84, 68, 0.2);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+    color: #6B5444;
+    font-size: 1.2rem;
+}
+
+.experience-period {
+    color: #8B7355;
+    font-weight: 600;
+    background: #E8DFD0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.experience-company {
+    margin: 0.5rem 0 0.8rem;
+    color: #3E3226;
+}
+
+.experience-tasks {
+    margin-left: 1rem;
+    display: grid;
+    gap: 0.4rem;
+    list-style: disc;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.experience-tags span {
+    font-size: 0.85rem;
+    background: linear-gradient(135deg, #D4C4B0 0%, #8B7355 100%);
+    color: #3E3226;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid #E8DFD0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+footer {
+    background: #3E3226;
+    color: #E8DFD0;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ===================================
+   RESPONSIVE - TABLETTES ET MOBILES
+   =================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
