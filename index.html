@@ -5,204 +5,371 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="Uf6FkVLL0LAyGhHUI5yd7ppK8pPFIpevENZSvvgoHnY" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio d'Edan RODDE - Étudiant en BTS SIO SISR">
-    <title>Portfolio - Edan RODDE | BTS SIO SISR</title>
+    <meta name="description"
+        content="Portfolio d'Edan RODDE - Étudiant en BTS SIO SISR, spécialisé en infrastructure réseau et cybersécurité">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>Edan RODDE | Portfolio BTS SIO SISR</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
+    <!-- Curseur personnalisé -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <!-- Navigation -->
-    <nav role="navigation" aria-label="Navigation principale">
+    <nav role="navigation" aria-label="Navigation principale" id="navbar">
         <ul>
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#apropos">À propos</a></li>
-            <li><a href="#parcours">Mon Parcours</a></li>
+            <li><a href="#parcours">Parcours</a></li>
             <li><a href="#experiences">Expériences</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#projets">Projets</a></li>
+            <li><a href="#certifications">Certifications</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <header id="accueil" class="hero">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Étudiant en BTS SIO - Spécialité SISR</p>
+
+        <h1>Edan RODDE</h1>
+        <p>Étudiant passionné en <strong>BTS SIO</strong> — Spécialité <strong>SISR</strong><br>
+            Infrastructure, Réseaux & Cybersécurité</p>
+        <div class="hero-cta">
+            <a href="#projets" class="btn btn-primary">
+                <span>🚀</span> Voir mes projets
+            </a>
+            <a href="#apropos" class="btn btn-secondary">
+                <span>👋</span> En savoir plus
+            </a>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true"></div>
     </header>
 
     <!-- À propos -->
-    <section id="apropos">
-        <h2>Bonjour !</h2>
+    <section id="apropos" class="reveal">
+        <h2>À propos de moi</h2>
+        <p class="section-subtitle">Passionné par les technologies réseau et l'infrastructure informatique</p>
         <div class="about-content">
-            <div class="about-text">
-                <p> Je m'appelle Edan RODDE, j'ai 18 ans. Je suis actuellement étudiant en première année de BTS SIO
+            <div class="about-text reveal-left">
+                <p>Je m'appelle Edan RODDE, j'ai 18 ans. Je suis actuellement étudiant en première année de BTS SIO
                     (Services Informatiques aux Organisations), spécialisé en SISR (Solutions d'Infrastructure, Systèmes
                     et Réseaux).</p>
-                <p styl="margin-top: 1rem;">Passionné par les technologies réseau et l'infrastructure informatique, je
-                    développe mes compétences dans l'administration système, la cybersécurité et la gestion des réseaux.
-                    Mon objectif est de devenir administrateur réseau, d'être capable de concevoir et maintenir des
-                    systèmes fiables et sécurisés.</p>
+                <p>Passionné par les technologies réseau et l'infrastructure informatique, je développe mes compétences
+                    dans l'administration système, la cybersécurité et la gestion des réseaux. Mon objectif est de
+                    devenir
+                    administrateur réseau, capable de concevoir et maintenir des systèmes fiables et sécurisés.</p>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Ans</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Stages</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Projets</div>
+                    </div>
+                </div>
             </div>
-            <div class="about-image">
+            <div class="about-image reveal-right">
                 <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1764844362/puy_de_dome_gdvcjv.jpg"
                     alt="Photo de profil d'Edan RODDE"
-                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22250%22%3E%3Crect width=%22250%22 height=%22250%22 fill=%22%23D4C4B0%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%233E3226%22%3EER%3C/text%3E%3C/svg%3E';">
+                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22260%22 viewBox=%220 0 260 260%22%3E%3Cdefs%3E%3ClinearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%236366f1%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%2306b6d4%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22260%22 height=%22260%22 fill=%22%2312121a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.35em%22 font-family=%22Outfit,sans-serif%22 font-size=%2280%22 font-weight=%22800%22 fill=%22url(%23grad)%22%3EER%3C/text%3E%3C/svg%3E';">
             </div>
         </div>
     </section>
 
-    <!-- Parcours Scolaire -->
-    <section id="parcours">
-        <h2>Mon Parcours Scolaire</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>🎓 BTS SIO - SISR</h3>
-                <p><strong>2025 - 2027</strong></p>
-                <p>Spécialité Solutions d'Infrastructure, Systèmes et Réseaux. Formation axée sur l'administration des
-                    systèmes, la gestion des réseaux et la cybersécurité.</p>
+    <!-- Parcours Scolaire - Timeline -->
+    <section id="parcours" class="reveal">
+        <h2>Mon Parcours</h2>
+        <p class="section-subtitle">Une progression constante dans le domaine de l'informatique</p>
+
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-card">
+                    <span class="timeline-date">2025 - 2027</span>
+                    <h3><span class="icon">🎓</span> BTS SIO - SISR</h3>
+                    <p>Spécialité Solutions d'Infrastructure, Systèmes et Réseaux. Formation axée sur l'administration
+                        des
+                        systèmes, la gestion des réseaux et la cybersécurité. Développement de compétences avancées en
+                        virtualisation et supervision.</p>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>🏫 Baccalauréat SN option RISC</h3>
-                <p><strong>2022 - 2025</strong></p>
-                <p>Obtention du baccalauréat avec mention Bien. Le Bac professionnel Système Numérique option Réseaux et
-                    Systèmes Communiquants. M'a fait débuter dans le réseau, durant ces 3 ans j'ai pu exercer sur des
-                    machines virtuelles et voir les grandes bases de la cybersécurité et du monde informatique en
-                    général.</p>
+
+            <div class="timeline-item reveal delay-1">
+                <div class="timeline-card">
+                    <span class="timeline-date">2022 - 2025</span>
+                    <h3><span class="icon">🏫</span> Baccalauréat SN option RISC</h3>
+                    <p>Obtention du baccalauréat avec <strong>mention Bien</strong>. Le Bac professionnel Système
+                        Numérique option Réseaux et
+                        Systèmes Communiquants m'a fait débuter dans le réseau. Durant ces 3 ans, j'ai pu exercer sur
+                        des
+                        machines virtuelles et découvrir les bases de la cybersécurité.</p>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3> 📜​Brevet professionnel</h3>
-                <p><strong>2021-2022</strong></p>
-                <p>Obtenu avec mention Très Bien. Année qui m'a permis de choisir ma voie grâce à la multitude de stages
-                    proposés.</p>
+
+            <div class="timeline-item reveal delay-2">
+                <div class="timeline-card">
+                    <span class="timeline-date">2021 - 2022</span>
+                    <h3><span class="icon">📜</span> Brevet professionnel</h3>
+                    <p>Obtenu avec <strong>mention Très Bien</strong>. Année qui m'a permis de choisir ma voie grâce à
+                        la multitude de stages
+                        proposés et de découvrir ma passion pour l'informatique.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- EXPÉRIENCES -->
-    <section id="experiences" aria-labelledby="experiences-title">
+    <!-- Expériences -->
+    <section id="experiences" aria-labelledby="experiences-title" class="reveal">
         <h2 id="experiences-title">Mes Expériences</h2>
+        <p class="section-subtitle">Des expériences variées qui ont forgé mes compétences</p>
 
         <div class="experiences-grid">
-            <!-- Stage 1 -->
-            <article class="experience-card">
+            <!-- Stage Technicien Réseau -->
+            <article class="experience-card reveal delay-1">
                 <div class="experience-header">
-                    <h3>Stage – Militaire</h3>
-                    <span class="experience-period">Janvier à Février 2024</span>
+                    <h3>🔧 Stage – Technicien Réseau</h3>
+                    <span class="experience-period">Nov 2024 - Jan 2025</span>
                 </div>
-                <p class="experience-company">Entreprise : <strong>28ᵉ régiment de transmission, Issoire</strong></p>
+                <p class="experience-company">📍 <strong>Hall 32</strong>, Clermont-Ferrand</p>
                 <ul class="experience-tasks">
-                    <li>J’ai vécu la vie militaire.</li>
-                    <li>J'ai fait de la transmission militaire.</li>
+                    <li>Dépannages et maintenance réseau</li>
+                    <li>Configuration de Nagios (supervision réseau)</li>
+                    <li>Installation d'un hyperviseur ESXi</li>
+                    <li>Projet Raspberry Pi pour machines industrielles</li>
                 </ul>
                 <div class="experience-tags">
-                    <span>Rigueur</span><span>Travail d'équipe</span>
+                    <span>Virtualisation</span>
+                    <span>Réseau</span>
+                    <span>Gestion de projet</span>
+                    <span>Support</span>
+                    <span>Supervision</span>
                 </div>
             </article>
 
-            <!-- Stage 2 -->
-            <article class="experience-card">
+            <!-- Stage Militaire -->
+            <article class="experience-card reveal delay-2">
                 <div class="experience-header">
-                    <h3>Stage – Technicien Réseau</h3>
-                    <span class="experience-period">Novembre 2024 à janvier 2025</span>
+                    <h3>🎖️ Stage – Militaire</h3>
+                    <span class="experience-period">Jan - Fév 2024</span>
                 </div>
-                <p class="experience-company">Entreprise : <strong>Hall 32, Clermont-Ferrand</strong></p>
+                <p class="experience-company">📍 <strong>28ᵉ Régiment de Transmission</strong>, Issoire</p>
                 <ul class="experience-tasks">
-                    <li>J'ai effectué des dépannages.</li>
-                    <li>J'ai configuré un logiciel de supervision du réseau (Nagios).</li>
-                    <li>Installé un hyperviseur (ESXi).</li>
-                    <li>J'ai mené un projet sur des Raspberry Pi.</li>
+                    <li>Immersion dans la vie militaire</li>
+                    <li>Transmission et communication militaire</li>
+                    <li>Travail en équipe dans un environnement exigeant</li>
                 </ul>
                 <div class="experience-tags">
-                    <span>Virtualisation</span><span>Réseau</span><span>Gestion de
-                        projet</span><span>Support</span><span>Supervision</span>
+                    <span>Rigueur</span>
+                    <span>Travail d'équipe</span>
+                    <span>Discipline</span>
                 </div>
             </article>
 
             <!-- Job étudiant -->
-            <article class="experience-card">
+            <article class="experience-card reveal delay-3">
                 <div class="experience-header">
-                    <h3>Job étudiant – Serveur en restauration</h3>
-                    <span class="experience-period">Juillet 2025 à août 2025</span>
+                    <h3>🍽️ Job étudiant – Serveur</h3>
+                    <span class="experience-period">Juil - Août 2025</span>
                 </div>
-                <p class="experience-company">Organisation : <strong>Restaurant du Bourbonnais, Lapalisse</strong></p>
+                <p class="experience-company">📍 <strong>Restaurant du Bourbonnais</strong>, Lapalisse</p>
                 <ul class="experience-tasks">
-                    <li>Lors de l’été 2025 j’ai travaillé en CDD à mi-temps. </li>
-                    <li>J’ai pu faire du service à table et au bar.</li>
+                    <li>Service en salle et au bar (CDD mi-temps)</li>
+                    <li>Gestion de la relation client</li>
+                    <li>Organisation et coordination avec l'équipe</li>
                 </ul>
                 <div class="experience-tags">
-                    <span>Travail d'équipe</span><span>Gestion de l'organisation</span>
+                    <span>Travail d'équipe</span>
+                    <span>Organisation</span>
+                    <span>Relationnel</span>
                 </div>
             </article>
         </div>
+    </section>
 
-        <section id="competences">
-            <!-- Compétences -->
-            <section id="competences">
-                <h2>Mes Compétences Techniques</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Systèmes & Réseaux</h3>
-                        <p>Windows Server, Linux, Active Directory, Configuration d'équipements réseau.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Infrastructure IT</h3>
-                        <p>Virtualisation (VMware, Hyper-V), supervision réseau.</p>
-                    </div>
+    <!-- Compétences -->
+    <section id="competences" class="reveal">
+        <h2>Mes Compétences</h2>
+        <p class="section-subtitle">Des compétences techniques solides en infrastructure IT</p>
 
-                    <div class="skill-card">
-                        <h3>Support & Maintenance</h3>
-                        <p>Assistance utilisateurs, dépannage matériel et logiciel, documentation technique.</p>
-                    </div>
+        <div class="skills-grid">
+            <div class="skill-card reveal delay-1">
+                <div class="skill-icon">🌐</div>
+                <h3>Systèmes & Réseaux</h3>
+                <p>Windows Server, Linux (Debian, Ubuntu), Active Directory, DHCP, DNS, Configuration d'équipements
+                    réseau (Switch, Routeur).</p>
+            </div>
+
+            <div class="skill-card reveal delay-2">
+                <div class="skill-icon">☁️</div>
+                <h3>Infrastructure IT</h3>
+                <p>Virtualisation (VMware ESXi, Hyper-V, Proxmox), supervision réseau (Nagios), conteneurisation et
+                    déploiement.</p>
+            </div>
+
+            <div class="skill-card reveal delay-3">
+                <div class="skill-icon">🛡️</div>
+                <h3>Cybersécurité</h3>
+                <p>Notions de sécurité réseau, pare-feu, analyse de vulnérabilités, bonnes pratiques de sécurisation des
+                    systèmes.</p>
+            </div>
+
+            <div class="skill-card reveal delay-4">
+                <div class="skill-icon">🔧</div>
+                <h3>Support & Maintenance</h3>
+                <p>Assistance utilisateurs, dépannage matériel et logiciel, documentation technique, gestion des
+                    incidents.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="reveal">
+        <h2>Mes Projets</h2>
+        <p class="section-subtitle">Des réalisations concrètes au service de l'infrastructure</p>
+
+        <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1764845209/logo_az4zuu.png" alt="Logo Hall 32"
+            onerror="this.style.display='none'">
+
+        <div class="projects-grid">
+            <div class="project-card reveal delay-1">
+                <div class="project-image" aria-hidden="true">
+                    <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/images_zyxhcs.png"
+                        alt="Raspberry Pi">
                 </div>
-            </section>
-
-            <!-- Projets -->
-            <section id="projets">
-                <h2>Mes Projets</h2>
-                <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1764845209/logo_az4zuu.png"
-                    alt="Logo Hall 32"
-                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22250%22%3E%3Crect width=%22250%22 height=%22250%22 fill=%22%23D4C4B0%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%233E3226%22%3EER%3C/text%3E%3C/svg%3E';">
-
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image" aria-hidden="true"><img
-                                src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/images_zyxhcs.png">
-                        </div>
-                        <div class="project-content">
-                            <h3>Raspberry</h3>
-                            <p>J'ai travaillé sur des Raspberry Pi pour faire un kiosque sur des machines industrielles.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image" aria-hidden="true"><img
-                                src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/nagios_w4chml.png">
-                        </div>
-                        <div class="project-content">
-                            <h3>Supervision d'un réseau</h3>
-                            <p>Installation et configuration de Nagios, un logiciel de supervision au sein d'une
-                                infrastructure.</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image" aria-hidden="true"><img
-                                src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/hypetv_wbz5of.png">
-                        </div>
-                        <div class="project-content">
-                            <h3>Installation d'un Hyperviseur (Hyper-V)</h3>
-                            <p>Installation d'un hyperviseur dans une infrastructure.</p>
-                        </div>
-                    </div>
+                <div class="project-content">
+                    <h3>🍓 Kiosque Raspberry Pi</h3>
+                    <p>Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des
+                        machines industrielles. Configuration système optimisée pour un fonctionnement 24/7.</p>
                 </div>
-            </section>
+            </div>
 
-            <!-- Footer -->
-            <footer>
-                <p>&copy; 2025 Portfolio Edan RODDE. Tous droits réservés.</p>
-            </footer>
+            <div class="project-card reveal delay-2">
+                <div class="project-image" aria-hidden="true">
+                    <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/nagios_w4chml.png"
+                        alt="Nagios">
+                </div>
+                <div class="project-content">
+                    <h3>📊 Supervision Nagios</h3>
+                    <p>Installation et configuration complète de Nagios pour la supervision d'une infrastructure réseau.
+                        Mise en place d'alertes et de tableaux de bord personnalisés.</p>
+                </div>
+            </div>
 
-            <script src="script.js"></script>
+            <div class="project-card reveal delay-3">
+                <div class="project-image" aria-hidden="true">
+                    <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/hypetv_wbz5of.png"
+                        alt="Hyper-V">
+                </div>
+                <div class="project-content">
+                    <h3>💻 Hyperviseur Hyper-V</h3>
+                    <p>Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle. Configuration de
+                        machines virtuelles et gestion des ressources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="reveal">
+        <h2>Mes Certifications</h2>
+        <p class="section-subtitle">Des qualifications reconnues validant mes compétences</p>
+
+        <div class="certifications-grid">
+            <!-- Certification Cybersécurité -->
+            <article class="certification-card reveal delay-1">
+                <div class="certification-icon">🛡️</div>
+                <div class="certification-badge">Cybersécurité</div>
+                <h3>Certification Cybersécurité</h3>
+                <p>Formation aux bonnes pratiques de sécurité informatique, protection des systèmes d'information et
+                    gestion des risques cyber.</p>
+                <div class="certification-meta">
+                    <span class="certification-status verified">✓ Certifié</span>
+                </div>
+            </article>
+
+            <!-- Certification Militaire -->
+            <article class="certification-card reveal delay-2">
+                <div class="certification-icon">🎖️</div>
+                <div class="certification-badge">Militaire</div>
+                <h3>Certification Militaire</h3>
+                <p>Formation militaire au sein du 28ᵉ Régiment de Transmission. Compétences en transmission,
+                    communication tactique et travail en équipe.</p>
+                <div class="certification-meta">
+                    <span class="certification-status verified">✓ Certifié</span>
+                </div>
+            </article>
+
+            <!-- Certification Électrique -->
+            <article class="certification-card reveal delay-3">
+                <div class="certification-icon">⚡</div>
+                <div class="certification-badge">Électrique</div>
+                <h3>Habilitation Électrique</h3>
+                <p>Habilitation pour intervenir sur des installations électriques en toute sécurité. Connaissance des
+                    normes et procédures de sécurité électrique.</p>
+                <div class="certification-meta">
+                    <span class="certification-status verified">✓ Certifié</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Edan RODDE</h3>
+                <p>Étudiant BTS SIO SISR | Infrastructure & Cybersécurité</p>
+            </div>
+
+            <!-- ================================================
+                 🔧 LIENS À MODIFIER - Remplacez les valeurs ci-dessous
+                 ================================================ -->
+            <div class="footer-links">
+                <!-- 📧 EMAIL : Remplacez "VOTRE_EMAIL@exemple.com" par votre vraie adresse email -->
+                <a href="mailto:edan.rodde03@gmail.com" class="footer-link" id="link-email">
+                    <span class="link-icon">📧</span>
+                    <span class="link-text">Email</span>
+                </a>
+
+                <!-- 💼 LINKEDIN : Remplacez "VOTRE_PROFIL_LINKEDIN" par votre URL LinkedIn -->
+                <a href="https://www.linkedin.com/in/edan-rodde-a7bb92348/" target="_blank" rel="noopener"
+                    class="footer-link" id="link-linkedin">
+                    <span class="link-icon">💼</span>
+                    <span class="link-text">LinkedIn</span>
+                </a>
+
+                <!-- 🐙 GITHUB : Remplacez "VOTRE_USERNAME_GITHUB" par votre pseudo GitHub -->
+                <a href="https://github.com/pft-erodde/" target="_blank" rel="noopener" class="footer-link"
+                    id="link-github">
+                    <span class="link-icon">🐙</span>
+                    <span class="link-text">GitHub</span>
+                </a>
+
+                <!-- 📄 CV : Remplacez "LIEN_VERS_VOTRE_CV.pdf" par le lien vers votre CV -->
+                <a href="https://res.cloudinary.com/dynbrtfxs/image/upload/v1766057824/CV-edan-rodde_agap3r.pdf"
+                    target="_blank" rel="noopener" class="footer-link" id="link-cv">
+                    <span class="link-icon">📄</span>
+                    <span class="link-text">Mon CV</span>
+                </a>
+            </div>
+            <!-- ================================================ -->
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Edan RODDE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 
-
 </html>
-
