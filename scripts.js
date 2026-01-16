@@ -144,9 +144,72 @@ window.addEventListener('scroll', () => {
 });
 
 // ===================================
-// EFFET PUSH 3D SUR TOUTES LES CARTES
+// GESTION DU THÈME SOMBRE / CLAIR
 // ===================================
-const cards = document.querySelectorAll('.skill-card, .experience-card, .timeline-card, .certification-card, .project-card');
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle?.querySelector('.theme-icon');
+const htmlElement = document.documentElement;
+
+// Fonction pour définir le thème
+const setTheme = (theme) => {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    // Mettre à jour les icônes lune/soleil
+    if (themeIcon) {
+        const moonIcon = themeIcon.querySelector('.moon-icon');
+        const sunIcon = themeIcon.querySelector('.sun-icon');
+
+        if (theme === 'light') {
+            // Afficher l'icône soleil en mode clair
+            if (moonIcon) moonIcon.style.display = 'none';
+            if (sunIcon) sunIcon.style.display = 'block';
+        } else {
+            // Afficher l'icône lune en mode sombre
+            if (moonIcon) moonIcon.style.display = 'block';
+            if (sunIcon) sunIcon.style.display = 'none';
+        }
+    }
+
+    // Mettre à jour l'image de profil
+    const profileImage = document.getElementById('profile-image');
+    if (profileImage) {
+        const newSrc = theme === 'light' ? profileImage.dataset.lightSrc : profileImage.dataset.darkSrc;
+        if (newSrc && profileImage.src !== newSrc) {
+            profileImage.style.opacity = '0';
+            setTimeout(() => {
+                profileImage.src = newSrc;
+                profileImage.style.opacity = '1';
+            }, 200);
+        }
+    }
+};
+
+// Vérifier les préférences sauvegardées ou système
+const savedTheme = localStorage.getItem('theme');
+const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
+// Appliquer le thème initial
+if (savedTheme) {
+    setTheme(savedTheme);
+} else {
+    setTheme(systemTheme);
+}
+
+// Event listener sur le bouton
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+}
+
+
+// ===================================
+// EFFET PUSH 3D SUR LES CARTES DE PROJETS
+// ===================================
+const cards = document.querySelectorAll('.timeline-card, .certification-card, .project-card, .school-project-card');
 
 cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -218,51 +281,45 @@ if (aboutStats) {
 }
 
 // ===================================
-// EFFET DE FRAPPE POUR LE HERO (OPTIONNEL)
+// EFFET DE FRAPPE AVANCÉ POUR LE HERO
 // ===================================
-const typeWriter = (element, text, speed = 50) => {
-    let i = 0;
-    element.textContent = '';
+const heroTypingText = "Étudiant en BTS SIO — Spécialité SISR | Infrastructure, Réseaux & Cybersécurité";
+const typingElement = document.getElementById('typing-text');
+const typingCursor = document.querySelector('.typing-cursor');
 
-    const type = () => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+function typeHeroText() {
+    if (!typingElement) return;
+
+    let charIndex = 0;
+    const baseSpeed = 50;
+
+    function type() {
+        if (charIndex < heroTypingText.length) {
+            const char = heroTypingText.charAt(charIndex);
+            typingElement.textContent += char;
+            charIndex++;
+
+            // Vitesse variable pour un effet plus naturel
+            let delay = baseSpeed;
+            if (char === ' ') delay = baseSpeed * 0.5;
+            else if (char === '—' || char === '|') delay = baseSpeed * 3;
+            else if (char === ',') delay = baseSpeed * 2;
+            else delay = baseSpeed + Math.random() * 30;
+
+            setTimeout(type, delay);
+        } else {
+            // Animation terminée - cacher le curseur après un délai
+            setTimeout(() => {
+                if (typingCursor) {
+                    typingCursor.style.animation = 'none';
+                    typingCursor.style.opacity = '0';
+                }
+            }, 2000);
         }
-    };
+    }
 
-    type();
-};
-
-// ===================================
-// GLOW EFFECT SUR LA SOURIS
-// ===================================
-document.addEventListener('mousemove', (e) => {
-    const glowCards = document.querySelectorAll('.skill-card, .project-card, .experience-card');
-
-    glowCards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-    });
-});
-
-// ===================================
-// SMOOTH SCROLL POUR LE SCROLL INDICATOR
-// ===================================
-const scrollIndicator = document.querySelector('.scroll-indicator');
-if (scrollIndicator) {
-    scrollIndicator.addEventListener('click', () => {
-        const apropos = document.querySelector('#apropos');
-        if (apropos) {
-            apropos.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    scrollIndicator.style.cursor = 'pointer';
+    // Démarrer l'effet de frappe après un court délai
+    setTimeout(type, 800);
 }
 
 // ===================================
@@ -278,6 +335,9 @@ window.addEventListener('load', () => {
 
     // Ajouter une classe au body pour indiquer que le JS est chargé
     document.body.classList.add('js-loaded');
+
+    // Démarrer l'effet de frappe
+    typeHeroText();
 });
 
 // ===================================
@@ -291,6 +351,88 @@ if (prefersReducedMotion.matches) {
         el.classList.add('visible');
     });
 }
+
+// ===================================
+// MODAL PROJETS SCOLAIRES
+// ===================================
+const projectModal = document.getElementById('project-modal');
+const modalOverlay = projectModal?.querySelector('.modal-overlay');
+const modalClose = projectModal?.querySelector('.modal-close');
+const schoolProjectCards = document.querySelectorAll('.school-project-card[data-project="true"], .project-card[data-project="true"]');
+
+// Fonction pour ouvrir le modal avec les données du projet
+function openProjectModal(card) {
+    if (!projectModal) return;
+
+    // Récupérer les données du projet depuis les attributs data-*
+    // Pour l'icône, on essaie de récupérer le SVG depuis l'élément .project-icon-large s'il existe
+    const iconContainer = card.querySelector('.project-icon-large');
+    const icon = iconContainer ? iconContainer.innerHTML : (card.dataset.icon || '📁');
+
+    const title = card.dataset.title || 'Projet';
+    const status = card.dataset.status || 'En cours';
+    const year = card.dataset.year || '';
+    const description = card.dataset.description || 'Description non disponible.';
+    const objectives = card.dataset.objectives || 'Objectifs non définis.';
+    const tasks = card.dataset.tasks ? card.dataset.tasks.split('|') : ['Aucune tâche définie'];
+    const tech = card.dataset.tech ? card.dataset.tech.split(',') : [];
+
+    // Remplir le modal avec les données
+    document.getElementById('modal-icon').innerHTML = icon;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-description').textContent = description;
+    document.getElementById('modal-objectives').textContent = objectives;
+    document.getElementById('modal-year').textContent = year;
+
+    // Badge de statut
+    const modalBadge = document.getElementById('modal-badge');
+    modalBadge.textContent = status;
+    modalBadge.className = 'modal-badge ' + (status === 'Terminé' ? 'completed' : 'in-progress');
+
+    // Liste des tâches
+    const tasksList = document.getElementById('modal-tasks');
+    tasksList.innerHTML = tasks.map(task => `<li>${task.trim()}</li>`).join('');
+
+    // Technologies
+    const techContainer = document.getElementById('modal-tech');
+    techContainer.innerHTML = tech.map(t => `<span>${t.trim()}</span>`).join('');
+
+    // Afficher le modal
+    projectModal.classList.add('active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+// Fonction pour fermer le modal
+function closeProjectModal() {
+    if (!projectModal) return;
+
+    projectModal.classList.remove('active');
+    projectModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+// Event listeners pour les cartes de projets
+schoolProjectCards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => openProjectModal(card));
+});
+
+// Fermer le modal
+if (modalClose) {
+    modalClose.addEventListener('click', closeProjectModal);
+}
+
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeProjectModal);
+}
+
+// Fermer avec la touche Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal?.classList.contains('active')) {
+        closeProjectModal();
+    }
+});
 
 // ===================================
 // CONSOLE MESSAGE
