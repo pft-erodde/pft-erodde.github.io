@@ -71,7 +71,14 @@ const navMenu = document.querySelector('nav ul');
 const navLinksMobile = document.querySelectorAll('nav a');
 
 if (menuToggle && navMenu) {
+    // Initialisation de l'état accessibilité
+    menuToggle.setAttribute('aria-expanded', 'false');
+
     menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        menuToggle.setAttribute('aria-label', isExpanded ? 'Ouvrir le menu' : 'Fermer le menu');
+
         menuToggle.classList.toggle('active');
         navMenu.classList.toggle('nav-active');
 
@@ -86,6 +93,8 @@ if (menuToggle && navMenu) {
     // Fermer le menu lors du clic sur un lien
     navLinksMobile.forEach(link => {
         link.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
             menuToggle.classList.remove('active');
             navMenu.classList.remove('nav-active');
             document.body.style.overflow = '';
