@@ -64,6 +64,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===================================
+// MENU HAMBURGER MOBILE
+// ===================================
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+const navLinksMobile = document.querySelectorAll('nav a');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('nav-active');
+
+        // Empêcher le scroll du body quand le menu est ouvert
+        if (navMenu.classList.contains('nav-active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Fermer le menu lors du clic sur un lien
+    navLinksMobile.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('nav-active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+// ===================================
 // NAVBAR - EFFET AU SCROLL
 // ===================================
 const navbar = document.getElementById('navbar');
@@ -185,15 +215,15 @@ const setTheme = (theme) => {
     }
 };
 
-// Vérifier les préférences sauvegardées ou système
+// Vérifier les préférences sauvegardées ou, à défaut, forcer le mode sombre
 const savedTheme = localStorage.getItem('theme');
-const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 
 // Appliquer le thème initial
 if (savedTheme) {
     setTheme(savedTheme);
 } else {
-    setTheme(systemTheme);
+    // Force dark mode by default for first-time visitors
+    setTheme('dark');
 }
 
 // Event listener sur le bouton
