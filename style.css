@@ -207,6 +207,7 @@ body {
 }
 
 @media (hover: none) and (pointer: coarse) {
+
     .cursor,
     .cursor-follower {
         display: none !important;
@@ -1808,6 +1809,8 @@ footer::before {
     .about-image::before {
         width: 220px;
         height: 220px;
+        margin-top: -110px;
+        margin-left: -110px;
     }
 }
 
