@@ -440,6 +440,22 @@ function openProjectModal(card) {
     projectModal.classList.add('active');
     projectModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    // Image du projet (si disponible)
+    const imageUrl = card.dataset.image || '';
+    const imageCaption = card.dataset.imageCaption || '';
+    const imageContainer = document.getElementById('modal-image-container');
+    const modalImage = document.getElementById('modal-image');
+    const modalImageCaption = document.getElementById('modal-image-caption');
+
+    if (imageUrl && imageContainer && modalImage) {
+        modalImage.src = imageUrl;
+        modalImage.alt = imageCaption || 'Image du projet';
+        if (modalImageCaption) modalImageCaption.textContent = imageCaption;
+        imageContainer.style.display = 'block';
+    } else if (imageContainer) {
+        imageContainer.style.display = 'none';
+    }
 }
 
 // Fonction pour fermer le modal
@@ -478,3 +494,33 @@ document.addEventListener('keydown', (e) => {
 // ===================================
 console.log('%c🚀 Portfolio Edan RODDE', 'font-size: 24px; font-weight: bold; color: #6366f1;');
 console.log('%c✨ Conçu avec passion pour l\'infrastructure IT', 'font-size: 14px; color: #94a3b8;');
+
+// ===================================
+// SISR CARD - CLICK TO REVEAL IMAGE
+// ===================================
+const sisrCard = document.querySelector('.sisr-card');
+const sisrReveal = document.getElementById('sisr-reveal');
+
+if (sisrCard && sisrReveal) {
+    sisrCard.style.cursor = 'pointer';
+    sisrCard.addEventListener('click', () => {
+        const isVisible = sisrReveal.style.display !== 'none';
+        sisrReveal.style.display = isVisible ? 'none' : 'block';
+        const hint = sisrCard.querySelector('.sisr-click-hint');
+        if (hint) hint.textContent = isVisible ? 'Cliquez pour voir la salle' : 'Cliquez pour masquer';
+    });
+}
+
+// ===================================
+// CERTIFICATION CARDS - CLICK TO REVEAL IMAGE
+// ===================================
+document.querySelectorAll('.certification-card').forEach(card => {
+    const img = card.querySelector('.certification-image');
+    if (img) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            const isVisible = img.style.display !== 'none';
+            img.style.display = isVisible ? 'none' : 'block';
+        });
+    }
+});

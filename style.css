@@ -101,7 +101,8 @@
 /* Dark mode - images restent claires */
 .project-icon-large img,
 .skill-icon img,
-.option-icon img {
+.option-icon img,
+.modal-icon img {
     filter: invert(1);
     transition: filter 0.3s ease;
 }
@@ -109,8 +110,14 @@
 /* Light mode - inverser les couleurs pour les adapter au fond clair */
 [data-theme="light"] .project-icon-large img,
 [data-theme="light"] .skill-icon img,
-[data-theme="light"] .option-icon img {
+[data-theme="light"] .option-icon img,
+[data-theme="light"] .modal-icon img {
     filter: invert(0);
+}
+
+/* Les photos (non-SVG) ne doivent pas être inversées */
+.certification-image {
+    filter: none !important;
 }
 
 /* === TYPING EFFECT STYLES === */
@@ -2215,6 +2222,108 @@ footer::before {
     transition: var(--transition-smooth);
 }
 
+/* === SISR REVEAL IMAGE === */
+.sisr-reveal {
+    margin-top: 1.5rem;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sisr-reveal-content img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 0.75rem;
+}
+
+.sisr-reveal-caption {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-style: italic;
+    padding: 0.5rem;
+    background: rgba(99, 102, 241, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-primary);
+}
+
+.sisr-click-hint {
+    display: block;
+    margin-top: 1rem;
+    color: var(--accent-tertiary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+}
+
+.sisr-card:hover .sisr-click-hint {
+    opacity: 1;
+}
+
+/* === IMAGE DANS CHOIX SECTION === */
+.choix-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+}
+
+.choix-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-glow);
+}
+
+/* === MODAL PROJECT IMAGE === */
+.modal-image-container {
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-project-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+}
+
+.modal-image-caption {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* === CERTIFICATION ATTESTATION IMAGE === */
+.certification-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+}
+
+.certification-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-glow);
+}
+
 .modal.active {
     opacity: 1;
     visibility: visible;
@@ -2284,6 +2393,17 @@ footer::before {
 .modal-icon {
     font-size: 3rem;
     line-height: 1;
+}
+
+.modal-icon img {
+    max-width: 56px;
+    max-height: 56px;
+    object-fit: contain;
+}
+
+.modal-icon svg {
+    max-width: 56px;
+    max-height: 56px;
 }
 
 .modal-title-group {
