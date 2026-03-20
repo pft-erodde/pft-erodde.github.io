@@ -2512,7 +2512,40 @@ footer::before {
     color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
 }
+
+.modal-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.modal-hours,
+.modal-module {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1;
+}
+
+.modal-hours svg,
+.modal-module svg {
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
 
 /* Click hint pour les cartes cliquables */
 .click-hint {

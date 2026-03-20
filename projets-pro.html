@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -75,7 +75,7 @@
                     <li><a href="projets-scolaires.html#projet-site-web">Site web vitrine</a></li>
                     <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
                     <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
-                    <li><a href="projets-pro.html">Refonte réseau Brocker'Info</a></li>
+                    <li><a href="projets-scolaires.html#projet-brocker">Refonte réseau Brocker'Info</a></li>
                 </ul>
             </li>
             <li><a href="experiences.html">Expériences</a></li>
@@ -95,19 +95,19 @@
 
             <!-- Projet 1 : Raspberry Pi Kiosque -->
             <div class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
-                data-status="Terminé" data-year="2024-2025" data-hours="~40h"
+                data-status="Terminé" data-year="2024-2025" data-hours="~30h"
                 data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
                 data-module="Stage en entreprise – Hall 32"
-                data-description="Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des machines industrielles. Configuration système optimisée pour un fonctionnement 24/7."
-                data-context="Lors de mon stage au sein de Hall 32 (société d'ingénierie industrielle à Clermont-Ferrand), mon tuteur m'a confié le projet de concevoir un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien système Linux, en totale autonomie sur ce projet."
-                data-client="Hall 32 — Société d'ingénierie et de maintenance industrielle. Besoin interne : disposer d'un affichage d'informations en temps réel sur les machines de production sans matériel coûteux."
-                data-needs="Affichage d'informations en temps réel sur les machines|Fonctionnement autonome 24h/24 7j/7|Redémarrage automatique en cas de coupure|Coût minimal (Raspberry Pi)|Interface simple non modifiable par les opérateurs"
-                data-docs-in="Cahier des charges du tuteur|Documentation Raspberry Pi OS|Spécifications des machines industrielles"
-                data-tasks="Installation et configuration de Raspberry Pi OS|Développement de l'interface d'affichage|Configuration du démarrage automatique (autostart)|Optimisation des performances système|Configuration du mode kiosque (Chromium)|Tests de stabilité sur 24h"
-                data-docs-out="Raspberry Pi configuré et opérationnel|Documentation de configuration|Guide de maintenance|Script de démarrage automatique"
-                data-opinion="Ce projet m'a donné une vraie autonomie et une grande satisfaction. Voir le Raspberry Pi fonctionner en environnement industriel réel, 24h/24, est particulièrement valorisant. C'est l'un des projets dont je suis le plus fier."
-                data-difficulties="Gestion de la stabilité sur le long terme (memory leaks)|Configuration du kiosque pour empêcher toute interaction non autorisée|Adaptation à l'environnement industriel (poussière, température)"
-                data-contributions="Maîtrise de Raspberry Pi OS et Linux embarqué|Configuration de systèmes en mode kiosque|Gestion d'un projet en totale autonomie|Compréhension de l'environnement industriel IT"
+                data-description="Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des machines industrielles."
+                data-context="Lors de mon stage au sein de Hall 32, j'ai pu participer au projet de concevoir un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
+                data-client="Hall 32 — Société d'ingénierie et de maintenance industrielle."
+                data-needs="Affichage d'informations en temps réel|Fonctionnement autonome 24h/24 7j/7|Redémarrage automatique|Coût minimal (Raspberry Pi)"
+                data-docs-in="Cahier des charges"
+                data-tasks="Choix de l'OS|Installation et configuration de Raspberry Pi OS|Développement de l'interface d'affichage|Configuration du démarrage automatique|Optimisation des performances|Configuration du mode kiosque (Chromium)|Tests de stabilité"
+                data-docs-out="Documentation de configuration|Guide de maintenance"
+                data-opinion="Ce projet m'a donné une vision d'un projet en autonomie. Voir le Raspberry Pi fonctionner en environnement industriel réel, 24h/24, est particulièrement valorisant."
+                data-difficulties="Gestion de la stabilité sur le long terme|Configuration du kiosque|Adaptation à l'environnement industriel"
+                data-contributions="Maîtrise de Raspberry Pi OS et Linux embarqué|Configuration de systèmes en mode kiosque|Gestion d'un projet en autonomie"
                 data-tech="Raspberry Pi,Linux,Kiosk Mode,Shell">
                 <div class="project-image" aria-hidden="true">
                     <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/images_zyxhcs.png"
@@ -122,28 +122,28 @@
                         </svg>
                         Kiosque Raspberry Pi
                     </h3>
-                    <p>Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des
-                        machines industrielles. Configuration système optimisée pour un fonctionnement 24/7.</p>
+                    <p>Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur
+                        des machines industrielles.</p>
                 </div>
                 <span class="click-hint">Cliquez pour plus de détails</span>
             </div>
 
-            <!-- Projet 2 : Supervision Nagios -->
+            <!-- Projet Pro 2 -->
             <div class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
-                data-status="Terminé" data-year="2024-2025" data-hours="~35h"
+                data-status="Terminé" data-year="2024-2025" data-hours="~25h"
                 data-resources="Nagios Core|Linux (Debian)|SNMP|Serveur dédié|Postfix (alertes e-mail)"
                 data-module="Stage en entreprise – Hall 32"
-                data-description="Installation et configuration complète de Nagios pour la supervision d'une infrastructure réseau. Mise en place d'alertes et de tableaux de bord personnalisés."
-                data-context="Toujours dans le cadre de mon stage chez Hall 32, j'ai été missionné pour mettre en place un système de supervision réseau. Mon rôle était celui d'administrateur réseau/système, responsable de déployer et configurer Nagios sur un serveur Linux dédié."
-                data-client="Hall 32 — Besoin interne de supervision : l'entreprise souhaitait monitorer son infrastructure réseau (switches, serveurs, printers) et recevoir des alertes en cas de panne ou d'anomalie."
-                data-needs="Supervision de l'infrastructure réseau complète|Alertes par email en cas de problème|Tableau de bord accessible depuis le réseau interne|Surveillance des services critiques (HTTP, SSH, SNMP)|Documentation pour la maintenance future"
-                data-docs-in="Schéma réseau de Hall 32|Documentation Nagios Core|Liste des équipements à superviser"
-                data-tasks="Installation du serveur Nagios sur Linux|Configuration des plugins de supervision|Ajout des hôtes et services à surveiller|Configuration des alertes email|Création de tableaux de bord|Tests de supervision|Documentation de la configuration"
-                data-docs-out="Serveur Nagios opérationnel|Fichiers de configuration des hôtes/services|Documentation d'administration|Guide d'utilisation du tableau de bord"
-                data-opinion="Projet techniquement très enrichissant. Nagios est complexe à configurer mais extrêmement puissant. Ce projet m'a donné un vrai aperçu du métier d'administrateur réseau et de l'importance du monitoring en production."
-                data-difficulties="Compréhension de la syntaxe complexe des fichiers Nagios|Configuration du protocole SNMP sur les équipements réseau|Débogage des faux positifs dans les alertes"
-                data-contributions="Maîtrise de Nagios Core et du monitoring réseau|Connaissance du protocole SNMP|Compréhension de la supervision en environnement de production|Administration Linux (services, cron, mail)"
-                data-tech="Nagios,Linux,SNMP,Monitoring">
+                data-description="Installation et configuration de Nagios pour la supervision d'une infrastructure réseau."
+                data-context="J'ai été missionné pour mettre en place un système de supervision réseau chez Hall 32. Mon rôle était celui d'un technicien."
+                data-client="Hall 32 — Besoin de supervision de l'infrastructure réseau."
+                data-needs="Supervision de l'infrastructure réseau complète|Alertes par email|Tableau de bord accessible|Surveillance des services critiques"
+                data-docs-in="Schéma réseau de Hall 32|Cahier des charges"
+                data-tasks="Installation du serveur Nagios|Configuration des plugins|Ajout des hôtes et services|Configuration des alertes email|Création de tableaux de bord"
+                data-docs-out="Tutoriel d'installation et de configuration de Nagios"
+                data-opinion="Projet techniquement très enrichissant. Nagios est complexe mais extrêmement puissant."
+                data-difficulties="Compréhension de la syntaxe Nagios|Configuration SNMP|Débogage des faux positifs|Intégration des hôtes"
+                data-contributions="Maîtrise de Nagios Core|Connaissance du protocole SNMP|Administration Linux"
+                data-tech="Nagios,SNMP,Monitoring">
                 <div class="project-image" aria-hidden="true">
                     <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/nagios_w4chml.png"
                         alt="Nagios">
@@ -157,27 +157,26 @@
                         </svg>
                         Supervision Nagios
                     </h3>
-                    <p>Installation et configuration partielle de Nagios pour la supervision d'une infrastructure
-                        réseau. Mise en place d'alertes et de tableaux de bord personnalisés.</p>
+                    <p>Installation et configuration de Nagios pour la supervision d'une infrastructure réseau.</p>
                 </div>
                 <span class="click-hint">Cliquez pour plus de détails</span>
             </div>
 
-            <!-- Projet 3 : Hyperviseur Hyper-V -->
+            <!-- Projet Pro 3 -->
             <div class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
-                data-status="Terminé" data-year="2024-2025" data-hours="~50h"
+                data-status="Terminé" data-year="2024-2025" data-hours="~10h"
                 data-resources="Windows Server 2019|Hyper-V|vSwitch|Migration physique vers VM"
                 data-module="Stage en entreprise – Hall 32"
-                data-description="Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle. Configuration de machines virtuelles et gestion des ressources."
-                data-context="Troisième projet majeur de mon stage chez Hall 32. Mon rôle était d'administrateur virtualisation, chargé de déployer une solution d'hyperviseur pour consolider les serveurs physiques de l'entreprise en machines virtuelles."
-                data-client="Hall 32 — Besoin interne : remplacer des serveurs physiques vieillissants par une infrastructure virtualisée sous Windows Server/Hyper-V, pour réduire les coûts et améliorer la maintenance."
-                data-needs="Virtualisation des serveurs existants|Conservation des données et services|Performances suffisantes pour les applications métier|Sauvegardes automatiques des VMs|Documentation pour l'administrateur système"
-                data-docs-in="Inventaire des serveurs physiques|Spécifications des applications métier|Documentation Hyper-V Microsoft"
-                data-tasks="Installation de Windows Server avec rôle Hyper-V|Création et configuration des machines virtuelles|Migration des données des serveurs physiques|Configuration du réseau virtuel (vSwitch)|Mise en place des sauvegardes automatiques|Tests de performance et de basculement"
-                data-docs-out="Infrastructure Hyper-V opérationnelle|Documentation de configuration des VMs|Guide d'administration et de maintenance|Plan de reprise d'activité (PRA)"
-                data-opinion="Ce projet m'a confronté à une vraie migration d'infrastructure en conditions réelles, avec des contraintes de production. C'est l'expérience la plus professionnalisante de mon stage, qui m'a appris à travailler avec rigueur et méthode."
-                data-difficulties="Migration sans interruption des services en production|Dimensionnement correct des ressources pour chaque VM|Configuration du réseau virtuel pour la communication inter-VMs|Gestion des problèmes de performance post-migration"
-                data-contributions="Maîtrise de l'hyperviseur Hyper-V|Compétences en virtualisation et migration|Gestion d'une infrastructure de production|Administration Windows Server|Méthodologie de projet en environnement professionnel"
+                data-description="Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle."
+                data-context="Mon rôle était de déployer une solution d'hyperviseur."
+                data-client="Hall 32 — Besoin de virtualisation des serveurs existants."
+                data-needs="Virtualisation des serveurs|Conservation des données|Performances suffisantes|Sauvegardes automatiques"
+                data-docs-in="Inventaire des serveurs physiques|Documentation Hyper-V Microsoft"
+                data-tasks="Installation d'Hyper-V|Création des VMs|Configuration du réseau virtuel|Mise en place des sauvegardes"
+                data-docs-out="Infrastructure Hyper-V opérationnelle|Documentation de configuration|Plan de reprise d'activité"
+                data-opinion="Ce projet m'a confronté à une vraie infrastructure en conditions réelles."
+                data-difficulties="Installer Hyper-V sur un serveur"
+                data-contributions="Maîtrise d'Hyper-V|Compétences en virtualisation|Administration Windows Server"
                 data-tech="Hyper-V,Windows Server,Virtualisation">
                 <div class="project-image" aria-hidden="true">
                     <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/hypetv_wbz5of.png"
@@ -192,50 +191,11 @@
                         </svg>
                         Hyperviseur Hyper-V
                     </h3>
-                    <p>Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle. Configuration de
-                        machines virtuelles et gestion des ressources.</p>
+                    <p>Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle.</p>
                 </div>
                 <span class="click-hint">Cliquez pour plus de détails</span>
             </div>
 
-            <!-- Projet 4 : Refonte réseau Brocker'Info (IT Partner, 17/03/2026) -->
-            <div class="project-card reveal delay-4" data-project="true"
-                data-title="Refonte réseau Brocker'Info — Commutation & Routage" data-status="En cours"
-                data-year="Du 17/03/2026 au 20/04/2026" data-hours="En cours"
-                data-resources="Cisco Packet Tracer|Cisco Switch 2950 (x2)|Cisco Router 1841|VTP|TFTP"
-                data-module="Stage en entreprise – IT Partner"
-                data-description="Refonte complète du réseau de Brocker'Info : commutation et routage avec deux switches Cisco 2950 et un routeur Cisco 1841. Configuration VTP et sauvegarde TFTP."
-                data-context="Dans le cadre de mon stage chez IT Partner (prestataire informatique), j'ai été missionné pour refondre l'infrastructure réseau du client Brocker'Info. Mon rôle est celui d'administrateur réseau, en charge de la conception et du déploiement de la solution de commutation et de routage."
-                data-client="Brocker'Info — PME cliente d'IT Partner. Besoin : refonte du réseau interne avec une architecture structurée (commutation + routage) pour améliorer la performance et la maintenabilité de l'infrastructure."
-                data-needs="Descriptif des besoins|Solution Cisco sur fichier Packet Tracer|Fichiers de configuration des équipements (2 switches 2950 et 1 routeur 1841)|Tutoriel(s) VTP &amp; TFTP|Mail de réponse au client"
-                data-docs-in="Cahier des charges client|Schéma réseau existant|Documentation Cisco IOS"
-                data-tasks="Analyse du réseau existant et descriptif des besoins|Conception de la solution sur Cisco Packet Tracer|Configuration des 2 switches Cisco 2950 (VLANs, VTP)|Configuration du routeur Cisco 1841 (routage inter-VLAN)|Sauvegarde des configurations via TFTP|Rédaction de tutoriels VTP et TFTP|Rédaction du mail de réponse client"
-                data-docs-out="Descriptif des besoins|Fichier Packet Tracer de la solution|Fichiers de configuration des 3 équipements Cisco|Tutoriels VTP &amp; TFTP|Mail réponse client"
-                data-opinion="Projet très formateur en conditions professionnelles réelles. Travailler sur des équipements Cisco avec VTP et TFTP approfondissait directement mes compétences SISR dans un contexte client concret."
-                data-difficulties="Maîtrise de VTP (domaine, mode serveur/client/transparent)|Configuration cohérente du routage inter-VLAN sur le 1841|Sauvegarde et restauration des configs via TFTP"
-                data-contributions="Configuration avancée d'équipements Cisco (CLI IOS)|Maîtrise du protocole VTP et de TFTP|Compréhension d'une refonte réseau en environnement professionnel|Rédaction de documentation et communication client"
-                data-tech="Cisco,Packet Tracer,VTP,TFTP,Commutation,Routage">
-                <div class="project-image" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        style="width:120px;height:120px;color:var(--accent-primary);opacity:0.85;">
-                        <path
-                            d="M15 3H9c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-2V5c0-1.1-.9-2-2-2zM9 5h6v2H9V5zm6 14H9v-4h6v4zm3-6H6V9h12v4z" />
-                    </svg>
-                </div>
-                <div class="project-content">
-                    <h3>
-                        <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M15 3H9c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-2V5c0-1.1-.9-2-2-2zM9 5h6v2H9V5zm6 14H9v-4h6v4zm3-6H6V9h12v4z" />
-                        </svg>
-                        Refonte réseau Brocker'Info
-                    </h3>
-                    <p>Commutation &amp; routage — 2 switches Cisco 2950 et 1 routeur Cisco 1841. Configuration VTP,
-                        sauvegarde TFTP et documentation pour IT Partner.</p>
-                </div>
-                <span class="click-hint">Cliquez pour plus de détails</span>
-            </div>
 
         </div>
     </div>
@@ -295,7 +255,7 @@
                     <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
                             height="18">
                             <path d="M22 5.18L10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10L22 5.18z" />
-                        </svg> Tâches demandées</h4>
+                        </svg> Tâches réalisées</h4>
                     <ul id="modal-tasks"></ul>
                 </div>
                 <div class="modal-section" id="ms-docs-out" style="display:none;">
