@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mes Projets Scolaires BTS SIO - Edan RODDE">
+    <title>Projets Scolaires | Edan RODDE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav role="navigation" aria-label="Navigation principale" id="navbar">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+            <span class="theme-icon">
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.2" />
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    <circle cx="17" cy="5" r="0.8" fill="currentColor" />
+                    <circle cx="19" cy="8" r="0.5" fill="currentColor" />
+                    <circle cx="15" cy="3" r="0.6" fill="currentColor" />
+                </svg>
+                <svg class="sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" opacity="0.3" />
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+        </button>
+        <button class="menu-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li class="nav-dropdown">
+                <a href="formation.html" class="nav-dropdown-toggle">Ma Formation <svg class="dropdown-arrow"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
+                        height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <ul class="dropdown-menu">
+                    <li><a href="formation.html">BTS SIO</a></li>
+                    <li><a href="parcours.html">Mon Parcours</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="projets-tous.html" class="nav-dropdown-toggle active">Projets <svg class="dropdown-arrow"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
+                        height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <ul class="dropdown-menu">
+                    <li><a href="projets-tous.html">Tous les Projets</a></li>
+                    <li><a href="projets-pro.html">Projets Pro</a></li>
+                    <li><a href="projets-scolaires.html" class="active">Projets Scolaires</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
+                    <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
+                    <li><a href="projets-scolaires.html#projet-cablage">Câblage salle info</a></li>
+                    <li><a href="projets-scolaires.html#projet-reseau-env">Environnement réseau</a></li>
+                    <li><a href="projets-scolaires.html#projet-p2p">Réseau poste à poste</a></li>
+                    <li><a href="projets-scolaires.html#projet-site-web">Site web vitrine</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
+                    <li class="dropdown-separator"><span>— Stage IT Partner —</span></li>
+                    <li><a href="projets-pro.html">Refonte réseau Brocker'Info</a></li>
+                </ul>
+            </li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <a href="index.html" class="back-home">← Accueil</a>
+        <h1>Mes Projets Scolaires</h1>
+        <p class="page-subtitle">Les projets réalisés durant ma formation au Lycée Albert Londres</p>
+    </div>
+
+    <div class="page-content">
+        <div class="school-projects-grid">
+
+            <!-- Projet : Site web vitrine (02 — 09/2025) -->
+            <article id="projet-site-web" class="school-project-card reveal delay-2" data-project="true"
+                data-title="Création d'un site web vitrine" data-status="Terminé" data-year="Du 09/2025 au 01/2026"
+                data-hours="~30h" data-resources="VS Code|Google Fonts|Cloudinary|GitHub Pages|ChatGPT (aide CSS)"
+                data-module="Bloc 3 – Cybersécurité & développement"
+                data-description="Création du site web que vous pouvez voir actuellement, avec amélioration entre temps ;)"
+                data-context="Dans le cadre du BTS SIO, j'ai eu pour mission de créer un portfolio personnel sous forme de site web vitrine. Mon rôle est celui de développeur/administrateur : concevoir, mettre en ligne et maintenir ce site qui présente mes compétences, ma formation et mes projets."
+                data-client="Demande interne — projet personnel dans le cadre du BTS SIO SISR, visant à constituer un dossier professionnel numérique."
+                data-needs="Présenter mon parcours et mes compétences|Avoir un portfolio accessible en ligne|Adopter un design moderne et responsive|Intégrer un mode sombre/clair|Permettre la navigation intuitive entre les sections"
+                data-docs-in="Cahier des charges personnel|Exemples de portfolios modernes|Ressources Google Fonts et Cloudinary"
+                data-tasks="Conception de la structure HTML|Stylisation avec CSS moderne (Glassmorphism, animations)|Ajout d'interactivité JavaScript|Optimisation SEO et performance|Migration vers une architecture multi-pages"
+                data-docs-out="Site web complet (index.html + pages)|style.css|scripts.js|Hébergement GitHub Pages"
+                data-opinion="Ce projet m'a permis de découvrir le développement front-end dans sa globalité. Bien que ce ne soit pas ma spécialité SISR, je suis satisfait du résultat final qui reflète bien mon niveau et mes connaissances."
+                data-difficulties="Gestion du responsive design pour tous les écrans|Optimisation des performances (images, animations)|Mise en place du système de thème dark/light persistant"
+                data-contributions="Maîtrise de HTML/CSS/JS avancé|Compréhension du DOM et des animations CSS|Notions d'accessibilité et de SEO|Capacité à concevoir une architecture multi-pages"
+                data-tech="HTML,CSS,JS">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-icon-large"><img
+                        src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1768479939/globe-svgrepo-com_eiwbl4.svg"
+                        alt="Globe" class="icon-svg"></div>
+                <h3>Création d'un site web vitrine</h3>
+                <p>Création du site web que vous pouvez voir, avec amélioration entre temps ;)</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+            <!-- Projet : Appel d'offres PC (03 — 10/2025) -->
+            <article id="projet-appel-offres-pc" class="school-project-card reveal delay-3" data-project="true"
+                data-title="Réponse à un appel d'offres de PC" data-status="Terminé" data-year="Du 10/2025 au 11/2025"
+                data-hours="~12h" data-resources="Catalogues fournisseurs (LDLC, PC21)|LibreOffice Calc|Word"
+                data-module="Bloc 1 – Support et mise à disposition de services informatiques"
+                data-description="Recherche de produits et de solutions pour répondre à un appel d'offres de PC."
+                data-context="Dans le cadre de la formation BTS SIO, nous avons été sollicités pour répondre à un appel d'offres fictif d'une entreprise souhaitant renouveler son parc informatique. Mon rôle était celui de technicien informatique chargé de la recherche et de la proposition."
+                data-client="Demande interne scolaire — simulation d'un appel d'offres d'une entreprise type PME souhaitant acquérir des postes de travail."
+                data-needs="Analyser le cahier des charges|Sélectionner des composants adaptés aux besoins|Respecter le budget imposé|Justifier techniquement les choix|Présenter une proposition claire et professionnelle"
+                data-docs-in="Cahier des charges de l'appel d'offres|Catalogues fournisseurs|Grille d'évaluation"
+                data-tasks="Analyse du cahier des charges|Recherche de produits et de solutions|Rédaction de la proposition technique|Création du devis|Présentation de la solution"
+                data-docs-out="Proposition technique rédigée|Devis détaillé|Support de présentation"
+                data-opinion="Exercice formateur qui m'a appris à raisonner en termes de coût/performance et à argumenter mes choix techniques face à un client. La partie devis a été particulièrement instructive."
+                data-difficulties="Trouver le meilleur rapport qualité/prix dans les contraintes budgétaires|Justifier les choix techniques de manière professionnelle"
+                data-contributions="Capacité à répondre à un appel d'offres|Maîtrise des outils de devis|Argumentation technique|Communication professionnelle"
+                data-tech="Recherche,Devis,Proposition technique">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-icon-large">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3>Réponse à un appel d'offres de PC</h3>
+                <p>Recherche de produits et de solutions pour répondre à un appel d'offres de PC</p>
+                <div class="project-tech"><span>Recherche</span><span>Création de devis</span><span>Proposition
+                        technique</span></div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+            <!-- Projet : Câblage (04 — 11/2025) -->
+            <article id="projet-cablage" class="school-project-card reveal delay-4" data-project="true"
+                data-title="Appel d'offres et câblage" data-status="Terminé" data-year="Du 11/2025 au 12/2025"
+                data-hours="~15h"
+                data-resources="Fluke Networks (documentation)|LibreOffice Draw (plans)|Catalogues câblage (Legrand, Nexans)"
+                data-module="Bloc 2 – Maintien en condition opérationnelle du patrimoine informatique"
+                data-description="Réponse à un appel d'offres de câblage d'une salle de classe transformée en salle informatique."
+                data-context="Mon rôle était celui de technicien réseau/câbleur chargé de proposer une solution complète de câblage structuré pour transformer une salle de classe en salle informatique."
+                data-client="Demande interne scolaire — simulation d'un appel d'offres pour la transformation d'une salle de cours en salle informatique pour un lycée."
+                data-needs="Câblage réseau structuré pour 20 postes|Solution Wi-Fi complémentaire|Baie de brassage|Respect des normes EIA/TIA|Budget défini"
+                data-docs-in="Plan de la salle|Cahier des charges technique|Normes de câblage structuré"
+                data-tasks="Analyse du cahier des charges|Dimensionnement de l'installation|Recherche de produits et de solutions|Rédaction de la proposition technique|Présentation de la solution"
+                data-docs-out="Schéma de câblage|Proposition technique|Devis détaillé"
+                data-opinion="Projet très concret qui m'a confronté aux réalités d'un chantier réseau. La partie dimensionnement et le respect des normes ont été les aspects les plus enrichissants."
+                data-difficulties="Respecter les normes de câblage structuré|Dimensionner correctement la baie de brassage|Optimiser les chemins de câbles"
+                data-contributions="Connaissance des normes de câblage|Dimensionnement d'infrastructure réseau|Capacité à réaliser des plans techniques"
+                data-tech="Recherche,Devis,Proposition technique">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-icon-large"><img
+                        src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1768479950/cable-svgrepo-com_qpxalr.svg"
+                        alt="Câble réseau" class="icon-svg"></div>
+                <h3>Appel d'offres et câblage</h3>
+                <p>Réponse à un appel d'offres de câblage d'une salle de classe transformée en salle informatique.</p>
+                <div class="project-tech"><span>Recherche</span><span>Devis</span><span>Proposition technique</span>
+                </div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+            <!-- Projet : Environnement réseau (06 — 12/2025) -->
+            <article id="projet-reseau-env" class="school-project-card reveal delay-4" data-project="true"
+                data-title="Mise en place d'un environnement de réseau" data-status="Terminé"
+                data-year="Du 12/2025 au 01/2026" data-hours="~20h"
+                data-resources="Switches Cisco Catalyst|Routeurs Cisco|Packet Tracer|Câbles RJ45|Documentation IOS Cisco"
+                data-module="Bloc 2 – Maintien en condition opérationnelle du patrimoine informatique"
+                data-description="Mise en place d'un environnement de réseau pour simuler différents scénarios."
+                data-context="En salle A214, j'ai eu pour rôle d'administrateur réseau junior, chargé de configurer et tester un environnement réseau complet avec des équipements physiques (switches, routeurs) fournis par le lycée."
+                data-client="Demande interne scolaire — exercice pratique de mise en place d'un réseau segmenté avec VLANs dans la salle de spécialité SISR."
+                data-needs="Création de VLANs pour segmenter le réseau|Configuration du routage inter-VLAN|Tests de connectivité|Documentation de la configuration|Sécurisation des accès"
+                data-docs-in="Schéma logique du réseau|Plan d'adressage IP|Documentation switches/routeurs"
+                data-tasks="Configuration des équipements réseau|Création de VLANs|Configuration du routage inter-VLAN|Tests de connectivité|Documentation de la configuration"
+                data-docs-out="Rapport de configuration|Schéma réseau logique finalisé|Captures d'écran des configurations|Documentation technique"
+                data-opinion="C'est le projet qui m'a le plus appris techniquement. Manipuler de vrais équipements réseau (switches Cisco, routeurs) est une expérience inestimable pour comprendre comment fonctionne réellement un réseau d'entreprise."
+                data-difficulties="Compréhension du routage inter-VLAN|Résolution de conflits d'adressage IP|Débogage des configurations de spanning-tree"
+                data-contributions="Maîtrise de la configuration de switches et routeurs|Compréhension des VLANs et du routage|Utilisation de Packet Tracer et de vrais équipements|Méthodologie de diagnostic réseau"
+                data-image="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772100497/ARMOIRES_A214_ykju2r.jpg"
+                data-image-caption="Armoires réseau de la salle A214" data-tech="Réseau,Switch,Routeur,VLAN">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2025-2026</span>
+                </div>
+                <div class="project-icon-large"><img
+                        src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1768479939/globe-svgrepo-com_eiwbl4.svg"
+                        alt="Réseau" class="icon-svg"></div>
+                <h3>Mise en place d'un environnement de réseau</h3>
+                <p>Mise en place d'un environnement de réseau pour simuler différents scénarios.</p>
+                <div class="project-tech"><span>Réseau</span><span>Switch</span><span>VLAN</span></div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+            <!-- Projet : Réseau P2P (05 — 20/11/2025) -->
+            <article id="projet-p2p" class="school-project-card reveal delay-5" data-project="true"
+                data-title="Réseau poste à poste &amp; gestion Windows 10" data-status="Terminé"
+                data-year="Du 20/11/2025 au 22/01/2026" data-hours="~18h"
+                data-resources="Windows 10|Documentation Microsoft|Câbles RJ45|Switch de labo"
+                data-module="Bloc 2 – Maintien en condition opérationnelle du patrimoine informatique"
+                data-description="Mise en place d'un réseau poste à poste. Authentification SAM, gestion des fichiers et partages sous Windows 10."
+                data-context="Projet réalisé en binôme, avec le rôle d'administrateur système Windows. La mission consistait à mettre en place un réseau P2P complet et à documenter les procédures d'administration pour les futurs utilisateurs."
+                data-client="Demande interne scolaire — exercice pratique d'administration système Windows 10, simulant la mise en place d'un réseau workgroup pour une petite structure."
+                data-needs="Mise en place d'un réseau poste à poste fonctionnel|Configuration de la base SAM|Gestion des utilisateurs et groupes|Gestion des partages et permissions NTFS|Création d'une documentation complète"
+                data-docs-in="Documentation Microsoft Windows 10|Cahier de TP du professeur"
+                data-tasks="Mise en place d'un réseau poste à poste|Configuration du service d'authentification SAM|Gestion des fichiers et des partages|Configuration des permissions NTFS|Création d'un tutoriel : utilisateurs, groupes, permissions NTFS et autorisations de partage"
+                data-docs-out="Tutoriel de création d'utilisateurs et groupes|Guide des permissions NTFS|Documentation des partages réseau|Rapport de TP"
+                data-opinion="Projet très formateur sur l'administration Windows. La rédaction du tutoriel m'a obligé à approfondir mes connaissances pour pouvoir les expliquer clairement. C'est en expliquant qu'on apprend vraiment."
+                data-difficulties="Comprendre les différences entre permissions NTFS et autorisations de partage|Gérer les héritages de permissions complexes|Rédiger une documentation claire et utilisable"
+                data-contributions="Maîtrise de l'administration Windows 10|Compréhension des permissions NTFS et des partages|Capacité à rédiger de la documentation technique|Expérience du travail en binôme"
+                data-tech="Windows 10,Réseau P2P,SAM,NTFS,Partage">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2025-2026</span>
+                </div>
+                <div class="project-icon-large">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3>Réseau poste à poste &amp; gestion Windows 10</h3>
+                <p>Mise en place d'un réseau poste à poste, authentification SAM, gestion des fichiers, partages et
+                    permissions NTFS sous Windows 10.</p>
+                <div class="project-tech"><span>Windows 10</span><span>Réseau
+                        P2P</span><span>SAM</span><span>NTFS</span></div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+            <!-- Projet : YUMI (07 — 26/01/2026) -->
+            <article id="projet-yumi" class="school-project-card reveal delay-6" data-project="true"
+                data-title="YUMI – Clé bootable multifonction" data-status="Terminé"
+                data-year="Du 26/01/2026 au 11/03/2026" data-hours="~25h"
+                data-resources="YUMI (logiciel)|Clé USB 32 Go|Bitdefender|KeePass|Bitwarden|LibreOffice Impress"
+                data-module="Bloc 1 – Support et mise à disposition de services informatiques"
+                data-description="Création d'une clé bootable avec YUMI, comparatif de gestionnaires de mots de passe, tutoriels et gestion de projet."
+                data-context="Projet pluridisciplinaire terminé, avec un rôle de chef de projet/technicien. La mission était de créer une clé USB multifonction utilisable dans des scénarios de maintenance et de diagnostic système."
+                data-client="Demande interne scolaire — projet encadré par le professeur pour l'apprentissage de la gestion de projet et des outils de maintenance informatique."
+                data-needs="Créer une clé bootable avec plusieurs outils|Sélectionner et comparer des gestionnaires de mots de passe|Documenter l'ensemble du processus|Présenter le projet en diaporama"
+                data-docs-in="Documentation YUMI officielle|Liste des outils de maintenance à intégrer|Cahier des charges du professeur"
+                data-tasks="Descriptif des besoins|Diaporama de présentation|Création de tutoriel(s)|Comparatif de logiciels de gestionnaire de mots de passe|Rédaction de mail(s)|Création d'une clé bootable avec YUMI|Ajouts d'outils|Tests et gestion de projet"
+                data-docs-out="Clé USB bootable configurée|Tutoriels de création|Comparatif gestionnaires de mots de passe|Diaporama de présentation|Mails professionnels rédigés"
+                data-opinion="Projet intéressant qui combine aspects techniques et organisationnels. Le comparatif de gestionnaires de mots de passe m'a sensibilisé à la sécurité des mots de passe, sujet crucial en SISR."
+                data-difficulties="Compatibilité de certains outils avec YUMI|Rédaction d'un comparatif objectif et documenté|Gestion du temps sur un projet multitâche"
+                data-contributions="Utilisation de YUMI et outils de maintenance|Capacité d'évaluation comparative de logiciels|Gestion de projet (planning, livrables)|Sensibilisation à la sécurité des mots de passe"
+                data-tech="YUMI,USB Bootable,Gestion de projet,Documentation">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2026</span>
+                </div>
+                <div class="project-icon-large">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2" />
+                        <path d="M10 6h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="16" r="2" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <h3>YUMI – Clé bootable multifonction</h3>
+                <p>Création d'une clé bootable avec YUMI, comparatif de gestionnaires de mots de passe, tutoriels et
+                    gestion de projet.</p>
+                <div class="project-tech"><span>YUMI</span><span>USB Bootable</span><span>Gestion de projet</span></div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+            <!-- Projet : Recherches Métiers (01 — 03/09/2025) -->
+            <article id="projet-metiers" class="school-project-card reveal delay-1" data-project="true"
+                data-title="Recherches Métiers / CV / Mail Motivé / Entretien" data-status="Terminé"
+                data-year="Du 03/09/2025 au 05/11/2025" data-hours="~15h"
+                data-resources="Word|LibreOffice Impress|France Travail|LinkedIn|ONISEP"
+                data-module="Bloc 3 – Cybersécurité & développement"
+                data-description="Exploration des métiers de l'informatique, rédaction d'un CV professionnel, d'un mail motivé et préparation à l'entretien."
+                data-context="Projet d'insertion professionnelle avec un rôle de candidat actif. La mission est de se préparer à l'entrée dans le monde professionnel en constituant un dossier complet : CV, lettre de motivation et préparation à l'entretien."
+                data-client="Demande interne scolaire — projet encadré pour préparer les étudiants BTS SIO à leur insertion professionnelle post-diplôme."
+                data-needs="CV professionnel adapté au secteur IT|Mail de motivation percutant|Préparation aux questions d'entretien|Diaporama de présentation individuelle|Connaissance des débouchés métiers"
+                data-docs-in="Guides de rédaction CV|Exemples de mails professionnels|Fiches métiers informatique"
+                data-tasks="Recherches sur les métiers de l'informatique|Rédaction d'un CV professionnel|Rédaction d'un mail motivé|Conseils pour la conception du CV|Conseils pour un entretien|Conception d'un diaporama de présentation individuel"
+                data-docs-out="CV professionnel finalisé|Mail de motivation rédigé|Diaporama de présentation|Fiches de synthèse métiers informatique"
+                data-opinion="Projet essentiel pour ma future carrière. La rédaction du CV m'a forcé à prendre du recul sur mon parcours et à identifier mes points forts. La préparation à l'entretien est particulièrement utile pour les futurs stages."
+                data-difficulties="Se démarquer dans un domaine concurrentiel|Synthétiser mon parcours en une page de CV|Adapter le ton selon le destinataire du mail"
+                data-contributions="CV professionnel opérationnel|Techniques de recherche d'emploi dans l'IT|Capacité à présenter son projet professionnel à l'oral|Communication professionnelle écrite"
+                data-tech="Recherche métiers,CV,Mail motivé,Entretien,Diaporama">
+                <div class="project-status">
+                    <span class="status-badge completed"><svg class="icon-svg"
+                            style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>Terminé</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-icon-large">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="10" y1="9" x2="8" y2="9" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3>Recherches Métiers / CV / Mail Motivé / Entretien</h3>
+                <p>Exploration des métiers de l'informatique, rédaction d'un CV professionnel, d'un mail motivé et
+                    préparation à l'entretien.</p>
+                <div class="project-tech"><span>Recherche métiers</span><span>CV</span><span>Mail
+                        motivé</span><span>Entretien</span><span>Diaporama</span></div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </article>
+
+        </div>
+    </div>
+
+    <!-- Modal Projet Enrichi -->
+    <div id="project-modal" class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon" id="modal-icon"></span>
+                <div class="modal-title-group">
+                    <h3 id="modal-title"></h3>
+                    <span class="modal-badge" id="modal-badge"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container" id="modal-image-container" style="display:none;">
+                    <img id="modal-image" src="" alt="" class="modal-project-image">
+                    <p class="modal-image-caption" id="modal-image-caption"></p>
+                </div>
+
+                <!-- Contexte et rôle -->
+                <div class="modal-section" id="ms-context" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                        </svg> Contexte & Rôle</h4>
+                    <p id="modal-context"></p>
+                </div>
+
+                <!-- Profil client -->
+                <div class="modal-section" id="ms-client" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg> Profil client / Demande</h4>
+                    <p id="modal-client"></p>
+                </div>
+
+                <!-- Besoins + Documents fournis -->
+                <div class="modal-two-col">
+                    <div class="modal-section" id="ms-needs" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                            </svg> Liste des besoins</h4>
+                        <ul id="modal-needs"></ul>
+                    </div>
+                    <div class="modal-section" id="ms-docs-in" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M20 6h-2.18c.11-.31.18-.65.18-1a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z" />
+                            </svg> Documents fournis</h4>
+                        <ul id="modal-docs-in"></ul>
+                    </div>
+                </div>
+
+                <!-- Tâches demandées -->
+                <div class="modal-section">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path d="M22 5.18L10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10L22 5.18z" />
+                        </svg> Tâches demandées</h4>
+                    <ul id="modal-tasks"></ul>
+                </div>
+
+                <!-- Documents produits -->
+                <div class="modal-section" id="ms-docs-out" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg> Documents produits</h4>
+                    <ul id="modal-docs-out"></ul>
+                </div>
+
+                <!-- Compétences développées -->
+                <div class="modal-section">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+                        </svg> Compétences développées</h4>
+                    <div class="modal-tech" id="modal-tech"></div>
+                </div>
+
+                <!-- Difficultés + Apports -->
+                <div class="modal-two-col">
+                    <div class="modal-section difficulties" id="ms-difficulties" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                            </svg> Difficultés</h4>
+                        <ul id="modal-difficulties"></ul>
+                    </div>
+                    <div class="modal-section contributions" id="ms-contributions" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+                            </svg> Apports</h4>
+                        <ul id="modal-contributions"></ul>
+                    </div>
+                </div>
+
+                <!-- Avis personnel -->
+                <div class="modal-section opinion" id="ms-opinion" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg> Avis personnel</h4>
+                    <p id="modal-opinion"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span class="modal-year" id="modal-year"></span>
+                <div class="modal-meta-row" id="modal-meta-row" style="display:none;">
+                    <span class="modal-hours" id="modal-hours-badge" title="Temps passé sur le projet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                            height="14">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                        </svg>
+                        <span id="modal-hours-text"></span>
+                    </span>
+                    <span class="modal-module" id="modal-module-badge" title="Module BTS SIO">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                            height="14">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                        <span id="modal-module-text"></span>
+                    </span>
+                </div>
+            </div>
+            <!-- Ressources utilisées -->
+            <div class="modal-resources-section" id="ms-resources" style="display:none;">
+                <h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                        height="18">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+                    </svg>
+                    Ressources utilisées
+                </h4>
+                <div class="modal-resources-list" id="modal-resources-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Edan RODDE</h3>
+                <p>Étudiant BTS SIO SISR | Infrastructure & Cybersécurité</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:edan.rodde03@gmail.com" class="footer-link"><span class="link-icon"><svg
+                            class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg></span><span class="link-text">Email</span></a>
+                <a href="https://www.linkedin.com/in/edan-rodde-a7bb92348/" target="_blank" rel="noopener"
+                    class="footer-link"><span class="link-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        </svg></span><span class="link-text">LinkedIn</span></a>
+                <a href="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772099555/CV-EDAN-RODDE_dlpfzl.pdf"
+                    target="_blank" rel="noopener" class="footer-link"><span class="link-icon"><svg class="icon-svg"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg></span><span class="link-text">Mon CV</span></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Edan RODDE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

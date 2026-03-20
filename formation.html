@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ma Formation BTS SIO SISR - Edan RODDE">
+    <title>Ma Formation | Edan RODDE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1'/%3E%3Cstop offset='100%25' style='stop-color:%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='260' height='260' rx='60' fill='%2312121a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.35em' font-family='sans-serif' font-size='120' font-weight='800' fill='url(%23grad)'%3EER%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav role="navigation" aria-label="Navigation principale" id="navbar">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+            <span class="theme-icon">
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.2" />
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    <circle cx="17" cy="5" r="0.8" fill="currentColor" />
+                    <circle cx="19" cy="8" r="0.5" fill="currentColor" />
+                    <circle cx="15" cy="3" r="0.6" fill="currentColor" />
+                </svg>
+                <svg class="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" opacity="0.3" />
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+        </button>
+        <!-- Menu Hamburger pour mobile/tablette -->
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li class="nav-dropdown">
+                <a href="formation.html" class="nav-dropdown-toggle active">Ma Formation
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="formation.html" class="active">BTS SIO</a></li>
+                    <li><a href="parcours.html">Mon Parcours</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="projets-tous.html" class="nav-dropdown-toggle">Projets
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="projets-tous.html">Tous les Projets</a></li>
+                    <li><a href="projets-pro.html">Projets Pro</a></li>
+                    <li><a href="projets-scolaires.html">Projets Scolaires</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
+                    <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
+                    <li><a href="projets-scolaires.html#projet-cablage">Câblage salle info</a></li>
+                    <li><a href="projets-scolaires.html#projet-reseau-env">Environnement réseau</a></li>
+                    <li><a href="projets-scolaires.html#projet-p2p">Réseau poste à poste</a></li>
+                    <li><a href="projets-scolaires.html#projet-site-web">Site web vitrine</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
+                    <li class="dropdown-separator"><span>— Stage IT Partner —</span></li>
+                    <li><a href="projets-pro.html">Refonte réseau Brocker'Info</a></li>
+                </ul>
+            </li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="page-header">
+        <a href="index.html" class="back-home">← Accueil</a>
+        <h1>Ma Formation BTS SIO</h1>
+        <p class="page-subtitle">Au Lycée Professionnel Albert Londres à Cusset</p>
+    </div>
+
+    <div class="page-content">
+        <div class="formation-container">
+            <!-- Présentation du BTS SIO -->
+            <div class="formation-intro reveal">
+                <div class="formation-card main-card">
+                    <div class="formation-icon">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                    </div>
+                    <h3>Qu'est-ce que le BTS SIO ?</h3>
+                    <p>Le <strong>BTS Services Informatiques aux Organisations</strong> (SIO) est un diplôme de niveau
+                        Bac+2 qui forme des professionnels capables de répondre aux besoins informatiques des
+                        organisations. Cette formation polyvalente allie théorie et pratique avec de nombreux projets
+                        concrets et des périodes de stage en entreprise.</p>
+                    <p>Le BTS SIO prépare aux métiers du numérique en couvrant les domaines de l'administration système,
+                        du développement d'applications et de la cybersécurité en fonction de l'option choisie.</p>
+                </div>
+            </div>
+
+            <!-- Les deux options -->
+            <div class="options-grid reveal">
+                <div class="option-card sisr-card">
+                    <div class="option-badge selected">
+                        <svg class="icon-svg" style="width:16px;height:16px;margin-right:.25rem;"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>
+                        Mon choix
+                    </div>
+                    <div class="option-icon">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            <line x1="10" y1="18" x2="10.01" y2="18"></line>
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="10" y1="6" x2="10.01" y2="6"></line>
+                        </svg>
+                    </div>
+                    <h3>Option SISR</h3>
+                    <h4>Solutions d'Infrastructure, Systèmes et Réseaux</h4>
+                    <p>Cette option forme les futurs administrateurs systèmes et réseaux. Elle couvre :</p>
+                    <ul>
+                        <li><svg class="icon-svg" style="width:18px;height:18px;margin-right:.5rem;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+                            </svg>Administration des systèmes (Windows Server, Linux)</li>
+                        <li><svg class="icon-svg" style="width:18px;height:18px;margin-right:.5rem;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8.46 14.45l-1.36-.62c.28-.61.41-1.24.4-1.86a4.42 4.42 0 0 0-.4-1.8l1.36-.63a6.08 6.08 0 0 1 0 4.91z" />
+                            </svg>Configuration et maintenance des réseaux</li>
+                        <li><svg class="icon-svg" style="width:18px;height:18px;margin-right:.5rem;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                            </svg>Virtualisation et Cloud Computing</li>
+                        <li><svg class="icon-svg" style="width:18px;height:18px;margin-right:.5rem;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                            </svg>Cybersécurité et supervision</li>
+                        <li><svg class="icon-svg" style="width:18px;height:18px;margin-right:.5rem;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+                            </svg>Support et maintenance informatique</li>
+                    </ul>
+                    <div class="sisr-reveal" id="sisr-reveal" style="display:none;">
+                        <div class="sisr-reveal-content">
+                            <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772100495/A214_1_kewzfy.jpg"
+                                alt="Salle A214">
+                            <p class="sisr-reveal-caption">Voici la salle A214, notre salle de spécialité SISR. C'est
+                                ici que nous réalisons nos travaux pratiques sur les réseaux, les systèmes et la
+                                cybersécurité.</p>
+                        </div>
+                    </div>
+                    <span class="click-hint sisr-click-hint">Cliquez pour voir la salle</span>
+                </div>
+
+                <div class="option-card slam-card">
+                    <div class="option-icon">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Option SLAM</h3>
+                    <h4>Solutions Logicielles et Applications Métiers</h4>
+                    <p>Cette option forme les futurs développeurs web et d'applications. Elle couvre :</p>
+                    <ul>
+                        <li>Développement web (HTML, CSS, JavaScript, PHP)</li>
+                        <li>Développement d'applications mobiles</li>
+                        <li>Bases de données et requêtes SQL</li>
+                        <li>Programmation orientée objet</li>
+                        <li>Gestion de projets informatiques</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pourquoi ce choix -->
+            <div class="choix-section reveal">
+                <div class="formation-card choix-card">
+                    <div class="formation-icon">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z" />
+                        </svg>
+                    </div>
+                    <h3>Pourquoi j'ai choisi le Lycée Albert Londres et l'option SISR ?</h3>
+                    <div class="choix-content">
+                        <div class="choix-item">
+                            <span class="choix-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg></span>
+                            <div>
+                                <h4>Le Lycée Albert Londres à Cusset</h4>
+                                <p>Un établissement reconnu pour la qualité de son enseignement technique et
+                                    professionnel. Sa proximité géographique et mon tuteur de stage qui connait un
+                                    professeur enseignant en ce lieu, m'a conseillé lorsque j'étais en Terminale SN d'y
+                                    aller.</p>
+                                <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772100485/Entr%C3%A9e_principale_Nom_lyc%C3%A9es_flxp4h.jpg"
+                                    alt="Entrée principale du Lycée Albert Londres" class="choix-image">
+                            </div>
+                        </div>
+                        <div class="choix-item">
+                            <span class="choix-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                </svg></span>
+                            <div>
+                                <h4>L'option SISR</h4>
+                                <p>Passionné par les réseaux et l'infrastructure depuis mon Bac Pro SN option RISC,
+                                    l'option SISR correspond parfaitement à mon projet professionnel. Je souhaite
+                                    devenir administrateur réseau et cette formation me permet d'approfondir mes
+                                    connaissances en systèmes, réseaux et cybersécurité.</p>
+                            </div>
+                        </div>
+                        <div class="choix-item">
+                            <span class="choix-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg></span>
+                            <div>
+                                <h4>Mon projet professionnel</h4>
+                                <p>Mon objectif est de travailler dans l'administration de systèmes et réseaux. Le BTS
+                                    SIO SISR me donne toutes les compétences nécessaires pour atteindre cet objectif.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Edan RODDE</h3>
+                <p>Étudiant BTS SIO SISR | Infrastructure & Cybersécurité</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:edan.rodde03@gmail.com" class="footer-link"><span class="link-icon"><svg
+                            class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg></span><span class="link-text">Email</span></a>
+                <a href="https://www.linkedin.com/in/edan-rodde-a7bb92348/" target="_blank" rel="noopener"
+                    class="footer-link"><span class="link-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        </svg></span><span class="link-text">LinkedIn</span></a>
+                <a href="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772099555/CV-EDAN-RODDE_dlpfzl.pdf"
+                    target="_blank" rel="noopener" class="footer-link"><span class="link-icon"><svg class="icon-svg"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg></span><span class="link-text">Mon CV</span></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Edan RODDE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

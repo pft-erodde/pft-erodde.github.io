@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tous mes Projets - Edan RODDE">
+    <title>Tous les Projets | Edan RODDE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav role="navigation" aria-label="Navigation principale" id="navbar">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+            <span class="theme-icon">
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.2" />
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    <circle cx="17" cy="5" r="0.8" fill="currentColor" />
+                    <circle cx="19" cy="8" r="0.5" fill="currentColor" />
+                    <circle cx="15" cy="3" r="0.6" fill="currentColor" />
+                </svg>
+                <svg class="sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" opacity="0.3" />
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+        </button>
+        <button class="menu-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li class="nav-dropdown">
+                <a href="formation.html" class="nav-dropdown-toggle">Ma Formation <svg class="dropdown-arrow"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
+                        height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <ul class="dropdown-menu">
+                    <li><a href="formation.html">BTS SIO</a></li>
+                    <li><a href="parcours.html">Mon Parcours</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="projets-tous.html" class="nav-dropdown-toggle active">Projets <svg class="dropdown-arrow"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
+                        height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <ul class="dropdown-menu">
+                    <li><a href="projets-tous.html" class="active">Tous les Projets</a></li>
+                    <li><a href="projets-pro.html">Projets Pro</a></li>
+                    <li><a href="projets-scolaires.html">Projets Scolaires</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
+                    <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
+                    <li><a href="projets-scolaires.html#projet-cablage">Câblage salle info</a></li>
+                    <li><a href="projets-scolaires.html#projet-reseau-env">Environnement réseau</a></li>
+                    <li><a href="projets-scolaires.html#projet-p2p">Réseau poste à poste</a></li>
+                    <li><a href="projets-scolaires.html#projet-site-web">Site web vitrine</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
+                    <li class="dropdown-separator"><span>— Stage IT Partner —</span></li>
+                    <li><a href="projets-pro.html">Refonte réseau Brocker'Info</a></li>
+                </ul>
+            </li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <a href="index.html" class="back-home">← Accueil</a>
+        <h1>Tous mes Projets</h1>
+        <p class="page-subtitle">Projets professionnels et scolaires réalisés durant mon BTS SIO</p>
+    </div>
+
+    <div class="page-content">
+
+        <!-- Projets Professionnels -->
+        <div class="tous-projets-section">
+            <h2 class="tous-projets-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"
+                    style="vertical-align:middle;margin-right:.5rem;">
+                    <path
+                        d="M20 6h-2.18c.11-.31.18-.65.18-1a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z" />
+                </svg>
+                Projets Professionnels
+            </h2>
+            <div class="projects-grid">
+                <!-- Projet Pro 1 -->
+                <div class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
+                    data-status="Terminé" data-year="2024-2025" data-hours="~40h"
+                    data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
+                    data-module="Stage en entreprise – Hall 32"
+                    data-description="Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des machines industrielles."
+                    data-context="Lors de mon stage au sein de Hall 32, mon tuteur m'a confié le projet de concevoir un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien système Linux, en totale autonomie."
+                    data-client="Hall 32 — Société d'ingénierie et de maintenance industrielle."
+                    data-needs="Affichage d'informations en temps réel|Fonctionnement autonome 24h/24 7j/7|Redémarrage automatique|Coût minimal (Raspberry Pi)"
+                    data-docs-in="Cahier des charges du tuteur|Documentation Raspberry Pi OS"
+                    data-tasks="Installation et configuration de Raspberry Pi OS|Développement de l'interface d'affichage|Configuration du démarrage automatique|Optimisation des performances|Configuration du mode kiosque (Chromium)|Tests de stabilité"
+                    data-docs-out="Raspberry Pi configuré et opérationnel|Documentation de configuration|Guide de maintenance"
+                    data-opinion="Ce projet m'a donné une vraie autonomie. Voir le Raspberry Pi fonctionner en environnement industriel réel, 24h/24, est particulièrement valorisant."
+                    data-difficulties="Gestion de la stabilité sur le long terme|Configuration du kiosque|Adaptation à l'environnement industriel"
+                    data-contributions="Maîtrise de Raspberry Pi OS et Linux embarqué|Configuration de systèmes en mode kiosque|Gestion d'un projet en autonomie"
+                    data-tech="Raspberry Pi,Linux,Kiosk Mode,Shell">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/images_zyxhcs.png"
+                            alt="Raspberry Pi">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg"
+                                style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2L2 7v10c0 5 10 5 10 5s10 0 10-5V7l-10-5zm0 18.9c-3.4-.5-8-2.2-8-4.9v-6l8-3.67V18.9z" />
+                            </svg>
+                            Kiosque Raspberry Pi
+                        </h3>
+                        <p>Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur
+                            des machines industrielles.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
+                <!-- Projet Pro 2 -->
+                <div class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
+                    data-status="Terminé" data-year="2024-2025" data-hours="~35h"
+                    data-resources="Nagios Core|Linux (Debian)|SNMP|Serveur dédié|Postfix (alertes e-mail)"
+                    data-module="Stage en entreprise – Hall 32"
+                    data-description="Installation et configuration de Nagios pour la supervision d'une infrastructure réseau."
+                    data-context="j'ai été missionné pour mettre en place un système de supervision réseau chez Hall 32. Mon rôle était celui d'administrateur réseau/système."
+                    data-client="Hall 32 — Besoin de supervision de l'infrastructure réseau."
+                    data-needs="Supervision de l'infrastructure réseau complète|Alertes par email|Tableau de bord accessible|Surveillance des services critiques"
+                    data-docs-in="Schéma réseau de Hall 32|Documentation Nagios Core"
+                    data-tasks="Installation du serveur Nagios|Configuration des plugins|Ajout des hôtes et services|Configuration des alertes email|Création de tableaux de bord"
+                    data-docs-out="Serveur Nagios opérationnel|Fichiers de configuration|Documentation d'administration"
+                    data-opinion="Projet techniquement très enrichissant. Nagios est complexe mais extrêmement puissant."
+                    data-difficulties="Compréhension de la syntaxe Nagios|Configuration SNMP|Débogage des faux positifs"
+                    data-contributions="Maîtrise de Nagios Core|Connaissance du protocole SNMP|Administration Linux"
+                    data-tech="Nagios,Linux,SNMP,Monitoring">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/nagios_w4chml.png"
+                            alt="Nagios">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg"
+                                style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                            </svg>
+                            Supervision Nagios
+                        </h3>
+                        <p>Installation et configuration de Nagios pour la supervision d'une infrastructure réseau.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
+                <!-- Projet Pro 3 -->
+                <div class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
+                    data-status="Terminé" data-year="2024-2025" data-hours="~50h"
+                    data-resources="Windows Server 2019|Hyper-V|vSwitch|Migration physique vers VM"
+                    data-module="Stage en entreprise – Hall 32"
+                    data-description="Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle."
+                    data-context="Mon rôle était d'administrateur virtualisation chez Hall 32, chargé de déployer une solution d'hyperviseur."
+                    data-client="Hall 32 — Besoin de virtualisation des serveurs existants."
+                    data-needs="Virtualisation des serveurs|Conservation des données|Performances suffisantes|Sauvegardes automatiques"
+                    data-docs-in="Inventaire des serveurs physiques|Documentation Hyper-V Microsoft"
+                    data-tasks="Installation de Windows Server avec rôle Hyper-V|Création des VMs|Migration des données|Configuration du réseau virtuel|Mise en place des sauvegardes"
+                    data-docs-out="Infrastructure Hyper-V opérationnelle|Documentation de configuration|Plan de reprise d'activité"
+                    data-opinion="Ce projet m'a confronté à une vraie migration d'infrastructure en conditions réelles."
+                    data-difficulties="Migration sans interruption des services|Dimensionnement des ressources|Configuration du réseau virtuel"
+                    data-contributions="Maîtrise d'Hyper-V|Compétences en virtualisation|Administration Windows Server"
+                    data-tech="Hyper-V,Windows Server,Virtualisation">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1765110955/hypetv_wbz5of.png"
+                            alt="Hyper-V">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg"
+                                style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+                            </svg>
+                            Hyperviseur Hyper-V
+                        </h3>
+                        <p>Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projets Scolaires -->
+        <div class="tous-projets-section">
+            <h2 class="tous-projets-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"
+                    style="vertical-align:middle;margin-right:.5rem;">
+                    <path
+                        d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V5h2v2h10V5h2v16z" />
+                </svg>
+                Projets Scolaires
+            </h2>
+            <div class="school-projects-grid">
+                <article id="tous-site-web" class="school-project-card reveal delay-1" data-project="true"
+                    data-title="Création d'un site web vitrine" data-status="Terminé" data-year="Du 09/2025 au 01/2026"
+                    data-hours="~30h" data-resources="VS Code|Google Fonts|Cloudinary|GitHub Pages|ChatGPT (aide CSS)"
+                    data-module="Bloc 3 – Cybersécurité &amp; développement"
+                    data-description="Création du site web que vous pouvez voir actuellement."
+                    data-context="Création d'un portfolio personnel sous forme de site web vitrine dans le cadre du BTS SIO."
+                    data-tasks="Conception HTML|CSS moderne|JavaScript|SEO|Architecture multi-pages"
+                    data-tech="HTML,CSS,JS">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2025</span></div>
+                    <div class="project-icon-large"><img
+                            src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1768479939/globe-svgrepo-com_eiwbl4.svg"
+                            alt="Globe" class="icon-svg"></div>
+                    <h3>Création d'un site web vitrine</h3>
+                    <p>Création du site web que vous pouvez voir, avec amélioration entre temps ;)</p>
+                    <div class="project-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="tous-appel-pc" class="school-project-card reveal delay-2" data-project="true"
+                    data-title="Réponse à un appel d'offres de PC" data-status="Terminé"
+                    data-year="Du 10/2025 au 11/2025" data-hours="~12h"
+                    data-resources="Catalogues fournisseurs (LDLC, PC21)|LibreOffice Calc|Word"
+                    data-module="Bloc 1 – Support et mise à disposition de services informatiques"
+                    data-description="Recherche de produits et solutions pour répondre à un appel d'offres de PC."
+                    data-tasks="Analyse du cahier des charges|Recherche de produits|Rédaction de la proposition|Création du devis|Présentation"
+                    data-tech="Recherche,Devis,Proposition technique">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2025</span></div>
+                    <div class="project-icon-large"><svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg></div>
+                    <h3>Réponse à un appel d'offres de PC</h3>
+                    <p>Recherche de produits et solutions pour répondre à un appel d'offres de PC.</p>
+                    <div class="project-tech"><span>Recherche</span><span>Devis</span><span>Proposition</span></div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="tous-cablage" class="school-project-card reveal delay-3" data-project="true"
+                    data-title="Appel d'offres et câblage" data-status="Terminé" data-year="Du 11/2025 au 12/2025"
+                    data-hours="~15h"
+                    data-resources="Fluke Networks|LibreOffice Draw|Catalogues câblage (Legrand, Nexans)"
+                    data-module="Bloc 2 – Maintien en condition opérationnelle du patrimoine informatique"
+                    data-description="Réponse à un appel d'offres de câblage d'une salle informatique."
+                    data-tasks="Analyse du CDC|Dimensionnement|Recherche produits|Rédaction proposition|Présentation"
+                    data-tech="Recherche,Devis,Proposition technique">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2025</span></div>
+                    <div class="project-icon-large"><img
+                            src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1768479950/cable-svgrepo-com_qpxalr.svg"
+                            alt="Câble réseau" class="icon-svg"></div>
+                    <h3>Appel d'offres et câblage</h3>
+                    <p>Réponse à un appel d'offres de câblage d'une salle de classe transformée en salle informatique.
+                    </p>
+                    <div class="project-tech"><span>Câblage</span><span>Normes EIA/TIA</span><span>Devis</span></div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="tous-reseau" class="school-project-card reveal delay-4" data-project="true"
+                    data-title="Mise en place d'un environnement de réseau" data-status="Terminé"
+                    data-year="Du 12/2025 au 01/2026" data-hours="~20h"
+                    data-resources="Switches Cisco Catalyst|Routeurs Cisco|Packet Tracer|Câbles RJ45"
+                    data-module="Bloc 2 – Maintien en condition opérationnelle du patrimoine informatique"
+                    data-description="Mise en place d'un environnement de réseau avec VLANs et routage inter-VLAN."
+                    data-image="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772100497/ARMOIRES_A214_ykju2r.jpg"
+                    data-image-caption="Armoires réseau de la salle A214"
+                    data-tasks="Configuration équipements|Création VLANs|Routage inter-VLAN|Tests|Documentation"
+                    data-tech="Réseau,Switch,Routeur,VLAN">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2025-2026</span></div>
+                    <div class="project-icon-large"><img
+                            src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1768479939/globe-svgrepo-com_eiwbl4.svg"
+                            alt="Réseau" class="icon-svg"></div>
+                    <h3>Mise en place d'un environnement de réseau</h3>
+                    <p>Configuration de switches et routeurs Cisco avec VLANs et routage inter-VLAN.</p>
+                    <div class="project-tech"><span>Réseau</span><span>Switch</span><span>VLAN</span></div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="tous-p2p" class="school-project-card reveal delay-5" data-project="true"
+                    data-title="Réseau poste à poste &amp; gestion Windows 10" data-status="Terminé"
+                    data-year="Du 20/11/2025 au 22/01/2026" data-hours="~18h"
+                    data-resources="Windows 10|Documentation Microsoft|Câbles RJ45|Switch de labo"
+                    data-module="Bloc 2 – Maintien en condition opérationnelle du patrimoine informatique"
+                    data-description="Mise en place d'un réseau poste à poste avec authentification SAM et permissions NTFS."
+                    data-tasks="Réseau P2P|Configuration SAM|Gestion fichiers/partages|Permissions NTFS|Tutoriel"
+                    data-tech="Windows 10,Réseau P2P,SAM,NTFS,Partage">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2025-2026</span></div>
+                    <div class="project-icon-large"><svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg></div>
+                    <h3>Réseau poste à poste &amp; Windows 10</h3>
+                    <p>Mise en place d'un réseau P2P, authentification SAM, permissions NTFS.</p>
+                    <div class="project-tech"><span>Windows 10</span><span>SAM</span><span>NTFS</span></div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="tous-yumi" class="school-project-card reveal delay-6" data-project="true"
+                    data-title="YUMI – Clé bootable multifonction" data-status="Terminé"
+                    data-year="Du 26/01/2026 au 11/03/2026" data-hours="~25h"
+                    data-resources="YUMI (logiciel)|Clé USB 32 Go|Bitdefender|KeePass|Bitwarden|LibreOffice Impress"
+                    data-module="Bloc 1 – Support et mise à disposition de services informatiques"
+                    data-description="Création d'une clé bootable avec YUMI, comparatif gestionnaires de mots de passe."
+                    data-tasks="Descriptif besoins|Diaporama|Tutoriels|Comparatif logiciels|Mails|Clé bootable|Tests"
+                    data-tech="YUMI,USB Bootable,Gestion de projet,Documentation">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2026</span></div>
+                    <div class="project-icon-large"><svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M10 6h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="12" cy="16" r="2" stroke="currentColor" stroke-width="1.5" />
+                        </svg></div>
+                    <h3>YUMI – Clé bootable multifonction</h3>
+                    <p>Création d'une clé bootable avec YUMI, comparatif de gestionnaires de mots de passe.</p>
+                    <div class="project-tech"><span>YUMI</span><span>USB Bootable</span><span>Gestion projet</span>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="tous-metiers" class="school-project-card reveal delay-1" data-project="true"
+                    data-title="Recherches Métiers / CV / Mail Motivé / Entretien" data-status="Terminé"
+                    data-year="Du 03/09/2025 au 05/11/2025" data-hours="~15h"
+                    data-resources="Word|LibreOffice Impress|France Travail|LinkedIn|ONISEP"
+                    data-module="Bloc 3 – Cybersécurité &amp; développement"
+                    data-description="Exploration des métiers IT, rédaction CV, mail motivé et préparation entretien."
+                    data-tasks="Recherches métiers|CV professionnel|Mail motivé|Conseils entretien|Diaporama"
+                    data-tech="Recherche métiers,CV,Mail motivé,Entretien,Diaporama">
+                    <div class="project-status"><span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span><span class="project-year">2025</span></div>
+                    <div class="project-icon-large"><svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg></div>
+                    <h3>Recherches Métiers / CV / Mail / Entretien</h3>
+                    <p>Exploration des métiers IT, rédaction d'un CV professionnel et préparation à l'entretien.</p>
+                    <div class="project-tech"><span>CV</span><span>Mail motivé</span><span>Entretien</span></div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon" id="modal-icon"></span>
+                <div class="modal-title-group">
+                    <h3 id="modal-title"></h3>
+                    <span class="modal-badge" id="modal-badge"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container" id="modal-image-container" style="display:none;">
+                    <img id="modal-image" src="" alt="" class="modal-project-image">
+                    <p class="modal-image-caption" id="modal-image-caption"></p>
+                </div>
+                <div class="modal-section" id="ms-context" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                        </svg> Contexte &amp; Rôle</h4>
+                    <p id="modal-context"></p>
+                </div>
+                <div class="modal-section" id="ms-client" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg> Profil client / Demande</h4>
+                    <p id="modal-client"></p>
+                </div>
+                <div class="modal-two-col">
+                    <div class="modal-section" id="ms-needs" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                            </svg> Liste des besoins</h4>
+                        <ul id="modal-needs"></ul>
+                    </div>
+                    <div class="modal-section" id="ms-docs-in" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M20 6h-2.18c.11-.31.18-.65.18-1a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z" />
+                            </svg> Documents fournis</h4>
+                        <ul id="modal-docs-in"></ul>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path d="M22 5.18L10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10L22 5.18z" />
+                        </svg> Tâches demandées</h4>
+                    <ul id="modal-tasks"></ul>
+                </div>
+                <div class="modal-section" id="ms-docs-out" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg> Documents produits</h4>
+                    <ul id="modal-docs-out"></ul>
+                </div>
+                <div class="modal-section">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path
+                                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+                        </svg> Compétences développées</h4>
+                    <div class="modal-tech" id="modal-tech"></div>
+                </div>
+                <div class="modal-two-col">
+                    <div class="modal-section difficulties" id="ms-difficulties" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                            </svg> Difficultés</h4>
+                        <ul id="modal-difficulties"></ul>
+                    </div>
+                    <div class="modal-section contributions" id="ms-contributions" style="display:none;">
+                        <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                                height="18">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+                            </svg> Apports</h4>
+                        <ul id="modal-contributions"></ul>
+                    </div>
+                </div>
+                <div class="modal-section opinion" id="ms-opinion" style="display:none;">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                            height="18">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg> Avis personnel</h4>
+                    <p id="modal-opinion"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span class="modal-year" id="modal-year"></span>
+                <div class="modal-meta-row" id="modal-meta-row" style="display:none;">
+                    <span class="modal-hours" id="modal-hours-badge" title="Temps passé sur le projet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                            height="14">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                        </svg>
+                        <span id="modal-hours-text"></span>
+                    </span>
+                    <span class="modal-module" id="modal-module-badge" title="Module BTS SIO">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                            height="14">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                        <span id="modal-module-text"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-resources-section" id="ms-resources" style="display:none;">
+                <h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18"
+                        height="18">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+                    </svg>
+                    Ressources utilisées
+                </h4>
+                <div class="modal-resources-list" id="modal-resources-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Edan RODDE</h3>
+                <p>Étudiant BTS SIO SISR | Infrastructure &amp; Cybersécurité</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:edan.rodde03@gmail.com" class="footer-link"><span class="link-icon"><svg
+                            class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg></span><span class="link-text">Email</span></a>
+                <a href="https://www.linkedin.com/in/edan-rodde-a7bb92348/" target="_blank" rel="noopener"
+                    class="footer-link"><span class="link-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        </svg></span><span class="link-text">LinkedIn</span></a>
+                <a href="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772099555/CV-EDAN-RODDE_dlpfzl.pdf"
+                    target="_blank" rel="noopener" class="footer-link"><span class="link-icon"><svg class="icon-svg"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg></span><span class="link-text">Mon CV</span></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Edan RODDE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

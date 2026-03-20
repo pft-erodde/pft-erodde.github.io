@@ -1,5 +1,5 @@
 // ===================================
-// PORTFOLIO MODERNE - JAVASCRIPT
+// PORTFOLIO MULTI-PAGES - JAVASCRIPT
 // Animations, Interactions & UX
 // ===================================
 
@@ -13,52 +13,31 @@ if (cursor && cursorFollower) {
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
-
         cursorFollower.style.left = e.clientX + 'px';
         cursorFollower.style.top = e.clientY + 'px';
     });
 
-    // Effet hover sur les éléments cliquables
-    const hoverElements = document.querySelectorAll('a, button, .btn, .skill-card, .experience-card, .project-card, .certification-card, .timeline-card, .stat-item');
-
+    const hoverElements = document.querySelectorAll('a, button, .btn, .skill-card, .experience-card, .project-card, .certification-card, .timeline-card, .stat-item, .school-project-card, .nav-block');
     hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-            cursorFollower.classList.add('hover');
-        });
-
-        el.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-            cursorFollower.classList.remove('hover');
-        });
+        el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorFollower.classList.add('hover'); });
+        el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorFollower.classList.remove('hover'); });
     });
 
-    // Cacher le curseur quand il sort de la fenêtre
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-        cursorFollower.style.opacity = '0';
-    });
-
-    document.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '1';
-        cursorFollower.style.opacity = '0.6';
-    });
+    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; cursorFollower.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; cursorFollower.style.opacity = '0.6'; });
 }
 
 // ===================================
-// SCROLL FLUIDE POUR LA NAVIGATION
+// SCROLL FLUIDE POUR LES ANCRES
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
         const target = document.querySelector(targetId);
-
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
@@ -68,29 +47,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===================================
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('nav ul');
-const navLinksMobile = document.querySelectorAll('nav a');
+const navLinksMobile = document.querySelectorAll('nav ul a');
 
 if (menuToggle && navMenu) {
-    // Initialisation de l'état accessibilité
     menuToggle.setAttribute('aria-expanded', 'false');
 
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         menuToggle.setAttribute('aria-expanded', !isExpanded);
         menuToggle.setAttribute('aria-label', isExpanded ? 'Ouvrir le menu' : 'Fermer le menu');
-
         menuToggle.classList.toggle('active');
         navMenu.classList.toggle('nav-active');
-
-        // Empêcher le scroll du body quand le menu est ouvert
-        if (navMenu.classList.contains('nav-active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
+        document.body.style.overflow = navMenu.classList.contains('nav-active') ? 'hidden' : '';
     });
 
-    // Fermer le menu lors du clic sur un lien
     navLinksMobile.forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.setAttribute('aria-expanded', 'false');
@@ -103,84 +73,103 @@ if (menuToggle && navMenu) {
 }
 
 // ===================================
+// NAVBAR DÉROULANTE (DROPDOWN) - MOBILE
+// ===================================
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+
+    // Sur mobile : toggle au clic
+    if (toggle) {
+        toggle.addEventListener('click', (e) => {
+            // Si on est en mobile (menu hamburger visible)
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                const isOpen = dropdown.classList.contains('open');
+                // Fermer tous les autres
+                dropdowns.forEach(d => d.classList.remove('open'));
+                if (!isOpen) dropdown.classList.add('open');
+            }
+        });
+    }
+});
+
+// Fermer les dropdowns en cliquant ailleurs
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+        dropdowns.forEach(d => d.classList.remove('open'));
+    }
+});
+
+// ===================================
 // NAVBAR - EFFET AU SCROLL
 // ===================================
 const navbar = document.getElementById('navbar');
-let lastScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-
-    // Ajout classe "scrolled" quand on scroll
-    if (currentScrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-
-    lastScrollY = currentScrollY;
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+}
 
 // ===================================
 // ANIMATIONS AU SCROLL - INTERSECTION OBSERVER
 // ===================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -80px 0px'
-};
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
     });
 }, observerOptions);
 
-// Observer tous les éléments avec les classes reveal
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(element => {
     revealObserver.observe(element);
 });
 
 // ===================================
-// NAVIGATION ACTIVE AU SCROLL
+// NAVIGATION ACTIVE AU SCROLL (page index uniquement)
 // ===================================
 const sections = document.querySelectorAll('section, header');
 const navLinks = document.querySelectorAll('nav a');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.scrollY + 150;
+if (sections.length > 0) {
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.scrollY + 150;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
 
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === `#${current}` || href === `index.html#${current}`) {
+                link.classList.add('active');
+            }
+        });
     });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
+}
 
 // ===================================
-// EFFET PARALLAXE SUR LE HERO
+// EFFET PARALLAXE SUR LE HERO (page index uniquement)
 // ===================================
 const hero = document.querySelector('.hero');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY < window.innerHeight) {
-        const scrolled = window.scrollY;
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
-    }
-});
+if (hero) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < window.innerHeight) {
+            const scrolled = window.scrollY;
+            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+        }
+    });
+}
 
 // ===================================
 // GESTION DU THÈME SOMBRE / CLAIR
@@ -189,64 +178,44 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle?.querySelector('.theme-icon');
 const htmlElement = document.documentElement;
 
-// Fonction pour définir le thème
 const setTheme = (theme) => {
     htmlElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 
-    // Mettre à jour les icônes lune/soleil
     if (themeIcon) {
         const moonIcon = themeIcon.querySelector('.moon-icon');
         const sunIcon = themeIcon.querySelector('.sun-icon');
-
         if (theme === 'light') {
-            // Afficher l'icône soleil en mode clair
             if (moonIcon) moonIcon.style.display = 'none';
             if (sunIcon) sunIcon.style.display = 'block';
         } else {
-            // Afficher l'icône lune en mode sombre
             if (moonIcon) moonIcon.style.display = 'block';
             if (sunIcon) sunIcon.style.display = 'none';
         }
     }
 
-    // Mettre à jour l'image de profil
     const profileImage = document.getElementById('profile-image');
     if (profileImage) {
         const newSrc = theme === 'light' ? profileImage.dataset.lightSrc : profileImage.dataset.darkSrc;
         if (newSrc && profileImage.src !== newSrc) {
             profileImage.style.opacity = '0';
-            setTimeout(() => {
-                profileImage.src = newSrc;
-                profileImage.style.opacity = '1';
-            }, 200);
+            setTimeout(() => { profileImage.src = newSrc; profileImage.style.opacity = '1'; }, 200);
         }
     }
 };
 
-// Vérifier les préférences sauvegardées ou, à défaut, forcer le mode sombre
 const savedTheme = localStorage.getItem('theme');
+setTheme(savedTheme || 'dark');
 
-// Appliquer le thème initial
-if (savedTheme) {
-    setTheme(savedTheme);
-} else {
-    // Force dark mode by default for first-time visitors
-    setTheme('dark');
-}
-
-// Event listener sur le bouton
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        const newTheme = htmlElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
     });
 }
 
-
 // ===================================
-// EFFET PUSH 3D SUR LES CARTES DE PROJETS
+// EFFET PUSH 3D SUR LES CARTES
 // ===================================
 const cards = document.querySelectorAll('.timeline-card, .certification-card, .project-card, .school-project-card');
 
@@ -255,21 +224,12 @@ cards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // Effet "push" : le côté où se trouve la souris s'enfonce
-        // Souris en haut (y < centerY) → rotateX négatif → haut s'enfonce
-        // Souris à gauche (x < centerX) → rotateY positif → gauche s'enfonce
-        const rotateX = -(y - centerY) / 25;
-        const rotateY = (x - centerX) / 25;
-
+        const rotateX = -(y - rect.height / 2) / 25;
+        const rotateY = (x - rect.width / 2) / 25;
         requestAnimationFrame(() => {
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(-10px)`;
         });
     });
-
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
     });
@@ -281,7 +241,6 @@ cards.forEach(card => {
 const animateCounter = (element, target, duration = 2000) => {
     let start = 0;
     const increment = target / (duration / 16);
-
     const updateCounter = () => {
         start += increment;
         if (start < target) {
@@ -291,11 +250,9 @@ const animateCounter = (element, target, duration = 2000) => {
             element.textContent = target + (element.dataset.suffix || '');
         }
     };
-
     updateCounter();
 };
 
-// Observer pour déclencher l'animation des compteurs
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -304,10 +261,7 @@ const statsObserver = new IntersectionObserver((entries) => {
                 const text = stat.textContent;
                 const hasPlus = text.includes('+');
                 const number = parseInt(text.replace(/\D/g, ''));
-                if (number) {
-                    stat.dataset.suffix = hasPlus ? '+' : '';
-                    animateCounter(stat, number);
-                }
+                if (number) { stat.dataset.suffix = hasPlus ? '+' : ''; animateCounter(stat, number); }
             });
             entry.target.classList.add('counted');
         }
@@ -315,12 +269,10 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 const aboutStats = document.querySelector('.about-stats');
-if (aboutStats) {
-    statsObserver.observe(aboutStats);
-}
+if (aboutStats) statsObserver.observe(aboutStats);
 
 // ===================================
-// EFFET DE FRAPPE AVANCÉ POUR LE HERO
+// EFFET DE FRAPPE POUR LE HERO
 // ===================================
 const heroTypingText = "Étudiant en BTS SIO — Spécialité SISR | Infrastructure, Réseaux & Cybersécurité";
 const typingElement = document.getElementById('typing-text');
@@ -328,7 +280,6 @@ const typingCursor = document.querySelector('.typing-cursor');
 
 function typeHeroText() {
     if (!typingElement) return;
-
     let charIndex = 0;
     const baseSpeed = 50;
 
@@ -337,27 +288,18 @@ function typeHeroText() {
             const char = heroTypingText.charAt(charIndex);
             typingElement.textContent += char;
             charIndex++;
-
-            // Vitesse variable pour un effet plus naturel
             let delay = baseSpeed;
             if (char === ' ') delay = baseSpeed * 0.5;
             else if (char === '—' || char === '|') delay = baseSpeed * 3;
             else if (char === ',') delay = baseSpeed * 2;
             else delay = baseSpeed + Math.random() * 30;
-
             setTimeout(type, delay);
         } else {
-            // Animation terminée - cacher le curseur après un délai
             setTimeout(() => {
-                if (typingCursor) {
-                    typingCursor.style.animation = 'none';
-                    typingCursor.style.opacity = '0';
-                }
+                if (typingCursor) { typingCursor.style.animation = 'none'; typingCursor.style.opacity = '0'; }
             }, 2000);
         }
     }
-
-    // Démarrer l'effet de frappe après un court délai
     setTimeout(type, 800);
 }
 
@@ -365,83 +307,104 @@ function typeHeroText() {
 // INITIALISATION AU CHARGEMENT
 // ===================================
 window.addEventListener('load', () => {
-    // Forcer les révélations visibles au chargement pour le hero
-    const firstVisibleElements = document.querySelectorAll('.hero, .hero-badge, .hero-cta');
-    firstVisibleElements.forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-    });
-
-    // Ajouter une classe au body pour indiquer que le JS est chargé
     document.body.classList.add('js-loaded');
-
-    // Démarrer l'effet de frappe
     typeHeroText();
 });
 
 // ===================================
-// GESTION DU PREFERS-REDUCED-MOTION
-// ===================================
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-if (prefersReducedMotion.matches) {
-    // Désactiver les animations pour les utilisateurs qui le préfèrent
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-        el.classList.add('visible');
-    });
-}
-
-// ===================================
-// MODAL PROJETS SCOLAIRES
+// MODAL PROJETS — VERSION ENRICHIE
 // ===================================
 const projectModal = document.getElementById('project-modal');
 const modalOverlay = projectModal?.querySelector('.modal-overlay');
 const modalClose = projectModal?.querySelector('.modal-close');
-const schoolProjectCards = document.querySelectorAll('.school-project-card[data-project="true"], .project-card[data-project="true"]');
+const projectCards = document.querySelectorAll('.school-project-card[data-project="true"], .project-card[data-project="true"]');
 
-// Fonction pour ouvrir le modal avec les données du projet
+function setModalSection(id, content, isHtml = false) {
+    const el = document.getElementById(id);
+    if (el) {
+        if (isHtml) el.innerHTML = content;
+        else el.textContent = content;
+    }
+}
+
+function showHideSection(sectionId, data) {
+    const sec = document.getElementById(sectionId);
+    if (sec) sec.style.display = data ? 'block' : 'none';
+}
+
+function makeList(data, separator = '|') {
+    if (!data) return '';
+    return data.split(separator).map(item => `<li>${item.trim()}</li>`).join('');
+}
+
 function openProjectModal(card) {
     if (!projectModal) return;
 
-    // Récupérer les données du projet depuis les attributs data-*
-    // Pour l'icône, on essaie de récupérer le SVG depuis l'élément .project-icon-large s'il existe
     const iconContainer = card.querySelector('.project-icon-large');
     const icon = iconContainer ? iconContainer.innerHTML : (card.dataset.icon || '📁');
 
     const title = card.dataset.title || 'Projet';
     const status = card.dataset.status || 'En cours';
     const year = card.dataset.year || '';
-    const description = card.dataset.description || 'Description non disponible.';
-    const objectives = card.dataset.objectives || 'Objectifs non définis.';
-    const tasks = card.dataset.tasks ? card.dataset.tasks.split('|') : ['Aucune tâche définie'];
+    const description = card.dataset.description || '';
+    const tasks = card.dataset.tasks ? card.dataset.tasks.split('|') : [];
     const tech = card.dataset.tech ? card.dataset.tech.split(',') : [];
 
-    // Remplir le modal avec les données
+    // Nouvelles données enrichies
+    const context = card.dataset.context || '';
+    const client = card.dataset.client || '';
+    const needs = card.dataset.needs || '';
+    const docsIn = card.dataset.docsIn || '';
+    const docsOut = card.dataset.docsOut || '';
+    const opinion = card.dataset.opinion || '';
+    const difficulties = card.dataset.difficulties || '';
+    const contributions = card.dataset.contributions || '';
+
+    // Remplissage du modal
     document.getElementById('modal-icon').innerHTML = icon;
     document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-description').textContent = description;
-    document.getElementById('modal-objectives').textContent = objectives;
     document.getElementById('modal-year').textContent = year;
 
-    // Badge de statut
     const modalBadge = document.getElementById('modal-badge');
-    modalBadge.textContent = status;
-    modalBadge.className = 'modal-badge ' + (status === 'Terminé' ? 'completed' : 'in-progress');
+    if (modalBadge) {
+        modalBadge.textContent = status;
+        modalBadge.className = 'modal-badge ' + (status === 'Terminé' ? 'completed' : 'in-progress');
+    }
 
-    // Liste des tâches
+    // Tâches (toujours présentes)
     const tasksList = document.getElementById('modal-tasks');
-    tasksList.innerHTML = tasks.map(task => `<li>${task.trim()}</li>`).join('');
+    if (tasksList) tasksList.innerHTML = tasks.map(t => `<li>${t.trim()}</li>`).join('');
 
     // Technologies
     const techContainer = document.getElementById('modal-tech');
-    techContainer.innerHTML = tech.map(t => `<span>${t.trim()}</span>`).join('');
+    if (techContainer) techContainer.innerHTML = tech.map(t => `<span>${t.trim()}</span>`).join('');
 
-    // Afficher le modal
-    projectModal.classList.add('active');
-    projectModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    // Sections optionnelles enrichies
+    showHideSection('ms-context', context);
+    if (context) setModalSection('modal-context', context);
 
-    // Image du projet (si disponible)
+    showHideSection('ms-client', client);
+    if (client) setModalSection('modal-client', client);
+
+    showHideSection('ms-needs', needs);
+    if (needs) { const el = document.getElementById('modal-needs'); if (el) el.innerHTML = makeList(needs); }
+
+    showHideSection('ms-docs-in', docsIn);
+    if (docsIn) { const el = document.getElementById('modal-docs-in'); if (el) el.innerHTML = makeList(docsIn); }
+
+    showHideSection('ms-docs-out', docsOut);
+    if (docsOut) { const el = document.getElementById('modal-docs-out'); if (el) el.innerHTML = makeList(docsOut); }
+
+    showHideSection('ms-opinion', opinion);
+    if (opinion) setModalSection('modal-opinion', opinion);
+
+    showHideSection('ms-difficulties', difficulties);
+    if (difficulties) { const el = document.getElementById('modal-difficulties'); if (el) el.innerHTML = makeList(difficulties); }
+
+    showHideSection('ms-contributions', contributions);
+    if (contributions) { const el = document.getElementById('modal-contributions'); if (el) el.innerHTML = makeList(contributions); }
+
+    // Image du projet
     const imageUrl = card.dataset.image || '';
     const imageCaption = card.dataset.imageCaption || '';
     const imageContainer = document.getElementById('modal-image-container');
@@ -456,44 +419,29 @@ function openProjectModal(card) {
     } else if (imageContainer) {
         imageContainer.style.display = 'none';
     }
+
+    projectModal.classList.add('active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
 }
 
-// Fonction pour fermer le modal
 function closeProjectModal() {
     if (!projectModal) return;
-
     projectModal.classList.remove('active');
     projectModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 }
 
-// Event listeners pour les cartes de projets
-schoolProjectCards.forEach(card => {
+projectCards.forEach(card => {
     card.style.cursor = 'pointer';
     card.addEventListener('click', () => openProjectModal(card));
 });
 
-// Fermer le modal
-if (modalClose) {
-    modalClose.addEventListener('click', closeProjectModal);
-}
-
-if (modalOverlay) {
-    modalOverlay.addEventListener('click', closeProjectModal);
-}
-
-// Fermer avec la touche Escape
+if (modalClose) modalClose.addEventListener('click', closeProjectModal);
+if (modalOverlay) modalOverlay.addEventListener('click', closeProjectModal);
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && projectModal?.classList.contains('active')) {
-        closeProjectModal();
-    }
+    if (e.key === 'Escape' && projectModal?.classList.contains('active')) closeProjectModal();
 });
-
-// ===================================
-// CONSOLE MESSAGE
-// ===================================
-console.log('%c🚀 Portfolio Edan RODDE', 'font-size: 24px; font-weight: bold; color: #6366f1;');
-console.log('%c✨ Conçu avec passion pour l\'infrastructure IT', 'font-size: 14px; color: #94a3b8;');
 
 // ===================================
 // SISR CARD - CLICK TO REVEAL IMAGE
@@ -512,7 +460,7 @@ if (sisrCard && sisrReveal) {
 }
 
 // ===================================
-// CERTIFICATION CARDS - CLICK TO REVEAL IMAGE
+// CERTIFICATION CARDS - CLICK TO REVEAL
 // ===================================
 document.querySelectorAll('.certification-card').forEach(card => {
     const img = card.querySelector('.certification-image');
@@ -524,3 +472,36 @@ document.querySelectorAll('.certification-card').forEach(card => {
         });
     }
 });
+
+// ===================================
+// GESTION DU PREFERS-REDUCED-MOTION
+// ===================================
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
+}
+
+// ===================================
+// BADGE HEURES SUR LES CARTES PROJET
+// ===================================
+document.querySelectorAll('[data-project="true"][data-hours]').forEach(card => {
+    const hours = card.dataset.hours;
+    if (!hours) return;
+    // Ne pas dupliquer si déjà présent
+    if (card.querySelector('.card-hours-badge')) return;
+    const badge = document.createElement('span');
+    badge.className = 'card-hours-badge';
+    badge.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>${hours}`;
+    // Insérer avant .click-hint s'il existe, sinon à la fin de la carte
+    const hint = card.querySelector('.click-hint');
+    if (hint) {
+        card.insertBefore(badge, hint);
+    } else {
+        card.appendChild(badge);
+    }
+});
+
+// ===================================
+// CONSOLE MESSAGE
+// ===================================
+console.log('%c🚀 Portfolio Edan RODDE', 'font-size: 24px; font-weight: bold; color: #6366f1;');
+console.log('%c✨ Conçu avec passion pour l\'infrastructure IT', 'font-size: 14px; color: #94a3b8;');

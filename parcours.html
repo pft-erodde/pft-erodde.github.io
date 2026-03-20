@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mon Parcours Scolaire - Edan RODDE">
+    <title>Mon Parcours | Edan RODDE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1'/%3E%3Cstop offset='100%25' style='stop-color:%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='260' height='260' rx='60' fill='%2312121a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.35em' font-family='sans-serif' font-size='120' font-weight='800' fill='url(%23grad)'%3EER%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav role="navigation" aria-label="Navigation principale" id="navbar">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+            <span class="theme-icon">
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.2" />
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    <circle cx="17" cy="5" r="0.8" fill="currentColor" />
+                    <circle cx="19" cy="8" r="0.5" fill="currentColor" />
+                    <circle cx="15" cy="3" r="0.6" fill="currentColor" />
+                </svg>
+                <svg class="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" opacity="0.3" />
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+        </button>
+        <!-- Menu Hamburger pour mobile/tablette -->
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li class="nav-dropdown">
+                <a href="formation.html" class="nav-dropdown-toggle active">Ma Formation
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="formation.html">BTS SIO</a></li>
+                    <li><a href="parcours.html" class="active">Mon Parcours</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="projets-tous.html" class="nav-dropdown-toggle">Projets
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="projets-tous.html">Tous les Projets</a></li>
+                    <li><a href="projets-pro.html">Projets Pro</a></li>
+                    <li><a href="projets-scolaires.html">Projets Scolaires</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
+                    <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
+                    <li><a href="projets-scolaires.html#projet-cablage">Câblage salle info</a></li>
+                    <li><a href="projets-scolaires.html#projet-reseau-env">Environnement réseau</a></li>
+                    <li><a href="projets-scolaires.html#projet-p2p">Réseau poste à poste</a></li>
+                    <li><a href="projets-scolaires.html#projet-site-web">Site web vitrine</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
+                    <li class="dropdown-separator"><span>— Stage IT Partner —</span></li>
+                    <li><a href="projets-pro.html">Refonte réseau Brocker'Info</a></li>
+                </ul>
+            </li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="page-header">
+        <a href="index.html" class="back-home">← Accueil</a>
+        <h1>Mon Parcours</h1>
+        <p class="page-subtitle">Une progression constante dans le domaine de l'informatique</p>
+    </div>
+
+    <div class="page-content">
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-card">
+                    <span class="timeline-date">2025 - 2027</span>
+                    <h3>
+                        <span class="icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                            </svg></span>
+                        BTS SIO - SISR
+                    </h3>
+                    <p>Spécialité Solutions d'Infrastructure, Systèmes et Réseaux. Formation axée sur l'administration
+                        des systèmes, la gestion des réseaux et la cybersécurité. Développement de compétences avancées
+                        en virtualisation et supervision.<br>
+                        <a href="https://albert-londres-cusset.ent.auvergnerhonealpes.fr/" target="_blank"
+                            style="color: var(--accent-secondary); text-decoration: none; font-weight: 500; margin-top: 0.5rem; display: inline-block;">
+                            <svg class="icon-svg"
+                                style="width:16px;height:16px;margin-right:.3rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" />
+                            </svg>
+                            ENT Lycée Albert Londres (Cusset)
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal delay-1">
+                <div class="timeline-card">
+                    <span class="timeline-date">2022 - 2025</span>
+                    <h3>
+                        <span class="icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.69L18 11v7h-2v-6H8v6H6v-7l6-5.31z" />
+                            </svg></span>
+                        Baccalauréat SN option RISC
+                    </h3>
+                    <p>Obtention du baccalauréat avec <strong>mention Bien</strong>. Le Bac professionnel Systèmes
+                        Numériques option Réseaux et Systèmes Communiquants m'a fait débuter dans le réseau. Durant ces
+                        3 ans, j'ai pu exercer sur des machines virtuelles et découvrir les bases de la
+                        cybersécurité.<br>
+                        <a href="https://gergovie-clermont.ent.auvergnerhonealpes.fr/" target="_blank"
+                            style="color: var(--accent-secondary); text-decoration: none; font-weight: 500; margin-top: 0.5rem; display: inline-block;">
+                            <svg class="icon-svg"
+                                style="width:16px;height:16px;margin-right:.3rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" />
+                            </svg>
+                            ENT Lycée Gergovie (Clermont-Ferrand)
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal delay-2">
+                <div class="timeline-card">
+                    <span class="timeline-date">2021 - 2022</span>
+                    <h3>
+                        <span class="icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h4l4 3 4-3h4c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11zm-2-9H6v2h12V7zm-3 3H6v2h9v-2z" />
+                            </svg></span>
+                        Brevet professionnel
+                    </h3>
+                    <p>Obtenu avec <strong>mention Très Bien</strong>. Année qui m'a permis de choisir ma voie grâce à
+                        la multitude de stages proposés et de découvrir ma passion pour l'informatique.<br>
+                        <a href="https://pierre-boulanger-pont-du-chateau.ent.auvergnerhonealpes.fr/" target="_blank"
+                            style="color: var(--accent-secondary); text-decoration: none; font-weight: 500; margin-top: 0.5rem; display: inline-block;">
+                            <svg class="icon-svg"
+                                style="width:16px;height:16px;margin-right:.3rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" />
+                            </svg>
+                            ENT Collège Pierre Boulanger (Pont-du-Château)
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Edan RODDE</h3>
+                <p>Étudiant BTS SIO SISR | Infrastructure & Cybersécurité</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:edan.rodde03@gmail.com" class="footer-link"><span class="link-icon"><svg
+                            class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg></span><span class="link-text">Email</span></a>
+                <a href="https://www.linkedin.com/in/edan-rodde-a7bb92348/" target="_blank" rel="noopener"
+                    class="footer-link"><span class="link-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        </svg></span><span class="link-text">LinkedIn</span></a>
+                <a href="https://res.cloudinary.com/dynbrtfxs/image/upload/v1772099555/CV-EDAN-RODDE_dlpfzl.pdf"
+                    target="_blank" rel="noopener" class="footer-link"><span class="link-icon"><svg class="icon-svg"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg></span><span class="link-text">Mon CV</span></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Edan RODDE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
