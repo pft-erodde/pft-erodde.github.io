@@ -94,21 +94,109 @@
 
 /* === THEME-AWARE IMAGES (External SVGs) === */
 /* Dark mode - images restent claires */
-.project-icon-large img,
-.skill-icon img,
-.option-icon img,
-.modal-icon img {
+.project-icon-large img:not(.no-invert),
+.skill-icon img:not(.no-invert),
+.option-icon img:not(.no-invert),
+.modal-icon img:not(.no-invert) {
     filter: invert(1);
     transition: filter 0.3s ease;
 }
 
 /* Light mode - inverser les couleurs pour les adapter au fond clair */
-[data-theme="light"] .project-icon-large img,
-[data-theme="light"] .skill-icon img,
-[data-theme="light"] .option-icon img,
-[data-theme="light"] .modal-icon img {
+[data-theme="light"] .project-icon-large img:not(.no-invert),
+[data-theme="light"] .skill-icon img:not(.no-invert),
+[data-theme="light"] .option-icon img:not(.no-invert),
+[data-theme="light"] .modal-icon img:not(.no-invert) {
     filter: invert(0);
 }
+
+/* Image en accord avec le fond */
+.adapted-image {
+    mix-blend-mode: screen; 
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
+[data-theme="light"] .adapted-image {
+    mix-blend-mode: darken;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Animation sur certains textes */
+@keyframes glowingText {
+    0%, 100% { text-shadow: 0 0 10px var(--accent-glow); }
+    50% { text-shadow: 0 0 20px var(--accent-primary), 0 0 30px var(--accent-tertiary); }
+}
+.animated-text {
+    animation: glowingText 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* SMOKY BUTTON (Vanilla CSS au lieu de Tailwind) */
+.smoky-button {
+    position: relative;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-family: inherit;
+    transition: transform 0.3s ease;
+    display: inline-flex;
+}
+
+.smoky-button:hover {
+    transform: scale(1.02);
+}
+
+.smoky-btn-canvas-wrapper {
+    position: absolute;
+    z-index: -1;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+}
+
+.smoky-btn-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.smoky-button:hover .smoky-btn-canvas {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.smoky-btn-inner {
+    margin: 2px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.smoky-button:hover .smoky-btn-inner {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.smoky-btn-text {
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.smoky-button:hover .smoky-btn-text {
+    color: #fff;
+    transform: scale(1.05);
+}
+
 
 /* Les photos (non-SVG) ne doivent pas être inversées */
 .certification-image {
@@ -1706,6 +1794,8 @@ footer::before {
 }
 
 /* === RESPONSIVE === */
+
+/* --- Tablette (max-width: 1024px) --- */
 @media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -1726,89 +1816,98 @@ footer::before {
         display: block;
         margin-bottom: 1rem;
     }
+
+    /* Fix nav layout sur tablette/mobile : theme toggle + hamburger à droite */
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
 }
 
+/* --- Mobile (max-width: 768px) --- */
 @media (max-width: 768px) {
 
-
+    /* === HERO === */
     .hero {
         min-height: auto;
-        padding: 100px 20px 60px;
+        padding: 100px 16px 50px;
     }
 
-    section {
-        padding: 60px 15px;
-    }
-
-    .about-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.75rem;
-    }
-
-    .stat-item {
-        padding: 1rem 0.5rem;
-    }
-
-    .stat-number {
-        font-size: 1.8rem;
-    }
-
-    .stat-label {
-        font-size: 0.7rem;
-    }
-
-    .timeline {
-        padding-left: 30px;
-    }
-
-    .timeline::before {
-        left: 10px;
-    }
-
-    .timeline-item::before {
-        left: -27px;
-        width: 12px;
-        height: 12px;
-    }
-
-    .experiences-grid,
-    .skills-grid,
-    .projects-grid,
-    .certifications-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    footer {
-        padding: 2rem 1rem;
-    }
-}
-
-@media (max-width: 480px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: clamp(2rem, 10vw, 3rem);
     }
 
-    .hero p {
-        font-size: 1rem;
+    .hero-typing {
+        font-size: 0.95rem;
+        min-height: 2.5em;
+    }
+
+    .hero-badge {
+        padding: 0.4rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-badge span {
+        font-size: 0.8rem;
     }
 
     .hero-cta {
-        flex-direction: column;
+        margin-top: 1.5rem;
         gap: 0.75rem;
     }
 
     .btn {
-        width: 100%;
-        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    /* === SECTIONS === */
+    section {
+        padding: 50px 16px;
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    /* === À PROPOS === */
+    .about-content {
+        gap: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+    }
+
+    .stat-item {
+        padding: 0.8rem 0.4rem;
+        border-radius: 12px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
     }
 
     .about-image img {
@@ -1821,6 +1920,653 @@ footer::before {
         height: 220px;
         margin-top: -110px;
         margin-left: -110px;
+    }
+
+    /* === TIMELINE (Parcours) === */
+    .timeline {
+        padding-left: 28px;
+    }
+
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -25px;
+        width: 12px;
+        height: 12px;
+        top: 6px;
+    }
+
+    .timeline-card {
+        padding: 1.2rem 1rem;
+        border-radius: 12px;
+    }
+
+    .timeline-card:hover {
+        transform: translateX(4px);
+    }
+
+    .timeline-card h3 {
+        font-size: 1.1rem;
+        flex-wrap: wrap;
+    }
+
+    .timeline-card p {
+        font-size: 0.88rem;
+    }
+
+    .timeline-date {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+    }
+
+    /* === GRILLES DE CARTES — toutes en 1 colonne === */
+    .experiences-grid,
+    .skills-grid,
+    .projects-grid,
+    .certifications-grid,
+    .school-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    /* === EXPÉRIENCES === */
+    .experience-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .experience-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .experience-tasks li {
+        font-size: 0.88rem;
+    }
+
+    /* === COMPÉTENCES === */
+    .skill-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .skill-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
+    }
+
+    /* === PROJETS === */
+    .project-card {
+        border-radius: 16px;
+    }
+
+    .project-image {
+        height: 220px;
+    }
+
+    .project-image img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .project-image::before {
+        width: 160px;
+        height: 160px;
+    }
+
+    .project-content {
+        padding: 1.2rem 1.5rem 1.5rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+    }
+
+    /* === CERTIFICATIONS === */
+    .certification-card {
+        padding: 2rem 1.5rem;
+        border-radius: 18px;
+    }
+
+    .certification-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .certification-card p {
+        font-size: 0.9rem;
+    }
+
+    /* === PROJETS SCOLAIRES === */
+    .school-project-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .school-project-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .school-project-card p {
+        font-size: 0.9rem;
+    }
+
+    .project-tech span {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    /* === PAGE HEADER (pages secondaires) === */
+    .page-header {
+        padding: 100px 16px 2.5rem;
+    }
+
+    .page-header h1 {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+    }
+
+    .page-header .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .page-header .back-home {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* === PAGE CONTENT === */
+    .page-content {
+        padding: 1.5rem 16px 3rem;
+    }
+
+    /* === NAV BLOCKS (grille d'accueil) === */
+    #navigation-grid {
+        padding: 3rem 16px;
+    }
+
+    .nav-blocks-grid {
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .nav-block {
+        padding: 1.5rem 1.2rem;
+        border-radius: 16px;
+    }
+
+    .nav-block-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+    }
+
+    .nav-block h3 {
+        font-size: 1rem;
+    }
+
+    .nav-block p {
+        font-size: 0.82rem;
+    }
+
+    /* === FOOTER === */
+    footer {
+        padding: 2.5rem 16px 1.5rem;
+        margin-top: 60px;
+    }
+
+    .footer-brand {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-brand h3 {
+        font-size: 1.4rem;
+    }
+
+    .footer-brand p {
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-link {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+        padding: 0.7rem 1.2rem;
+        border-radius: 12px;
+    }
+
+    .footer-bottom {
+        padding-top: 1.5rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+
+    /* === MODAL === */
+    .modal-container {
+        width: 95%;
+        max-height: 90vh;
+        border-radius: 18px;
+    }
+
+    .modal-header {
+        padding: 1.5rem 1.25rem 0.75rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .modal-title-group h3 {
+        font-size: 1.2rem;
+    }
+
+    .modal-body {
+        padding: 0 1.25rem 1.5rem;
+    }
+
+    .modal-section {
+        padding: 1rem;
+    }
+
+    .modal-footer {
+        padding: 0.75rem 1.25rem 1rem;
+    }
+
+    .modal-close {
+        width: 36px;
+        height: 36px;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    /* === FORMATION === */
+    .formation-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .formation-card h3 {
+        font-size: 1.25rem;
+    }
+
+    /* === CHOIX === */
+    .choix-item {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .choix-item:hover {
+        transform: translateY(-3px);
+    }
+
+    /* === OPTIONS === */
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .option-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 0.75rem;
+    }
+
+    .option-card {
+        padding: 1.5rem;
+    }
+
+    /* Réduire les hover transforms pour le mobile */
+    .skill-card:hover,
+    .certification-card:hover,
+    .school-project-card:hover {
+        transform: translateY(-4px) scale(1);
+    }
+
+    .experience-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* --- Petit mobile (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+    /* === HERO === */
+    .hero {
+        padding: 90px 12px 40px;
+    }
+
+    .hero h1 {
+        font-size: 1.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p,
+    .hero-typing {
+        font-size: 0.9rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.6rem;
+        width: 100%;
+        padding: 0 8px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.88rem;
+    }
+
+    /* === SECTIONS === */
+    section {
+        padding: 40px 12px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.88rem;
+    }
+
+    /* === ABOUT === */
+    .about-image img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .about-image::before {
+        width: 190px;
+        height: 190px;
+        margin-top: -95px;
+        margin-left: -95px;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    /* === PAGE HEADER === */
+    .page-header {
+        padding: 90px 12px 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-header .page-subtitle {
+        font-size: 0.85rem;
+    }
+
+    /* === PAGE CONTENT === */
+    .page-content {
+        padding: 1rem 12px 2.5rem;
+    }
+
+    /* === TIMELINE === */
+    .timeline {
+        padding-left: 22px;
+    }
+
+    .timeline::before {
+        left: 5px;
+    }
+
+    .timeline-item {
+        padding-left: 1.2rem;
+    }
+
+    .timeline-item::before {
+        left: -22px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-card {
+        padding: 1rem 0.85rem;
+    }
+
+    .timeline-card h3 {
+        font-size: 1rem;
+    }
+
+    .timeline-card p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    /* === CARDS spacings === */
+    .experience-card,
+    .skill-card,
+    .certification-card,
+    .school-project-card {
+        padding: 1.25rem;
+    }
+
+    .experience-header h3,
+    .skill-card h3,
+    .certification-card h3,
+    .school-project-card h3 {
+        font-size: 1.05rem;
+    }
+
+    /* === NAV BLOCKS === */
+    #navigation-grid {
+        padding: 2.5rem 12px;
+    }
+
+    .nav-block {
+        padding: 1.25rem 1rem;
+    }
+
+    .nav-block-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+    }
+
+    .nav-block-icon .icon-svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .nav-block h3 {
+        font-size: 0.95rem;
+    }
+
+    .nav-block p {
+        font-size: 0.8rem;
+    }
+
+    /* === FOOTER === */
+    footer {
+        padding: 2rem 12px 1.25rem;
+        margin-top: 40px;
+    }
+
+    .footer-brand h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-brand p {
+        font-size: 0.8rem;
+    }
+
+    .footer-link {
+        max-width: 100%;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* === MODAL === */
+    .modal-container {
+        width: 96%;
+        border-radius: 14px;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1rem 0.5rem;
+    }
+
+    .modal-title-group h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal-body {
+        padding: 0 1rem 1.25rem;
+    }
+
+    .modal-section {
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .modal-section h4 {
+        font-size: 0.85rem;
+    }
+
+    .modal-section p,
+    .modal-section li {
+        font-size: 0.85rem;
+    }
+
+    .modal-footer {
+        padding: 0.6rem 1rem 0.8rem;
+    }
+
+    /* === FORMATION === */
+    .formation-card {
+        padding: 1.25rem;
+    }
+
+    .formation-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .formation-card p {
+        font-size: 0.9rem;
+    }
+
+    /* === PROJETS IMAGE === */
+    .project-image {
+        height: 180px;
+    }
+
+    .project-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .project-image::before {
+        width: 140px;
+        height: 140px;
+    }
+
+    .project-content {
+        padding: 1rem 1.2rem 1.2rem;
+    }
+
+    /* === CERTIFICATIONS === */
+    .certification-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .certification-icon .icon-svg {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* --- Très petit mobile (max-width: 360px) --- */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-typing,
+    .hero p {
+        font-size: 0.82rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-stats {
+        gap: 0.4rem;
+    }
+
+    .stat-item {
+        padding: 0.6rem 0.3rem;
+    }
+
+    .stat-number {
+        font-size: 1.2rem;
+    }
+
+    .timeline-card {
+        padding: 0.85rem 0.7rem;
+    }
+
+    .nav-block {
+        padding: 1rem 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.82rem;
+        padding: 0.65rem 1rem;
     }
 }
 
@@ -2169,35 +2915,7 @@ footer::before {
     font-weight: 600;
 }
 
-/* Responsive pour les nouvelles sections */
-@media (max-width: 768px) {
-    .options-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .option-badge {
-        position: static;
-        display: inline-block;
-        margin-bottom: 1rem;
-    }
-
-    .choix-item {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .choix-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .school-projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .formation-card {
-        padding: 1.5rem;
-    }
-}
+/* Responsive pour les sections formation/options/school-projects : consolidé dans le bloc responsive principal */
 
 /* Les délais d'animation sont définis via transition-delay dans les utilitaires .delay-N ci-dessus */
 
@@ -2292,8 +3010,11 @@ footer::before {
 
 .modal-project-image {
     width: 100%;
+    max-height: 350px;
+    object-fit: contain;
     border-radius: 12px;
     box-shadow: var(--shadow-card);
+    background: var(--surface);
 }
 
 .modal-image-caption {
@@ -2566,28 +3287,7 @@ footer::before {
     opacity: 1;
 }
 
-/* Modal responsive */
-@media (max-width: 768px) {
-    .modal-container {
-        width: 95%;
-        max-height: 90vh;
-    }
-
-    .modal-header {
-        padding: 1.5rem 1.5rem 1rem;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .modal-body {
-        padding: 0 1.5rem 1.5rem;
-    }
-
-    .modal-footer {
-        padding: 1rem 1.5rem;
-    }
-}
+/* Modal responsive : consolidé dans le bloc responsive principal */
 
 /* ===================================
    STYLES POUR LES ICÔNES SVG
@@ -2781,13 +3481,13 @@ h3 .icon-svg,
     }
 
     .nav-dropdown.open .dropdown-menu {
-        max-height: 200px;
+        max-height: 600px;
         opacity: 1;
         visibility: visible;
     }
 
     .nav-dropdown:hover .dropdown-menu {
-        max-height: 200px;
+        max-height: 600px;
         opacity: 1;
         visibility: visible;
     }
@@ -3144,9 +3844,9 @@ h3 .icon-svg,
    HERO ZOOM - Affichage plus proche
    =================================== */
 .hero {
-    min-height: 85vh !important;
+    min-height: 85vh;
     /* Réduit de 100vh pour voir le contenu sous le fold */
-    padding: 80px 20px 60px !important;
+    padding: 80px 20px 60px;
 }
 
 /* ===================================

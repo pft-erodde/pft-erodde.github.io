@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -84,11 +84,11 @@
         </ul>
     </nav>
 
-    <div class="page-header">
+    <header id="projets-header" class="hero" style="min-height: 40vh; padding: 100px 20px 40px;">
         <a href="index.html" class="back-home">← Accueil</a>
-        <h1>Mes Projets Professionnels</h1>
+        <h1 class="animated-text">Mes Projets Professionnels</h1>
         <p class="page-subtitle">Des réalisations concrètes au service de l'infrastructure — Stage Hall 32</p>
-    </div>
+    </header>
 
     <div class="page-content">
         <div class="projects-grid">
@@ -99,7 +99,7 @@
                 data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
                 data-module="Stage en entreprise – Hall 32"
                 data-description="Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des machines industrielles."
-                data-context="Lors de mon stage au sein de Hall 32, j'ai pu participer au projet de concevoir un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
+                data-context="Lors de mon stage au sein de Hall 32, j'ai pu participer au projet de conception d'un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
                 data-client="Hall 32 — Société d'ingénierie et de maintenance industrielle."
                 data-needs="Affichage d'informations en temps réel|Fonctionnement autonome 24h/24 7j/7|Redémarrage automatique|Coût minimal (Raspberry Pi)"
                 data-docs-in="Cahier des charges"
@@ -116,9 +116,10 @@
                 <div class="project-content">
                     <h3>
                         <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2L2 7v10c0 5 10 5 10 5s10 0 10-5V7l-10-5zm0 18.9c-3.4-.5-8-2.2-8-4.9v-6l8-3.67V18.9z" />
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="currentColor" opacity="0.12"/>
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4" stroke-width="2"/>
                         </svg>
                         Kiosque Raspberry Pi
                     </h3>
@@ -151,9 +152,14 @@
                 <div class="project-content">
                     <h3>
                         <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" opacity="0.1"/>
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <rect x="7" y="13" width="2" height="4" rx="0.5" fill="currentColor" opacity="0.5"/>
+                            <rect x="11" y="9" width="2" height="8" rx="0.5" fill="currentColor" opacity="0.5"/>
+                            <rect x="15" y="7" width="2" height="10" rx="0.5" fill="currentColor" opacity="0.5"/>
+                            <polyline points="7 11 10 8 14 10 17 6" stroke-width="1.8"/>
+                            <circle cx="17" cy="6" r="1" fill="currentColor" stroke="none"/>
                         </svg>
                         Supervision Nagios
                     </h3>
@@ -185,9 +191,15 @@
                 <div class="project-content">
                     <h3>
                         <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" fill="currentColor" opacity="0.1"/>
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <rect x="6" y="7" width="5" height="3" rx="0.5" stroke-opacity="0.5"/>
+                            <rect x="13" y="7" width="5" height="3" rx="0.5" stroke-opacity="0.5"/>
+                            <rect x="6" y="12" width="5" height="3" rx="0.5" stroke-opacity="0.5"/>
+                            <rect x="13" y="12" width="5" height="3" rx="0.5" stroke-opacity="0.5"/>
                         </svg>
                         Hyperviseur Hyper-V
                     </h3>
@@ -214,7 +226,10 @@
             </div>
             <div class="modal-body">
                 <div class="modal-image-container" id="modal-image-container" style="display:none;">
-                    <img id="modal-image" src="" alt="" class="modal-project-image">
+                    <div class="modal-images-wrapper" id="modal-images-wrapper" style="display: flex; gap: 2rem; justify-content: center; align-items: center; max-width: 100%;">
+                        <img id="modal-image" src="" alt="" class="modal-project-image" style="max-width: 48%; max-height: 250px;">
+                        <img id="modal-image2" src="" alt="" class="modal-project-image" style="display:none; max-width: 48%; max-height: 250px;">
+                    </div>
                     <p class="modal-image-caption" id="modal-image-caption"></p>
                 </div>
                 <div class="modal-section" id="ms-context" style="display:none;">

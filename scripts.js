@@ -220,18 +220,27 @@ if (themeToggle) {
 const cards = document.querySelectorAll('.timeline-card, .certification-card, .project-card, .school-project-card');
 
 cards.forEach(card => {
+    // Initialise une vitesse de retour fluide
+    card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const rotateX = -(y - rect.height / 2) / 25;
-        const rotateY = (x - rect.width / 2) / 25;
+        const rotateX = -(y - rect.height / 2) / 20;
+        const rotateY = (x - rect.width / 2) / 20;
+        
         requestAnimationFrame(() => {
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(-10px)`;
+            card.style.transition = 'transform 0.1s ease';
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02) translateY(-5px)`;
         });
     });
+    
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        requestAnimationFrame(() => {
+            card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1) translateY(0)';
+        });
     });
 });
 
@@ -359,6 +368,7 @@ function openProjectModal(card) {
     const opinion = card.dataset.opinion || '';
     const difficulties = card.dataset.difficulties || '';
     const contributions = card.dataset.contributions || '';
+    const bonus = card.dataset.bonus || '';
 
     // Remplissage du modal
     document.getElementById('modal-icon').innerHTML = icon;
@@ -404,16 +414,31 @@ function openProjectModal(card) {
     showHideSection('ms-contributions', contributions);
     if (contributions) { const el = document.getElementById('modal-contributions'); if (el) el.innerHTML = makeList(contributions); }
 
+    showHideSection('ms-bonus', bonus);
+    if (bonus) setModalSection('modal-bonus', bonus);
+
     // Image du projet
     const imageUrl = card.dataset.image || '';
+    const imageUrl2 = card.dataset.image2 || '';
     const imageCaption = card.dataset.imageCaption || '';
     const imageContainer = document.getElementById('modal-image-container');
     const modalImage = document.getElementById('modal-image');
+    const modalImage2 = document.getElementById('modal-image2');
     const modalImageCaption = document.getElementById('modal-image-caption');
 
     if (imageUrl && imageContainer && modalImage) {
         modalImage.src = imageUrl;
         modalImage.alt = imageCaption || 'Image du projet';
+        
+        if (imageUrl2 && modalImage2) {
+            modalImage2.src = imageUrl2;
+            modalImage2.alt = 'Image secondaire';
+            modalImage2.style.display = 'block';
+        } else if (modalImage2) {
+            modalImage2.style.display = 'none';
+            modalImage2.src = '';
+        }
+
         if (modalImageCaption) modalImageCaption.textContent = imageCaption;
         imageContainer.style.display = 'block';
     } else if (imageContainer) {
