@@ -328,6 +328,60 @@ window.addEventListener('load', () => {
 });
 
 // ===================================
+// ILLUSTRATIONS DE PAGE (RENDU VITRINE)
+// ===================================
+const pageIllustrations = {
+    'formation.html': {
+        src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Baie de serveurs et infrastructure reseau'
+    },
+    'parcours.html': {
+        src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Parcours scolaire et documents de formation'
+    },
+    'projets-tous.html': {
+        src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Collaboration sur des projets informatiques'
+    },
+    'projets-pro.html': {
+        src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Poste de travail professionnel et code'
+    },
+    'projets-scolaires.html': {
+        src: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Ordinateur portable pour projets scolaires'
+    },
+    'competences.html': {
+        src: 'https://res.cloudinary.com/dynbrtfxs/image/upload/v1778071401/Gemini_Generated_Image_o8fn49o8fn49o8fn_ckaydp.png',
+        alt: 'Developpement et competences techniques'
+    },
+    'qualifications-professionnelles.html': {
+        src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Certifications et qualifications professionnelles'
+    }
+};
+
+const currentPageName = window.location.pathname.split('/').pop() || 'index.html';
+const headerIllustrationData = pageIllustrations[currentPageName];
+const pageHeaderEl = document.querySelector('.page-header');
+
+if (pageHeaderEl && headerIllustrationData && !pageHeaderEl.querySelector('.page-header-illustration')) {
+    const figure = document.createElement('figure');
+    figure.className = 'page-header-illustration';
+    figure.innerHTML = `
+        <img src="${headerIllustrationData.src}" alt="${headerIllustrationData.alt}" loading="eager" decoding="async" referrerpolicy="no-referrer">
+    `;
+    const illustrationImg = figure.querySelector('img');
+    if (illustrationImg) {
+        illustrationImg.onerror = function () {
+            this.onerror = null;
+            this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22340%22 viewBox=%220 0 1200 340%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%231e1b4b%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230f766e%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22340%22 fill=%22url(%23g)%22/%3E%3Ccircle cx=%221050%22 cy=%2260%22 r=%22170%22 fill=%22rgba(255,255,255,0.08)%22/%3E%3Ccircle cx=%22140%22 cy=%22310%22 r=%22180%22 fill=%22rgba(255,255,255,0.05)%22/%3E%3C/svg%3E';
+        };
+    }
+    pageHeaderEl.appendChild(figure);
+}
+
+// ===================================
 // MODAL PROJETS — VERSION ENRICHIE
 // ===================================
 const projectModal = document.getElementById('project-modal');
@@ -466,12 +520,16 @@ function closeProjectModal() {
 
 projectCards.forEach(card => {
     card.style.cursor = 'pointer';
-    card.addEventListener('click', () => openProjectModal(card));
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('img')) return;
+        openProjectModal(card);
+    });
 });
 
 if (modalClose) modalClose.addEventListener('click', closeProjectModal);
 if (modalOverlay) modalOverlay.addEventListener('click', closeProjectModal);
 document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) closeGlobalLightbox();
     if (e.key === 'Escape' && projectModal?.classList.contains('active')) closeProjectModal();
 });
 
@@ -483,7 +541,8 @@ const sisrReveal = document.getElementById('sisr-reveal');
 
 if (sisrCard && sisrReveal) {
     sisrCard.style.cursor = 'pointer';
-    sisrCard.addEventListener('click', () => {
+    sisrCard.addEventListener('click', (e) => {
+        if (e.target.closest('img')) return;
         const isVisible = sisrReveal.style.display !== 'none';
         sisrReveal.style.display = isVisible ? 'none' : 'block';
         const hint = sisrCard.querySelector('.sisr-click-hint');
@@ -498,11 +557,64 @@ document.querySelectorAll('.certification-card').forEach(card => {
     const img = card.querySelector('.certification-image');
     if (img) {
         card.style.cursor = 'pointer';
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('img')) return;
             const isVisible = img.style.display !== 'none';
             img.style.display = isVisible ? 'none' : 'block';
         });
     }
+});
+
+// ===================================
+// LIGHTBOX GLOBALE POUR LES IMAGES
+// ===================================
+const lightbox = document.createElement('div');
+lightbox.className = 'global-lightbox';
+lightbox.setAttribute('aria-hidden', 'true');
+lightbox.innerHTML = `
+    <button class="global-lightbox-close" aria-label="Fermer l'image agrandie">×</button>
+    <img class="global-lightbox-image" src="" alt="">
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImage = lightbox.querySelector('.global-lightbox-image');
+const lightboxClose = lightbox.querySelector('.global-lightbox-close');
+
+function openGlobalLightbox(imageEl) {
+    if (!lightboxImage || !imageEl) return;
+    lightboxImage.src = imageEl.src;
+    lightboxImage.alt = imageEl.alt || 'Image agrandie';
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeGlobalLightbox() {
+    if (!lightboxImage) return;
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    if (!projectModal?.classList.contains('active')) {
+        document.body.style.overflow = '';
+    }
+}
+
+document.addEventListener('click', (e) => {
+    const image = e.target.closest('img');
+    if (!image) return;
+    if (image.closest('.modal-close') || image.closest('.modal-icon')) return;
+    if (image.classList.contains('no-lightbox')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openGlobalLightbox(image);
+});
+
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeGlobalLightbox);
+}
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeGlobalLightbox();
 });
 
 // ===================================

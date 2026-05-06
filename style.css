@@ -1184,19 +1184,61 @@ h2::after {
 /* === EXPÉRIENCES - CARTES GLASSMORPHISM === */
 .experiences-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
 }
 
 .experience-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1.2rem;
     transition: var(--transition-smooth);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) 1fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.experience-card-featured {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(280px, 42%) 1fr;
+    min-height: 360px;
+}
+
+.experience-visual {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    background: rgba(15, 23, 42, 0.35);
+    min-height: 210px;
+}
+
+.experience-card-featured .experience-visual {
+    min-height: 320px;
+}
+
+.experience-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.65), rgba(10, 10, 15, 0.12));
+    pointer-events: none;
+}
+
+.experience-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    --img-scale: 1;
+    transform: scale(var(--img-scale));
+    display: block;
+    transition: transform 0.45s ease;
 }
 
 .experience-card::before {
@@ -1220,6 +1262,44 @@ h2::after {
 
 .experience-card:hover::before {
     opacity: 1;
+}
+
+.experience-card:hover .experience-visual img {
+    transform: scale(calc(var(--img-scale) + 0.04));
+}
+
+.experience-hall32 .experience-visual img {
+    --img-scale: 1.2;
+    object-position: center 52%;
+}
+
+.experience-militaire .experience-visual img {
+    --img-scale: 1.14;
+    object-position: center 50%;
+}
+
+.experience-job .experience-visual img {
+    --img-scale: 1.16;
+    object-position: center 44%;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-content .project-icon-large {
+    margin-bottom: 0.6rem;
+}
+
+.experience-content .project-icon-large svg {
+    width: 44px;
+    height: 44px;
+}
+
+.experience-card-featured .experience-content .project-icon-large svg {
+    width: 56px;
+    height: 56px;
 }
 
 .experience-header {
@@ -1300,6 +1380,38 @@ h2::after {
     background: var(--accent-primary);
     color: white;
     border-color: var(--accent-primary);
+}
+
+@media (max-width: 1024px) {
+    .experience-card {
+        grid-template-columns: minmax(130px, 180px) 1fr;
+    }
+
+    .experience-card-featured {
+        grid-template-columns: minmax(210px, 38%) 1fr;
+        min-height: 320px;
+    }
+
+    .experience-card-featured .experience-visual {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card,
+    .experience-card-featured {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .experience-visual,
+    .experience-card-featured .experience-visual {
+        min-height: 190px;
+    }
 }
 
 /* === COMPÉTENCES - GRILLE MODERNE === */
@@ -2975,6 +3087,17 @@ footer::before {
 .sisr-reveal {
     margin-top: 1.5rem;
     animation: fadeSlideIn 0.4s ease;
+    padding: 0.75rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(6, 182, 212, 0.05));
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.sisr-reveal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
 }
 
 @keyframes fadeSlideIn {
@@ -2989,11 +3112,30 @@ footer::before {
     }
 }
 
-.sisr-reveal-content img {
+.sisr-reveal-photo {
     width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 0.35rem;
     border-radius: 12px;
     box-shadow: var(--shadow-card);
-    margin-bottom: 0.75rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sisr-reveal-photo:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 680px) {
+    .sisr-reveal-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .sisr-reveal-photo {
+        max-height: 270px;
+    }
 }
 
 .sisr-reveal-caption {
@@ -3037,6 +3179,44 @@ footer::before {
     box-shadow: var(--shadow-glow);
 }
 
+.lycee-vitrine {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0.9rem;
+    align-items: stretch;
+}
+
+.lycee-vitrine .choix-image {
+    margin-top: 0;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.lycee-vitrine-main {
+    min-height: 260px;
+}
+
+.lycee-vitrine-side {
+    min-height: 260px;
+}
+
+@media (max-width: 900px) {
+    .lycee-vitrine {
+        grid-template-columns: 1fr;
+    }
+
+    .lycee-vitrine .choix-image,
+    .lycee-vitrine-main,
+    .lycee-vitrine-side {
+        min-height: 210px;
+    }
+}
+
 /* === MODAL PROJECT IMAGE === */
 .modal-image-container {
     margin-bottom: 1.5rem;
@@ -3074,6 +3254,60 @@ footer::before {
 .certification-image:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-glow);
+}
+
+/* === GLOBAL IMAGE LIGHTBOX === */
+.global-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 12000;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    padding: 2rem;
+}
+
+.global-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.global-lightbox-image {
+    max-width: min(1200px, 92vw);
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    object-fit: contain;
+}
+
+.global-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.75);
+    color: #fff;
+    font-size: 1.65rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.global-lightbox-close:hover {
+    transform: scale(1.05);
+    background: rgba(30, 41, 59, 0.9);
 }
 
 .modal.active {
@@ -3737,6 +3971,29 @@ h3 .icon-svg,
     transform: translateX(-4px);
 }
 
+.page-header-illustration {
+    margin: 1.6rem auto 0;
+    max-width: 920px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+    background: rgba(15, 23, 42, 0.45);
+}
+
+.page-header-illustration img {
+    display: block;
+    width: 100%;
+    height: clamp(180px, 30vw, 310px);
+    object-fit: cover;
+    filter: saturate(1.05) contrast(1.04);
+    transition: transform 0.35s ease;
+}
+
+.page-header-illustration:hover img {
+    transform: scale(1.02);
+}
+
 /* ===================================
    CONTENU PRINCIPAL DES PAGES
    =================================== */
@@ -3744,6 +4001,13 @@ h3 .icon-svg,
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 2rem 5rem;
+}
+
+@media (max-width: 768px) {
+    .page-header-illustration {
+        margin-top: 1.2rem;
+        border-radius: 14px;
+    }
 }
 
 /* ===================================
