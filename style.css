@@ -48,28 +48,21 @@
 
 /* === LIGHT MODE === */
 [data-theme="light"] {
-    /* Couleurs principales - Light Mode (Light Blue & Pale Pink) */
-    --bg-primary: #f0f9ff;
-    /* Light Blue Background */
-    --bg-secondary: #e0f2fe;
-    /* Slightly darker light blue for cards/sections */
-    --bg-card: rgba(255, 255, 255, 0.5);
-    /* Semi-transparent white cards */
-    --bg-card-hover: rgba(255, 255, 255, 0.8);
+    /* Couleurs principales - Light Mode */
+    --bg-primary: #eef2ff;
+    --bg-secondary: #e8f0fe;
+    --bg-card: rgba(255, 255, 255, 0.55);
+    --bg-card-hover: rgba(255, 255, 255, 0.85);
 
     /* Navbar Backgrounds - Light Mode */
     --nav-bg: rgba(240, 249, 255, 0.8);
     --nav-scrolled-bg: rgba(255, 255, 255, 0.95);
 
-    /* Accents - Light Mode (Pale Pink & Cyan) */
-    --accent-primary: #fbcfe8;
-    /* Paler Pink (Pink 200) */
-    --accent-secondary: #06b6d4;
-    /* Cyan */
-    --accent-tertiary: #8b5cf6;
-    /* Violet */
-    --accent-glow: rgba(99, 102, 241, 0.2);
-    /* Indigo Glow en light mode */
+    /* Accents - Light Mode (Indigo & Cyan — cohérent avec le fond) */
+    --accent-primary: #6366f1;
+    --accent-secondary: #4338ca;
+    --accent-tertiary: #0891b2;
+    --accent-glow: rgba(99, 102, 241, 0.18);
 
     /* Specific overrides */
     --about-circle-color: var(--accent-secondary);
@@ -87,9 +80,45 @@
     --glass-border: rgba(0, 0, 0, 0.05);
 
     /* Ombres - Light Mode */
-    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.08);
-    --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.1);
-    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.05);
+    --shadow-soft: 0 4px 24px rgba(99, 102, 241, 0.10);
+    --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.18);
+    --shadow-card: 0 8px 32px rgba(99, 102, 241, 0.08);
+}
+
+/* Light mode — fond inspiré de l'OG preview (indigo/cyan doux) */
+[data-theme="light"] body {
+    background:
+        radial-gradient(ellipse 90% 70% at 40% 50%, #f0f4ff 0%, #e8f0fe 100%);
+}
+
+/* Couche 1 — orbes indigo/cyan lumineuses (calque principal) */
+[data-theme="light"] body::before {
+    background:
+        radial-gradient(ellipse 75% 60% at 10% 20%,  rgba(99,  102, 241, 0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 65% 55% at 88% 78%,  rgba(6,   182, 212, 0.20) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 65% at 58% 8%,   rgba(129, 140, 248, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 48% at 28% 88%,  rgba(34,  211, 238, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 42% 42% at 78% 32%,  rgba(99,  102, 241, 0.12) 0%, transparent 55%);
+    filter: blur(55px);
+    animation: aurora1 12s ease-in-out infinite alternate;
+}
+
+/* Couche 2 — orbes complémentaires */
+[data-theme="light"] body::after {
+    background:
+        radial-gradient(ellipse 60% 48% at 73% 13%,  rgba(129, 140, 248, 0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 48% 62% at 18% 68%,  rgba(99,  102, 241, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 38% 38% at 50% 90%,  rgba(6,   182, 212, 0.13) 0%, transparent 50%),
+        radial-gradient(ellipse 30% 30% at 92% 5%,   rgba(34,  211, 238, 0.10) 0%, transparent 50%);
+    filter: blur(65px);
+    animation: aurora2 18s ease-in-out infinite alternate-reverse;
+}
+
+/* Grille de points subtile en light mode */
+[data-theme="light"] body {
+    background-image:
+        radial-gradient(ellipse 90% 70% at 40% 50%, #f0f4ff 0%, #e8f0fe 100%),
+        radial-gradient(circle 1px at center, rgba(99, 102, 241, 0.07) 0%, transparent 100%);
 }
 
 /* === THEME-AWARE IMAGES (External SVGs) === */
@@ -308,46 +337,53 @@ body {
     }
 }
 
-/* === FOND ANIMÉ AVEC PARTICULES === */
+/* === AURORA BACKGROUND === */
+
+/* Couche 1 — grands orbes flous qui dérivent lentement */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-        radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+    inset: 0;
     pointer-events: none;
-    z-index: -1;
-    animation: backgroundPulse 8s ease-in-out infinite alternate;
+    z-index: -2;
+    background:
+        radial-gradient(ellipse 80% 60% at 10% 20%,  rgba(99,  102, 241, 0.28) 0%, transparent 65%),
+        radial-gradient(ellipse 70% 55% at 90% 80%,  rgba(6,   182, 212, 0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 70% at 60% 10%,  rgba(139, 92,  246, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 30% 90%,  rgba(6,   182, 212, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 45% at 80% 35%,  rgba(99,  102, 241, 0.12) 0%, transparent 55%);
+    filter: blur(40px);
+    animation: aurora1 12s ease-in-out infinite alternate;
 }
 
-@keyframes backgroundPulse {
-    0% {
-        opacity: 0.8;
-    }
-
-    100% {
-        opacity: 1;
-    }
+@keyframes aurora1 {
+    0%   { transform: scale(1)    translate(0px,   0px)   rotate(0deg); }
+    25%  { transform: scale(1.06) translate(20px, -15px)  rotate(1deg); }
+    50%  { transform: scale(0.97) translate(-10px, 20px)  rotate(-1deg); }
+    75%  { transform: scale(1.04) translate(15px,  10px)  rotate(0.5deg); }
+    100% { transform: scale(1.02) translate(-20px, -10px) rotate(-0.5deg); }
 }
 
-/* === GRILLE DE POINTS ANIMÉE === */
+/* Couche 2 — orbes complémentaires en sens inverse */
 body::after {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    inset: 0;
     pointer-events: none;
     z-index: -1;
+    background:
+        radial-gradient(ellipse 65% 50% at 75% 15%,  rgba(139, 92,  246, 0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 65% at 20% 70%,  rgba(99,  102, 241, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 50% 50%,  rgba(6,   182, 212, 0.08) 0%, transparent 50%);
+    filter: blur(55px);
+    animation: aurora2 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes aurora2 {
+    0%   { transform: scale(1.02) translate(0px,    0px)  rotate(0deg); }
+    33%  { transform: scale(0.96) translate(-25px,  15px) rotate(-1.5deg); }
+    66%  { transform: scale(1.05) translate(18px,  -20px) rotate(1deg); }
+    100% { transform: scale(0.99) translate(10px,   25px) rotate(-0.5deg); }
 }
 
 /* === NAVIGATION MODERNE AMÉLIORÉE === */
