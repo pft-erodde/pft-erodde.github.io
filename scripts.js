@@ -56,26 +56,52 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('nav ul');
 const navLinksMobile = document.querySelectorAll('nav ul a');
 
+// Overlay derrière le menu mobile
+const mobileOverlay = document.createElement('div');
+mobileOverlay.className = 'mobile-nav-overlay';
+document.body.appendChild(mobileOverlay);
+
+// Bouton fermer (×) en haut du menu
+const mobileCloseBtn = document.createElement('button');
+mobileCloseBtn.className = 'mobile-nav-close';
+mobileCloseBtn.setAttribute('aria-label', 'Fermer le menu');
+mobileCloseBtn.innerHTML = '×';
+if (navMenu) navMenu.prepend(mobileCloseBtn);
+
+function openMobileMenu() {
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Fermer le menu');
+    menuToggle.classList.add('active');
+    navMenu.classList.add('nav-active');
+    mobileOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+    menuToggle.classList.remove('active');
+    navMenu.classList.remove('nav-active');
+    mobileOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
 if (menuToggle && navMenu) {
     menuToggle.setAttribute('aria-expanded', 'false');
 
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        menuToggle.setAttribute('aria-label', isExpanded ? 'Ouvrir le menu' : 'Fermer le menu');
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('nav-active');
-        document.body.style.overflow = navMenu.classList.contains('nav-active') ? 'hidden' : '';
+        if (isExpanded) closeMobileMenu(); else openMobileMenu();
     });
 
+    mobileCloseBtn.addEventListener('click', closeMobileMenu);
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+
     navLinksMobile.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
-            menuToggle.classList.remove('active');
-            navMenu.classList.remove('nav-active');
-            document.body.style.overflow = '';
-        });
+        // Ne pas fermer si c'est un toggle de dropdown
+        if (!link.classList.contains('nav-dropdown-toggle')) {
+            link.addEventListener('click', closeMobileMenu);
+        }
     });
 }
 

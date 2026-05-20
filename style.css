@@ -585,97 +585,108 @@ nav a.active::after {
 @media (max-width: 1024px) {
     .menu-toggle {
         display: flex;
-        /* Agrandir la zone de clic pour le mobile */
-        padding: 15px;
-        margin-right: -10px;
+        padding: 12px;
+        margin-right: -8px;
     }
 
     nav {
-        padding: 0.8rem 1.5rem;
+        padding: 0.7rem 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Barre de nav : theme-toggle à gauche, hamburger à droite */
+    #theme-toggle {
+        order: -1;
+        margin-right: auto;
+        margin-left: 0;
     }
 
     nav ul {
         position: fixed;
-        top: 70px;
-        /* Juste en dessous de la barre de nav */
-        right: 20px;
-        width: 280px;
-        /* Largeur fixe pour un aspect "carte" */
-        bottom: auto;
-        /* Ne pas prendre toute la hauteur */
-        left: auto;
-        /* Ne pas prendre toute la largeur */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
 
-        /* Fond beaucoup plus lisible (presque opaque) */
-        background: #1e1e24;
-        /* Couleur plus solide */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-
-        /* Effet de flou maintenu mais plus léger */
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(14, 14, 20, 0.97);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: none;
+        border-radius: 0;
 
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        /* Les liens prennent toute la largeur */
-        gap: 0.5rem;
+        gap: 0.25rem;
 
         z-index: 1001;
-        transform: translateY(-20px);
-        /* Animation depuis le haut */
-        opacity: 0;
+        transform: translateX(100%);
+        opacity: 1;
         visibility: hidden;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
         display: flex;
-        padding: 1.5rem;
+        padding: 5rem 1.5rem 2rem;
 
-        /* Ombre portée forte pour détacher du fond */
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        box-shadow: none;
+    }
+
+    [data-theme="light"] nav ul {
+        background: rgba(240, 245, 255, 0.97);
     }
 
     nav ul::before {
         display: none;
-        /* Retrait du trait décoratif précédent */
     }
 
     nav ul.nav-active {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateX(0);
         visibility: visible;
     }
 
     nav a {
-        font-size: 1.1rem;
-        /* Police plus petite et lisible */
+        font-size: 1rem;
         font-weight: 500;
         color: var(--text-primary);
         opacity: 1;
-        /* Toujours visible une fois le menu ouvert */
         transform: none;
         transition: all 0.2s ease;
-        padding: 0.8rem 1rem;
-        display: block;
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
         text-align: left;
-        /* Alignement gauche plus standard */
-        border-radius: 8px;
+        border-radius: 10px;
         background: rgba(255, 255, 255, 0.03);
-        /* Léger fond par défaut */
     }
 
-    /* Effet hover/active tactile */
+    [data-theme="light"] nav a {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
     nav a:active,
     nav a:hover {
-        background: linear-gradient(90deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.2));
-        color: white;
-        transform: translateX(5px);
+        background: linear-gradient(90deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.1));
+        color: var(--text-primary);
+        transform: translateX(4px);
     }
 
-    /* Suppression des animations en cascade complexes pour plus de réactivité */
     nav ul.nav-active a {
         opacity: 1;
         transform: none;
+    }
+
+    /* Séparateur visuel entre items */
+    nav > ul > li + li {
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    [data-theme="light"] nav > ul > li + li {
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 }
 
@@ -3740,26 +3751,41 @@ h3 .icon-svg,
         transform: none !important;
         box-shadow: none;
         background: rgba(255, 255, 255, 0.04);
-        border: none;
-        border-radius: 8px;
-        padding: 0.25rem 0 0.25rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 10px;
+        padding: 0.25rem 0 0.25rem 0.75rem;
         margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
         backdrop-filter: none;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
+        transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+        opacity: 0;
+        /* Pas de min-width sur mobile */
+        min-width: unset;
+        width: 100%;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu {
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.06);
     }
 
     .nav-dropdown.open .dropdown-menu {
-        max-height: 600px;
+        max-height: 800px;
         opacity: 1;
         visibility: visible;
+        padding: 0.5rem 0 0.5rem 0.75rem;
     }
 
+    /* Pas de hover sur mobile */
     .nav-dropdown:hover .dropdown-menu {
-        max-height: 600px;
+        max-height: 0;
+        opacity: 0;
+    }
+    .nav-dropdown.open:hover .dropdown-menu {
+        max-height: 800px;
         opacity: 1;
-        visibility: visible;
     }
 
     .dropdown-menu::before {
@@ -3767,9 +3793,27 @@ h3 .icon-svg,
     }
 
     .dropdown-menu a {
-        padding: 0.5rem 0.75rem !important;
-        font-size: 0.95rem !important;
+        padding: 0.55rem 0.75rem !important;
+        font-size: 0.92rem !important;
         color: var(--text-secondary) !important;
+        white-space: normal !important;
+        line-height: 1.4;
+    }
+
+    /* Indicateur visuel que le parent est ouvert */
+    .nav-dropdown.open > a.nav-dropdown-toggle {
+        color: var(--accent-tertiary) !important;
+        background: rgba(6, 182, 212, 0.08) !important;
+    }
+
+    /* Flèche dropdown */
+    .nav-dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dropdown-separator span {
+        font-size: 0.68rem;
     }
 }
 
@@ -4247,4 +4291,83 @@ h3 .icon-svg,
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+}
+/* ===================================
+   MENU MOBILE — OVERLAY & CLOSE BTN
+   =================================== */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.mobile-nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Bouton × pour fermer le menu mobile */
+.mobile-nav-close {
+    display: none;
+    position: absolute;
+    top: 1.1rem;
+    right: 1.2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text-primary);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 1003;
+}
+
+.mobile-nav-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    transform: rotate(90deg) scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .mobile-nav-close {
+        display: flex;
+    }
+
+    /* Empêche le toggle hamburger d'apparaître par-dessus le menu ouvert */
+    .menu-toggle {
+        z-index: 1002;
+    }
+
+    /* nav reste au-dessus de l'overlay */
+    nav {
+        z-index: 1001;
+    }
+
+    /* page-header: padding-top adapté pour petits écrans */
+    .page-header {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding-top: 90px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .page-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
