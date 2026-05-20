@@ -395,7 +395,7 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1002;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-smooth);
 }
@@ -631,7 +631,7 @@ nav a.active::after {
         visibility: hidden;
         transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
         display: flex;
-        padding: 5rem 1.5rem 2rem;
+        padding: 5.5rem 1.5rem 2rem;
 
         box-shadow: none;
     }
@@ -3759,8 +3759,9 @@ h3 .icon-svg,
         backdrop-filter: none;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+        transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease, visibility 0.35s ease;
         opacity: 0;
+        visibility: hidden;
         /* Pas de min-width sur mobile */
         min-width: unset;
         width: 100%;
@@ -3782,10 +3783,12 @@ h3 .icon-svg,
     .nav-dropdown:hover .dropdown-menu {
         max-height: 0;
         opacity: 0;
+        visibility: hidden;
     }
     .nav-dropdown.open:hover .dropdown-menu {
         max-height: 800px;
         opacity: 1;
+        visibility: visible;
     }
 
     .dropdown-menu::before {
@@ -4004,9 +4007,10 @@ h3 .icon-svg,
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.2s ease;
-    padding: 0.4rem 0.9rem;
+    padding: 0.5rem 1rem;
     border-radius: 50px;
     border: 1px solid var(--border-color);
+    background: var(--glass-bg);
 }
 
 .page-header .back-home:hover {
@@ -4330,6 +4334,7 @@ h3 .icon-svg,
     justify-content: center;
     transition: background 0.2s ease, transform 0.2s ease;
     z-index: 1003;
+    flex-shrink: 0;
 }
 
 .mobile-nav-close:hover {
@@ -4343,14 +4348,25 @@ h3 .icon-svg,
         display: flex;
     }
 
-    /* Empêche le toggle hamburger d'apparaître par-dessus le menu ouvert */
+    /* Hamburger toujours au-dessus du menu overlay */
     .menu-toggle {
+        z-index: 1003;
+        position: relative;
+    }
+
+    /* nav barre fixe au-dessus de tout */
+    nav {
         z-index: 1002;
     }
 
-    /* nav reste au-dessus de l'overlay */
-    nav {
+    /* Le menu plein-écran sous la nav barre */
+    nav ul {
         z-index: 1001;
+    }
+
+    /* L'overlay en dessous du menu */
+    .mobile-nav-overlay {
+        z-index: 1000;
     }
 
     /* page-header: padding-top adapté pour petits écrans */
@@ -4369,5 +4385,64 @@ h3 .icon-svg,
     .page-content {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+}
+
+/* ===================================
+   CORRECTIONS MOBILES SUPPLÉMENTAIRES
+   =================================== */
+
+/* S'assure que le bouton hamburger reste toujours cliquable */
+@media (max-width: 1024px) {
+    /* La nav bar contient le theme-toggle et le hamburger côte à côte */
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.7rem 1.2rem;
+    }
+
+    /* theme-toggle à gauche */
+    #theme-toggle {
+        order: -1;
+        margin-right: auto;
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    /* hamburger à droite, toujours au-dessus */
+    .menu-toggle {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    /* back-home bien visible sur mobile */
+    .page-header .back-home {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Empêche le débordement horizontal */
+    .page-header {
+        overflow-x: hidden;
+        word-break: break-word;
+    }
+}
+
+/* Très petits écrans : back-home plus compact */
+@media (max-width: 380px) {
+    .page-header .back-home {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    nav {
+        padding: 0.6rem 1rem;
     }
 }

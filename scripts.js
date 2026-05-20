@@ -84,6 +84,8 @@ function closeMobileMenu() {
     navMenu.classList.remove('nav-active');
     mobileOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    // Fermer tous les dropdowns ouverts
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
 }
 
 if (menuToggle && navMenu) {
