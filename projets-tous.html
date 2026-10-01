@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -26,7 +26,7 @@
                     <circle cx="19" cy="8" r="0.5" fill="currentColor" />
                     <circle cx="15" cy="3" r="0.6" fill="currentColor" />
                 </svg>
-                <svg class="sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                <svg class="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5" fill="currentColor" opacity="0.3" />
                     <circle cx="12" cy="12" r="5" />
@@ -41,31 +41,47 @@
                 </svg>
             </span>
         </button>
-        <button class="menu-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <!-- Menu Hamburger pour mobile/tablette -->
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul>
+            <button class="mobile-nav-close" aria-label="Fermer le menu">×</button>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#apropos">À propos</a></li>
             <li class="nav-dropdown">
-                <a href="formation.html" class="nav-dropdown-toggle">Ma Formation <svg class="dropdown-arrow"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
-                        height="12">
+                <a href="formation.html" class="nav-dropdown-toggle">Ma Formation
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
                         <path d="M7 10l5 5 5-5z" />
-                    </svg></a>
+                    </svg>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="formation.html">BTS SIO</a></li>
                     <li><a href="parcours.html">Mon Parcours</a></li>
                 </ul>
             </li>
             <li class="nav-dropdown">
-                <a href="projets-tous.html" class="nav-dropdown-toggle active">Projets <svg class="dropdown-arrow"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
-                        height="12">
+                <a href="projets-tous.html" class="nav-dropdown-toggle active">Projets
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
                         <path d="M7 10l5 5 5-5z" />
-                    </svg></a>
+                    </svg>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="projets-tous.html" class="active">Tous les Projets</a></li>
-                    <li><a href="projets-pro.html">Projets Pro</a></li>
-                    <li><a href="projets-scolaires.html">Projets Scolaires</a></li>
+                    <li class="dropdown-category-divider"></li>
+                    <li><a href="projets-pro.html" class="dropdown-category">Projets Pro</a></li>
+                    <li class="dropdown-separator"><span>— Stage —</span></li>
+                    <li><a href="projets-pro.html#projet-raspberry">Kiosque Raspberry Pi</a></li>
+                    <li><a href="projets-pro.html#projet-nagios">Supervision Nagios</a></li>
+                    <li><a href="projets-pro.html#projet-hyperv">Hyperviseur Hyper-V</a></li>
+                    <li class="dropdown-separator"><span>— Alternance —</span></li>
+                    <li><a href="projets-pro.html#projet-hololens">Hololens 2 &amp; Shift 89</a></li>
+                    <li class="dropdown-category-divider"></li>
+                    <li><a href="projets-scolaires.html" class="dropdown-category">Projets Scolaires</a></li>
                     <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
                     <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
                     <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
@@ -75,6 +91,8 @@
                     <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
                     <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
                     <li><a href="projets-scolaires.html#projet-brocker">Refonte réseau Brocker'Info</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 3 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-travail-collaboratif">Travail collaboratif</a></li>
                 </ul>
             </li>
             <li><a href="experiences.html">Expériences</a></li>
@@ -106,7 +124,7 @@
             </h2>
             <div class="projects-grid">
                 <!-- Projet Pro 1 -->
-                <div class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
+                <div id="projet-raspberry" class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
                     data-status="Terminé" data-year="2024-2025" data-hours="~30h"
                     data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
                     data-module="Stage en entreprise – Hall 32"
@@ -150,7 +168,7 @@
                 </div>
 
                 <!-- Projet Pro 2 -->
-                <div class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
+                <div id="projet-nagios" class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
                     data-status="Terminé" data-year="2024-2025" data-hours="~35h"
                     data-resources="Nagios Core|Linux (Debian)|SNMP|Serveur dédié|Postfix (alertes e-mail)"
                     data-module="Stage en entreprise – Hall 32"
@@ -192,7 +210,7 @@
                 </div>
 
                 <!-- Projet Pro 3 -->
-                <div class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
+                <div id="projet-hyperv" class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
                     data-status="Terminé" data-year="2024-2025" data-hours="~10h"
                     data-resources="Windows Server 2019|Hyper-V|vSwitch|Migration physique vers VM"
                     data-module="Stage en entreprise – Hall 32"
@@ -235,6 +253,47 @@
                             Hyperviseur Hyper-V
                         </h3>
                         <p>Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
+                <!-- Projet Alternance 1 -->
+                <div id="projet-hololens" class="project-card reveal delay-4" data-project="true" data-title="Hololens 2 &amp; Shift 89"
+                    data-status="Terminé" data-year="2026" data-hours="~40h"
+                    data-module="Alternance – Hall 32"
+                    data-description="Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et mise à jour des licences. Échanges avec l'éditeur (visio + mails), mise en place des comptes génériques. Création de tutoriels."
+                    data-context="Lors de mon stage au sein de Hall 32, il y a eu un problème de licences introuvables au niveau des casques HoloLens 2 pour l'application Shift89."
+                    data-client="Hall 32 — Professeur"
+                    data-needs="Remettre l'application disponible pour les utilisateurs|Séparer les comptes utilisateurs, formateur et administrateur"
+                    data-docs-in="Aucun"
+                    data-tasks="Prise de contact avec le service client de Shift 89|Réinstallation des casques de A à Z|Configuration de paramètres dans Intune|Installation de l'application PC et casque|Attribution des licences|Tests avec les utilisateurs"
+                    data-docs-out="Tutoriel utilisateur|Tutoriel d'installation"
+                    data-difficulties="Manque de droits|Les utilisateurs pouvaient faire des modifications|La prise de contact avec Shift 89"
+                    data-contributions="Prise en main d'une nouvelle application|Contact avec une autre entreprise"
+                    data-tech="Microsoft Intune,HoloLens 2,Shift89"
+                    data-image="https://res.cloudinary.com/dynbrtfxs/image/upload/v1789108572/shift89_cecqrf.png">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1789108572/shift89_cecqrf.png"
+                            alt="Hololens 2 &amp; Shift 89">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 10c0-3 3.5-5 8-5s8 2 8 5" opacity="0.5"/>
+                                <rect x="2" y="10" width="20" height="8" rx="3" fill="currentColor" opacity="0.1"/>
+                                <rect x="2" y="10" width="20" height="8" rx="3"/>
+                                <circle cx="8" cy="14" r="2.3" fill="currentColor" opacity="0.15"/>
+                                <circle cx="8" cy="14" r="2.3"/>
+                                <circle cx="16" cy="14" r="2.3" fill="currentColor" opacity="0.15"/>
+                                <circle cx="16" cy="14" r="2.3"/>
+                                <line x1="10.5" y1="14" x2="13.5" y2="14" stroke-width="1.2"/>
+                                <circle cx="16.9" cy="13.1" r="0.5" fill="currentColor" stroke="none" opacity="0.8"/>
+                            </svg>
+                            Hololens 2 &amp; Shift 89
+                        </h3>
+                        <p>Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et
+                            mise à jour des licences.</p>
                     </div>
                     <span class="click-hint">Cliquez pour plus de détails</span>
                 </div>
@@ -607,6 +666,45 @@
                     <span class="click-hint">Cliquez pour plus de détails</span>
                 </article>
 
+                <article id="projet-travail-collaboratif" class="school-project-card reveal delay-9" data-project="true"
+                    data-title="Travail collaboratif" data-status="Terminé"
+                    data-year="2026" data-hours="~12h"
+                    data-description="Recherche de solutions répondant au cahier des charges, comparatif des solutions et note de choix de solution, mise en place de la solution Nextcloud, rédaction de tutoriel d'installation du serveur, de paramétrage des utilisateurs à partir de LDAP, tutoriels d'utilisation."
+                    data-client="HSH-Nantes"
+                    data-docs-in="Cahier des charges"
+                    data-tasks="Recherche de la solution|Installation de Nextcloud|Configuration LDAP|Configuration gestion de fichier|Rédaction des tutoriels"
+                    data-docs-out="Tutoriel d'installation de Nextcloud sous Fedora 44|Tutoriel de configuration de LDAP|Tutoriel de sauvegarde|Tutoriel d'utilisation de Nextcloud"
+                    data-opinion="Bien se renseigner avant de commencer apporte une meilleure stabilité."
+                    data-difficulties="Compatibilité de Nextcloud avec Nginx et PHP 8.1"
+                    data-tech="Recherche de solutions,Installation de Nextcloud,Rédaction de tutoriel,Liaison LDAP">
+                    <div class="project-status">
+                        <span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <div class="project-icon-large">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
+                                fill="currentColor" opacity="0.08" />
+                            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+                            <circle cx="12" cy="13" r="2.2" stroke-width="1.4" />
+                        </svg>
+                    </div>
+                    <h3>Travail collaboratif</h3>
+                    <p>Mise en place d'une solution collaborative Nextcloud avec authentification LDAP pour
+                        HSH-Nantes.
+                    </p>
+                    <div class="project-tech">
+                        <span>Recherche de solutions</span><span>Installation de Nextcloud</span><span>Rédaction de
+                            tutoriel</span><span>Liaison LDAP</span>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
             </div>
         </div>
     </div>
@@ -790,6 +888,7 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>

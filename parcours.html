@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -50,6 +50,7 @@
             <span></span>
         </button>
         <ul>
+            <button class="mobile-nav-close" aria-label="Fermer le menu">×</button>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#apropos">À propos</a></li>
             <li class="nav-dropdown">
@@ -73,8 +74,16 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="projets-tous.html">Tous les Projets</a></li>
-                    <li><a href="projets-pro.html">Projets Pro</a></li>
-                    <li><a href="projets-scolaires.html">Projets Scolaires</a></li>
+                    <li class="dropdown-category-divider"></li>
+                    <li><a href="projets-pro.html" class="dropdown-category">Projets Pro</a></li>
+                    <li class="dropdown-separator"><span>— Stage —</span></li>
+                    <li><a href="projets-pro.html#projet-raspberry">Kiosque Raspberry Pi</a></li>
+                    <li><a href="projets-pro.html#projet-nagios">Supervision Nagios</a></li>
+                    <li><a href="projets-pro.html#projet-hyperv">Hyperviseur Hyper-V</a></li>
+                    <li class="dropdown-separator"><span>— Alternance —</span></li>
+                    <li><a href="projets-pro.html#projet-hololens">Hololens 2 &amp; Shift 89</a></li>
+                    <li class="dropdown-category-divider"></li>
+                    <li><a href="projets-scolaires.html" class="dropdown-category">Projets Scolaires</a></li>
                     <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
                     <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
                     <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
@@ -84,6 +93,8 @@
                     <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
                     <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
                     <li><a href="projets-scolaires.html#projet-brocker">Refonte réseau Brocker'Info</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 3 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-travail-collaboratif">Travail collaboratif</a></li>
                 </ul>
             </li>
             <li><a href="experiences.html">Expériences</a></li>

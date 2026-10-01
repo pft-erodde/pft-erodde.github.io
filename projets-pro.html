@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -26,7 +26,7 @@
                     <circle cx="19" cy="8" r="0.5" fill="currentColor" />
                     <circle cx="15" cy="3" r="0.6" fill="currentColor" />
                 </svg>
-                <svg class="sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                <svg class="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5" fill="currentColor" opacity="0.3" />
                     <circle cx="12" cy="12" r="5" />
@@ -41,31 +41,47 @@
                 </svg>
             </span>
         </button>
-        <button class="menu-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <!-- Menu Hamburger pour mobile/tablette -->
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul>
+            <button class="mobile-nav-close" aria-label="Fermer le menu">×</button>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#apropos">À propos</a></li>
             <li class="nav-dropdown">
-                <a href="formation.html" class="nav-dropdown-toggle">Ma Formation <svg class="dropdown-arrow"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
-                        height="12">
+                <a href="formation.html" class="nav-dropdown-toggle">Ma Formation
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
                         <path d="M7 10l5 5 5-5z" />
-                    </svg></a>
+                    </svg>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="formation.html">BTS SIO</a></li>
                     <li><a href="parcours.html">Mon Parcours</a></li>
                 </ul>
             </li>
             <li class="nav-dropdown">
-                <a href="projets-tous.html" class="nav-dropdown-toggle active">Projets <svg class="dropdown-arrow"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12"
-                        height="12">
+                <a href="projets-tous.html" class="nav-dropdown-toggle active">Projets
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="12" height="12">
                         <path d="M7 10l5 5 5-5z" />
-                    </svg></a>
+                    </svg>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="projets-tous.html">Tous les Projets</a></li>
-                    <li><a href="projets-pro.html" class="active">Projets Pro</a></li>
-                    <li><a href="projets-scolaires.html">Projets Scolaires</a></li>
+                    <li class="dropdown-category-divider"></li>
+                    <li><a href="projets-pro.html" class="dropdown-category active">Projets Pro</a></li>
+                    <li class="dropdown-separator"><span>— Stage —</span></li>
+                    <li><a href="projets-pro.html#projet-raspberry">Kiosque Raspberry Pi</a></li>
+                    <li><a href="projets-pro.html#projet-nagios">Supervision Nagios</a></li>
+                    <li><a href="projets-pro.html#projet-hyperv">Hyperviseur Hyper-V</a></li>
+                    <li class="dropdown-separator"><span>— Alternance —</span></li>
+                    <li><a href="projets-pro.html#projet-hololens">Hololens 2 &amp; Shift 89</a></li>
+                    <li class="dropdown-category-divider"></li>
+                    <li><a href="projets-scolaires.html" class="dropdown-category">Projets Scolaires</a></li>
                     <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
                     <li><a href="projets-scolaires.html#projet-metiers">Recherches Métiers</a></li>
                     <li><a href="projets-scolaires.html#projet-appel-offres-pc">Appel d'offres PC</a></li>
@@ -75,6 +91,8 @@
                     <li class="dropdown-separator"><span>— Semestre 2 —</span></li>
                     <li><a href="projets-scolaires.html#projet-yumi">YUMI – Clé bootable</a></li>
                     <li><a href="projets-scolaires.html#projet-brocker">Refonte réseau Brocker'Info</a></li>
+                    <li class="dropdown-separator"><span>— Semestre 3 —</span></li>
+                    <li><a href="projets-scolaires.html#projet-travail-collaboratif">Travail collaboratif</a></li>
                 </ul>
             </li>
             <li><a href="experiences.html">Expériences</a></li>
@@ -90,10 +108,25 @@
     </header>
 
     <div class="page-content">
+
+        <!-- Stage en entreprise -->
+        <div class="tous-projets-section">
+            <h2 class="tous-projets-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"
+                    style="vertical-align:middle;margin-right:.5rem;">
+                    <rect x="2" y="7" width="20" height="14" rx="2" fill="currentColor" opacity="0.15" />
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                    <line x1="2" y1="13" x2="22" y2="13" stroke-opacity="0.4" />
+                    <circle cx="12" cy="13" r="1.5" fill="currentColor" stroke="none" />
+                </svg>
+                Stage en entreprise — Hall 32
+            </h2>
         <div class="projects-grid">
 
             <!-- Projet 1 : Raspberry Pi Kiosque -->
-            <div class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
+            <div id="projet-raspberry" class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
                 data-status="Terminé" data-year="2024-2025" data-hours="~30h"
                 data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
                 data-module="Stage en entreprise – Hall 32"
@@ -145,7 +178,7 @@
             </div>
 
             <!-- Projet Pro 2 -->
-            <div class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
+            <div id="projet-nagios" class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
                 data-status="Terminé" data-year="2024-2025" data-hours="~25h"
                 data-resources="Nagios Core|Linux (Debian)|SNMP|Serveur dédié|Postfix (alertes e-mail)"
                 data-module="Stage en entreprise – Hall 32"
@@ -193,7 +226,7 @@
             </div>
 
             <!-- Projet Pro 3 -->
-            <div class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
+            <div id="projet-hyperv" class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
                 data-status="Terminé" data-year="2024-2025" data-hours="~10h"
                 data-resources="Windows Server 2019|Hyper-V|vSwitch|Migration physique vers VM"
                 data-module="Stage en entreprise – Hall 32"
@@ -250,7 +283,74 @@
                 <span class="click-hint">Cliquez pour plus de détails</span>
             </div>
 
+        </div>
+        </div>
 
+        <hr class="tous-projets-divider" aria-hidden="true">
+
+        <!-- Alternance -->
+        <div class="tous-projets-section">
+            <h2 class="tous-projets-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"
+                    style="vertical-align:middle;margin-right:.5rem;">
+                    <path d="M4 10c0-3 3.5-5 8-5s8 2 8 5" opacity="0.5"/>
+                    <rect x="2" y="10" width="20" height="8" rx="3" fill="currentColor" opacity="0.15" />
+                    <rect x="2" y="10" width="20" height="8" rx="3" />
+                    <circle cx="8" cy="14" r="2" fill="currentColor" opacity="0.2" />
+                    <circle cx="16" cy="14" r="2" fill="currentColor" opacity="0.2" />
+                </svg>
+                Alternance — Hall 32
+            </h2>
+        <div class="projects-grid">
+
+            <!-- Projet Alternance 1 -->
+            <div id="projet-hololens" class="project-card reveal delay-4" data-project="true" data-title="Hololens 2 &amp; Shift 89"
+                data-status="Terminé" data-year="2026" data-hours="~40h"
+                data-module="Alternance – Hall 32"
+                data-description="Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et mise à jour des licences. Échanges avec l'éditeur (visio + mails), mise en place des comptes génériques. Création de tutoriels."
+                data-context="Lors de mon stage au sein de Hall 32, il y a eu un problème de licences introuvables au niveau des casques HoloLens 2 pour l'application Shift89."
+                data-client="Hall 32 — Professeur"
+                data-needs="Remettre l'application disponible pour les utilisateurs|Séparer les comptes utilisateurs, formateur et administrateur"
+                data-docs-in="Aucun"
+                data-tasks="Prise de contact avec le service client de Shift 89|Réinstallation des casques de A à Z|Configuration de paramètres dans Intune|Installation de l'application PC et casque|Attribution des licences|Tests avec les utilisateurs"
+                data-docs-out="Tutoriel utilisateur|Tutoriel d'installation"
+                data-difficulties="Manque de droits|Les utilisateurs pouvaient faire des modifications|La prise de contact avec Shift 89"
+                data-contributions="Prise en main d'une nouvelle application|Contact avec une autre entreprise"
+                data-tech="Microsoft Intune,HoloLens 2,Shift89"
+                data-image="https://res.cloudinary.com/dynbrtfxs/image/upload/v1789108572/shift89_cecqrf.png">
+                <div class="project-image" aria-hidden="true">
+                    <img src="https://res.cloudinary.com/dynbrtfxs/image/upload/v1789108572/shift89_cecqrf.png"
+                        alt="Hololens 2 &amp; Shift 89">
+                </div>
+                <div class="project-content">
+                    <h3>
+                        <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- bandeau -->
+                            <path d="M4 10c0-3 3.5-5 8-5s8 2 8 5" opacity="0.5"/>
+                            <!-- visière -->
+                            <rect x="2" y="10" width="20" height="8" rx="3" fill="currentColor" opacity="0.1"/>
+                            <rect x="2" y="10" width="20" height="8" rx="3"/>
+                            <!-- lentilles -->
+                            <circle cx="8" cy="14" r="2.3" fill="currentColor" opacity="0.15"/>
+                            <circle cx="8" cy="14" r="2.3"/>
+                            <circle cx="16" cy="14" r="2.3" fill="currentColor" opacity="0.15"/>
+                            <circle cx="16" cy="14" r="2.3"/>
+                            <!-- pont -->
+                            <line x1="10.5" y1="14" x2="13.5" y2="14" stroke-width="1.2"/>
+                            <!-- reflet actif -->
+                            <circle cx="16.9" cy="13.1" r="0.5" fill="currentColor" stroke="none" opacity="0.8"/>
+                        </svg>
+                        Hololens 2 &amp; Shift 89
+                    </h3>
+                    <p>Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et
+                        mise à jour des licences.</p>
+                </div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </div>
+
+        </div>
         </div>
     </div>
 
@@ -423,6 +523,7 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>

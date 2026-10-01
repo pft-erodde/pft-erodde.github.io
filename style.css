@@ -585,8 +585,12 @@ nav a.active::after {
 @media (max-width: 1024px) {
     .menu-toggle {
         display: flex;
-        padding: 12px;
-        margin-right: -8px;
+        padding: 10px;
+        margin-right: 0;
+        flex-shrink: 0;
+        order: 2;
+        z-index: 1010;
+        position: relative;
     }
 
     nav {
@@ -594,59 +598,77 @@ nav a.active::after {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 0;
     }
 
     /* Barre de nav : theme-toggle à gauche, hamburger à droite */
     #theme-toggle {
-        order: -1;
+        order: 0;
         margin-right: auto;
         margin-left: 0;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1010;
     }
 
+    /* CRITIQUE : le ul ne doit PAS prendre de place dans la barre nav */
     nav ul {
+        /* Retiré du flux flex : taille 0 quand fermé */
+        flex: 0 0 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        order: 1;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+
+        /* Overlay plein écran via position fixed */
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        width: 100%;
-        height: 100%;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
 
-        background: rgba(14, 14, 20, 0.97);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border: none;
         border-radius: 0;
 
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        gap: 0.25rem;
 
-        z-index: 1001;
+        z-index: 1005;
         transform: translateX(100%);
-        opacity: 1;
         visibility: hidden;
         transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
         display: flex;
-        padding: 5.5rem 1.5rem 2rem;
 
         box-shadow: none;
     }
 
     [data-theme="light"] nav ul {
-        background: rgba(240, 245, 255, 0.97);
+        background: rgba(240, 245, 255, 0.98);
     }
 
     nav ul::before {
         display: none;
     }
 
+    /* Quand le menu est ouvert : taille normale + visible */
     nav ul.nav-active {
+        flex: none;
+        width: 100%;
+        height: 100dvh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
         transform: translateX(0);
         visibility: visible;
+        padding: 5.5rem 1.5rem 2rem;
+        gap: 0.25rem;
     }
 
     nav a {
@@ -662,6 +684,8 @@ nav a.active::after {
         text-align: left;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.03);
+        min-height: 44px;
+        touch-action: manipulation;
     }
 
     [data-theme="light"] nav a {
@@ -675,11 +699,6 @@ nav a.active::after {
         transform: translateX(4px);
     }
 
-    nav ul.nav-active a {
-        opacity: 1;
-        transform: none;
-    }
-
     /* Séparateur visuel entre items */
     nav > ul > li + li {
         border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -687,6 +706,38 @@ nav a.active::after {
 
     [data-theme="light"] nav > ul > li + li {
         border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* Bouton fermer (×) dans le menu mobile */
+    .mobile-nav-close {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 1.4rem;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--text-primary);
+        touch-action: manipulation;
+        z-index: 10;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .mobile-nav-close:hover {
+        background: rgba(239, 68, 68, 0.2);
+        border-color: rgba(239, 68, 68, 0.4);
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    [data-theme="light"] .mobile-nav-close {
+        background: rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -4181,6 +4232,48 @@ h3 .icon-svg,
     opacity: 0.75;
 }
 
+/* Séparateur fort entre les catégories Pro / Scolaire */
+.dropdown-category-divider {
+    height: 1px;
+    margin: 0.5rem 0.4rem;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+    list-style: none;
+    pointer-events: none;
+}
+
+[data-theme="light"] .dropdown-category-divider {
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.15), transparent);
+}
+
+/* Liens de catégorie (Projets Pro / Projets Scolaires) mis en avant */
+.dropdown-menu a.dropdown-category {
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    font-size: 0.95rem !important;
+}
+
+/* Élément de dropdown non cliquable — placeholder "à venir" (ex: Semestre 3) */
+.dropdown-empty {
+    padding: 0.25rem 0.8rem 0.5rem;
+    pointer-events: none;
+    list-style: none;
+}
+
+.dropdown-empty span {
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+/* Séparateur visuel fort entre sections Stage / Alternance / Semestres sur les pages projets */
+.tous-projets-divider {
+    height: 1px;
+    margin: 0 0 2.5rem;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    border: none;
+}
+
 /* Dropdown plus large pour les missions */
 .nav-dropdown .dropdown-menu {
     min-width: 230px;
@@ -4392,31 +4485,8 @@ h3 .icon-svg,
    CORRECTIONS MOBILES SUPPLÉMENTAIRES
    =================================== */
 
-/* S'assure que le bouton hamburger reste toujours cliquable */
+/* back-home bien visible sur mobile */
 @media (max-width: 1024px) {
-    /* La nav bar contient le theme-toggle et le hamburger côte à côte */
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.7rem 1.2rem;
-    }
-
-    /* theme-toggle à gauche */
-    #theme-toggle {
-        order: -1;
-        margin-right: auto;
-        margin-left: 0;
-        flex-shrink: 0;
-    }
-
-    /* hamburger à droite, toujours au-dessus */
-    .menu-toggle {
-        order: 1;
-        flex-shrink: 0;
-    }
-
-    /* back-home bien visible sur mobile */
     .page-header .back-home {
         font-size: 0.85rem;
         padding: 0.5rem 1rem;
@@ -4445,4 +4515,486 @@ h3 .icon-svg,
     nav {
         padding: 0.6rem 1rem;
     }
+}
+
+/* =====================================================
+   CORRECTIFS MOBILES — REFONTE COMPLETE (Mai 2026)
+   ===================================================== */
+
+/* 1. NAVBAR MOBILE — correctifs complémentaires */
+@media (max-width: 1024px) {
+    /* Le ul : flex 0 quand fermé (ne prend PAS de place dans la barre) */
+    nav ul {
+        flex: 0 0 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        z-index: 1005 !important;
+    }
+    /* Le ul : plein écran quand ouvert */
+    nav ul.nav-active {
+        flex: none !important;
+        width: 100% !important;
+        height: 100dvh !important;
+        max-height: none !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 5.5rem 1.25rem 2rem !important;
+        gap: 0.25rem !important;
+    }
+    nav a {
+        font-size: 1rem !important;
+        padding: 0.8rem 1rem !important;
+        border-radius: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        color: var(--text-primary) !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        touch-action: manipulation !important;
+        min-height: 44px !important;
+    }
+    [data-theme="light"] nav a {
+        background: rgba(0, 0, 0, 0.03) !important;
+    }
+    nav a:active, nav a:hover {
+        background: linear-gradient(90deg, rgba(99,102,241,0.18), rgba(6,182,212,0.12)) !important;
+        transform: translateX(4px) !important;
+    }
+    nav a.active {
+        background: linear-gradient(90deg, rgba(99,102,241,0.22), rgba(6,182,212,0.15)) !important;
+        color: var(--text-primary) !important;
+    }
+    nav > ul > li + li {
+        border-top: 1px solid rgba(255,255,255,0.05) !important;
+    }
+    [data-theme="light"] nav > ul > li + li {
+        border-top: 1px solid rgba(0,0,0,0.06) !important;
+    }
+    /* Dropdown mobile accordéon */
+    .nav-dropdown-toggle {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+    .nav-dropdown .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        box-shadow: none !important;
+        min-width: unset !important;
+        width: 100% !important;
+        border-radius: 10px !important;
+        padding: 0.3rem 0 0.3rem 0.75rem !important;
+        margin: 0.2rem 0 !important;
+        background: rgba(255,255,255,0.03) !important;
+        border: 1px solid rgba(255,255,255,0.07) !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: max-height 0.35s ease, opacity 0.25s ease, visibility 0.35s !important;
+    }
+    [data-theme="light"] .nav-dropdown .dropdown-menu {
+        background: rgba(0,0,0,0.03) !important;
+        border-color: rgba(0,0,0,0.07) !important;
+    }
+    .nav-dropdown.open .dropdown-menu {
+        max-height: 900px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    .nav-dropdown:not(.open):hover .dropdown-menu {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    .dropdown-menu a {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 0.75rem !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+        min-height: 44px !important;
+    }
+    .nav-dropdown.open > a.nav-dropdown-toggle {
+        color: var(--accent-tertiary) !important;
+        background: rgba(6,182,212,0.08) !important;
+    }
+}
+
+/* 2. BOUTON ACCUEIL MOBILE */
+@media (max-width: 1024px) {
+    .page-header {
+        padding-top: 90px !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        overflow-x: hidden !important;
+    }
+    .page-header .back-home {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
+        font-size: 0.9rem !important;
+        padding: 0.6rem 1.1rem !important;
+        min-height: 44px !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: rgba(99,102,241,0.15) !important;
+        position: relative !important;
+        z-index: 1 !important;
+        margin-bottom: 1.25rem !important;
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 50px !important;
+        color: var(--text-secondary) !important;
+        text-decoration: none !important;
+    }
+    .page-header h1 {
+        font-size: clamp(1.6rem, 6vw, 2.5rem) !important;
+        word-break: break-word !important;
+    }
+    .page-header .page-subtitle {
+        font-size: 0.95rem !important;
+    }
+}
+@media (max-width: 480px) {
+    .page-header {
+        padding-top: 80px !important;
+    }
+    .page-header .back-home {
+        font-size: 0.82rem !important;
+        padding: 0.5rem 0.85rem !important;
+    }
+}
+
+/* 3. GRILLES 1 COLONNE TELEPHONE */
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+    .experiences-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+    .school-projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+    .options-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+    .about-stats {
+        grid-template-columns: repeat(2,1fr) !important;
+        gap: 0.75rem !important;
+    }
+    .about-content {
+        grid-template-columns: 1fr !important;
+    }
+    .page-content {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .skill-card, .certification-card {
+        padding: 1.5rem 1.2rem !important;
+    }
+    .certification-image {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        margin-top: 1rem !important;
+    }
+}
+
+/* 4. FOOTER MOBILE */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
+        padding: 2rem 1rem !important;
+    }
+    .footer-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.75rem !important;
+    }
+    .footer-link {
+        padding: 0.5rem 0.85rem !important;
+        min-height: 44px !important;
+    }
+}
+
+/* 5. HERO MOBILE */
+@media (max-width: 600px) {
+    .hero {
+        padding: 100px 1rem 60px !important;
+        min-height: 90dvh !important;
+    }
+    .hero-cta {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+    }
+    .hero-cta .btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        justify-content: center !important;
+    }
+}
+
+/* 6. OVERLAY MOBILE */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1004;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+.mobile-nav-overlay.active {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* 7. PREVENTION SCROLL HORIZONTAL */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===================================================================
+   PANNEAU ADMINISTRATEUR (admin.js)
+   =================================================================== */
+
+.pf-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 10, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: pfFadeIn 0.2s ease;
+}
+
+@keyframes pfFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.pf-modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.pf-export-box, .pf-form-box { max-width: 720px; }
+
+.pf-modal-box h2 {
+    color: var(--text-primary);
+    margin: 0 0 1.2rem 0;
+    font-size: 1.4rem;
+}
+
+.pf-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.pf-modal-close:hover { background: var(--bg-card-hover); }
+
+.pf-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+.pf-field span { color: var(--text-secondary); font-weight: 500; }
+.pf-field input,
+.pf-field textarea,
+.pf-field select {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.6rem 0.7rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+}
+.pf-field input:focus,
+.pf-field textarea:focus,
+.pf-field select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.pf-field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1rem;
+}
+.pf-field-wide { grid-column: 1 / -1; }
+
+.pf-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.pf-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.pf-btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    color: #fff;
+}
+.pf-btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.pf-btn-ghost {
+    background: transparent;
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+.pf-btn-ghost:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.pf-btn-small { padding: 0.3rem 0.7rem; font-size: 0.75rem; }
+
+.pf-login-error { color: #f87171; font-size: 0.82rem; margin: -0.3rem 0 0.8rem; }
+
+.pf-export-hint { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.2rem; }
+.pf-export-section { margin-bottom: 1.4rem; }
+.pf-export-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+.pf-export-area {
+    width: 100%;
+    min-height: 130px;
+    background: #0a0a0f;
+    color: #a5f3fc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    white-space: pre;
+    overflow: auto;
+}
+.pf-import-area { min-height: 80px; color: var(--text-primary); background: var(--bg-card); white-space: pre-wrap; }
+
+/* Barre d'outils flottante */
+.pf-admin-toolbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+    background: var(--bg-secondary);
+    border: 1px solid var(--accent-primary);
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--glass-border);
+    width: 230px;
+    overflow: hidden;
+    font-size: 0.85rem;
+}
+.pf-toolbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: #fff;
+    font-weight: 700;
+}
+.pf-toolbar-collapse {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.pf-toolbar-body {
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.pf-admin-toolbar.pf-collapsed .pf-toolbar-body { display: none; }
+.pf-admin-toolbar .pf-btn { width: 100%; text-align: center; }
+
+/* Contrôles sur les cartes en mode admin */
+.pf-admin-editable { position: relative; outline: 2px dashed transparent; transition: outline-color 0.2s; }
+.pf-admin-editable:hover { outline-color: var(--accent-primary); }
+.pf-admin-card-controls {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+}
+.pf-admin-mini-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: rgba(10, 10, 15, 0.85);
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s;
+}
+.pf-admin-mini-btn:hover { transform: scale(1.12); }
+.pf-delete:hover { background: rgba(220, 38, 38, 0.85); }
+
+@media (max-width: 640px) {
+    .pf-field-grid { grid-template-columns: 1fr; }
+    .pf-admin-toolbar { right: 12px; bottom: 12px; width: 200px; }
+    .pf-modal-box { padding: 1.3rem; }
 }
