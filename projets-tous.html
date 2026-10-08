@@ -93,6 +93,7 @@
                     <li><a href="projets-scolaires.html#projet-brocker">Refonte réseau Brocker'Info</a></li>
                     <li class="dropdown-separator"><span>— Semestre 3 —</span></li>
                     <li><a href="projets-scolaires.html#projet-travail-collaboratif">Travail collaboratif</a></li>
+                    <li><a href="projets-scolaires.html#projet-administration-windows">Administration Windows</a></li>
                 </ul>
             </li>
             <li><a href="experiences.html">Expériences</a></li>
@@ -107,6 +108,41 @@
     </header>
 
     <div class="page-content">
+
+        <!-- Présentation de l'entreprise -->
+        <div class="company-presentation reveal">
+            <div class="company-presentation-text">
+                <h2>Hall 32 — Clermont-Ferrand</h2>
+                <p>Hall 32 est le Centre des métiers de l'Industrie, implanté dans le quartier Parc Cataroux à
+                    Clermont-Ferrand. Né d'une initiative portée notamment par Michelin et l'association 2ARAMI,
+                    en partenariat avec l'Académie de Clermont-Ferrand et la Région Auvergne-Rhône-Alpes, ce lieu de
+                    13 500 m² a pour mission d'informer, de former, d'innover et de connecter les acteurs de
+                    l'industrie — de la startup aux grands groupes.</p>
+                <p>C'est dans cette structure que j'ai réalisé mon stage puis mon alternance, au sein d'un
+                    environnement mêlant formation professionnelle, innovation industrielle et nouvelles
+                    technologies.</p>
+                <a href="https://www.hall32.fr/" target="_blank" rel="noopener" class="company-link">Site officiel
+                    de Hall 32 →</a>
+            </div>
+            <div class="company-presentation-facts">
+                <div class="company-fact">
+                    <span class="company-fact-label">Lieu</span>
+                    <span class="company-fact-value">32 rue du Clos Four, Clermont-Ferrand</span>
+                </div>
+                <div class="company-fact">
+                    <span class="company-fact-label">Fondé en</span>
+                    <span class="company-fact-value">2019</span>
+                </div>
+                <div class="company-fact">
+                    <span class="company-fact-label">Secteur</span>
+                    <span class="company-fact-value">Formation aux métiers de l'industrie</span>
+                </div>
+                <div class="company-fact">
+                    <span class="company-fact-label">Missions</span>
+                    <span class="company-fact-value">Informer · Former · Innover · Connecter</span>
+                </div>
+            </div>
+        </div>
 
         <!-- Projets Professionnels -->
         <div class="tous-projets-section">
@@ -260,6 +296,7 @@
                 <!-- Projet Alternance 1 -->
                 <div id="projet-hololens" class="project-card reveal delay-4" data-project="true" data-title="Hololens 2 &amp; Shift 89"
                     data-status="Terminé" data-year="2026" data-hours="~40h"
+                    data-resources="Microsoft Intune|HoloLens 2|Shift89|Support éditeur (visio + mails)"
                     data-module="Alternance – Hall 32"
                     data-description="Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et mise à jour des licences. Échanges avec l'éditeur (visio + mails), mise en place des comptes génériques. Création de tutoriels."
                     data-context="Lors de mon stage au sein de Hall 32, il y a eu un problème de licences introuvables au niveau des casques HoloLens 2 pour l'application Shift89."
@@ -668,14 +705,18 @@
 
                 <article id="projet-travail-collaboratif" class="school-project-card reveal delay-9" data-project="true"
                     data-title="Travail collaboratif" data-status="Terminé"
-                    data-year="2026" data-hours="~12h"
+                    data-year="Du 01/09/2026 au 28/09/2026" data-hours="~24h"
+                    data-module="AP3.1 Travail collaboratif"
                     data-description="Recherche de solutions répondant au cahier des charges, comparatif des solutions et note de choix de solution, mise en place de la solution Nextcloud, rédaction de tutoriel d'installation du serveur, de paramétrage des utilisateurs à partir de LDAP, tutoriels d'utilisation."
+                    data-context="L'entreprise veut mettre en place une solution de travail collaboratif, un cahier des charges à été donné.( Ldap, dmz, plusieurs critère comme gestion d'agenda, de fichier ect)"
                     data-client="HSH-Nantes"
+                    data-needs="Avoir un document qui sert de base pour les autres AP|faire un document comparatif entre plusieurs logiciel de travail collaboratif|Rédiger une documentation technique sur la solution retenue|Rédiger une note technique indiquant notre choix"
                     data-docs-in="Cahier des charges"
-                    data-tasks="Recherche de la solution|Installation de Nextcloud|Configuration LDAP|Configuration gestion de fichier|Rédaction des tutoriels"
-                    data-docs-out="Tutoriel d'installation de Nextcloud sous Fedora 44|Tutoriel de configuration de LDAP|Tutoriel de sauvegarde|Tutoriel d'utilisation de Nextcloud"
+                    data-tasks="Recherche de la solution de logiciel de travail collaboratif|Fiche comparative|Installation de Nextcloud|Configuration LDAP|Configuration gestion de fichier|Rédaction des tutoriels"
+                    data-docs-out="Document comparatif|Documentation technique|Tutoriel d'installation de Nextcloud sous Fedora 44|Tutoriel de configuration de LDAP|Tutoriel de sauvegarde|Tutoriel d'utilisation de Nextcloud"
                     data-opinion="Bien se renseigner avant de commencer apporte une meilleure stabilité."
-                    data-difficulties="Compatibilité de Nextcloud avec Nginx et PHP 8.1"
+                    data-difficulties="Compatibilité de Nextcloud avec Nginx et PHP 8.1 (choix final apache)|Délai très court"
+                    data-contributions="Utilisation de Fedora|Installation d'un logiciel de travail collaboratif"
                     data-tech="Recherche de solutions,Installation de Nextcloud,Rédaction de tutoriel,Liaison LDAP">
                     <div class="project-status">
                         <span class="status-badge completed"><svg class="icon-svg"
@@ -695,13 +736,71 @@
                         </svg>
                     </div>
                     <h3>Travail collaboratif</h3>
-                    <p>Mise en place d'une solution collaborative Nextcloud avec authentification LDAP pour
-                        HSH-Nantes.
-                    </p>
+                    <p>Recherche de solutions répondant au cahier des charges, comparatif des solutions et note de
+                        choix de solution, mise en place de la solution Nextcloud, rédaction de tutoriel
+                        d'installation du serveur, de paramétrage des utilisateurs à partir de LDAP, tutoriels
+                        d'utilisation.</p>
                     <div class="project-tech">
                         <span>Recherche de solutions</span><span>Installation de Nextcloud</span><span>Rédaction de
                             tutoriel</span><span>Liaison LDAP</span>
                     </div>
+                    <span class="card-hours-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" width="12" height="12">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                        </svg>~24h</span>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </article>
+
+                <article id="projet-administration-windows" class="school-project-card reveal delay-10" data-project="true"
+                    data-title="Administration Windows (contexte HSH)" data-status="Terminé"
+                    data-year="Du 08/09/2026 au 25/09/2026" data-hours="~16 h"
+                    data-resources="Cahier des charges|Tutoriels d'installation"
+                    data-module="TP Windows serveur"
+                    data-description="Mise en place des services d'authentification de domaine, de gestion de fichiers et du service DHCP redondant (2 serveurs AD, DNS, DHCP et DFS), tests avec deux clients Windows 11."
+                    data-context="Mise en place d'un serveur Windows pour une nouvelle infrastructure."
+                    data-client="HSH-Nantes"
+                    data-needs="Gestion des utilisateurs|Gestion des fichiers et droits NTFS|DNS, DHCP"
+                    data-docs-in="Aucun"
+                    data-tasks="Installation du serveur et des services|AD, DHCP, DNS, DFS"
+                    data-docs-out="Tutoriel d'installation des différents services|Schéma visio représentant le réseau"
+                    data-opinion="Ayant déjà fait cette installation plusieurs fois, cela m'as permis d'approfondir mes connaissances."
+                    data-difficulties="Aucune"
+                    data-contributions="Approche plus en détail"
+                    data-tech="Active Directory,DNS,DHCP redondant,DFS,Windows 11">
+                    <div class="project-status">
+                        <span class="status-badge completed"><svg class="icon-svg"
+                                style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Terminé</span>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <div class="project-icon-large">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="13" rx="1.5" fill="currentColor" opacity="0.08" />
+                            <rect x="3" y="4" width="18" height="13" rx="1.5" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                            <circle cx="9" cy="10.5" r="1.6" stroke-width="1.4" />
+                            <path d="M6.5 14.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5" stroke-width="1.4" />
+                            <path d="M15 8.5h3.5M15 11h3.5M15 13.5h2" stroke-opacity="0.5" stroke-width="1.3" />
+                        </svg>
+                    </div>
+                    <h3>Administration Windows (contexte HSH)</h3>
+                    <p>Mise en place des services d'authentification de domaine, de gestion de fichiers et du
+                        service DHCP redondant (2 serveurs AD, DNS, DHCP et DFS), tests avec deux clients Windows
+                        11.</p>
+                    <div class="project-tech">
+                        <span>Active Directory</span><span>DNS</span><span>DHCP redondant</span><span>DFS</span><span>Windows
+                            11</span>
+                    </div>
+                    <span class="card-hours-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" width="12" height="12">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                        </svg>~16 h</span>
                     <span class="click-hint">Cliquez pour plus de détails</span>
                 </article>
 

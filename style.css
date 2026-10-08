@@ -3738,6 +3738,8 @@ h3 .icon-svg,
     z-index: 1100;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     gap: 0.2rem;
 }
 
@@ -4368,6 +4370,97 @@ h3 .icon-svg,
 .resource-tag:hover {
     background: rgba(139, 92, 246, 0.22);
     transform: translateY(-1px);
+}
+
+/* ===================================
+   PRÉSENTATION ENTREPRISE (Hall 32)
+   =================================== */
+.company-presentation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.company-presentation-text {
+    flex: 2 1 320px;
+}
+
+.company-presentation-text h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.company-presentation-text p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.9rem;
+}
+
+.company-presentation-text a.company-link {
+    color: var(--accent-tertiary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.4);
+    transition: var(--transition-fast);
+}
+
+.company-presentation-text a.company-link:hover {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+.company-presentation-facts {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    justify-content: center;
+    border-left: 1px solid var(--glass-border);
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .company-presentation-facts {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--glass-border);
+        padding-top: 1rem;
+    }
+}
+
+.company-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.company-fact-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    opacity: 0.8;
+}
+
+.company-fact-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 /* ===================================
