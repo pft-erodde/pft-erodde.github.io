@@ -74,12 +74,17 @@
                     <li><a href="projets-tous.html" class="active">Tous les Projets</a></li>
                     <li class="dropdown-category-divider"></li>
                     <li><a href="projets-pro.html" class="dropdown-category">Projets Pro</a></li>
-                    <li class="dropdown-separator"><span>— Stage —</span></li>
+                    <li class="dropdown-separator"><span>— Stage BAC CIEL —</span></li>
                     <li><a href="projets-pro.html#projet-raspberry">Kiosque Raspberry Pi</a></li>
                     <li><a href="projets-pro.html#projet-nagios">Supervision Nagios</a></li>
                     <li><a href="projets-pro.html#projet-hyperv">Hyperviseur Hyper-V</a></li>
-                    <li class="dropdown-separator"><span>— Alternance —</span></li>
+                    <li class="dropdown-separator"><span>— Stage BTS 1ère année —</span></li>
+                    <li><a href="projets-pro.html#projet-automates">Communication automates</a></li>
+                    <li class="dropdown-separator"><span>— Alternance 2ème année —</span></li>
                     <li><a href="projets-pro.html#projet-hololens">Hololens 2 &amp; Shift 89</a></li>
+                    <li><a href="projets-pro.html#projet-bastion">Bastion Guacamole</a></li>
+                    <li><a href="projets-pro.html#projet-resa-salle">Réservation de salle</a></li>
+                    <li><a href="projets-pro.html#projet-zabbix">Supervision Zabbix</a></li>
                     <li class="dropdown-category-divider"></li>
                     <li><a href="projets-scolaires.html" class="dropdown-category">Projets Scolaires</a></li>
                     <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
@@ -118,7 +123,7 @@
                     en partenariat avec l'Académie de Clermont-Ferrand et la Région Auvergne-Rhône-Alpes, ce lieu de
                     13 500 m² a pour mission d'informer, de former, d'innover et de connecter les acteurs de
                     l'industrie — de la startup aux grands groupes.</p>
-                <p>C'est dans cette structure que j'ai réalisé mon stage puis mon alternance, au sein d'un
+                <p>C'est dans cette structure que j'ai réalisé mes stages (BAC CIEL puis BTS SIO 1ère année) et j'effectue mon alternance de BTS SIO 2ème année, au sein d'un
                     environnement mêlant formation professionnelle, innovation industrielle et nouvelles
                     technologies.</p>
                 <a href="https://www.hall32.fr/" target="_blank" rel="noopener" class="company-link">Site officiel
@@ -163,9 +168,9 @@
                 <div id="projet-raspberry" class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
                     data-status="Terminé" data-year="2024-2025" data-hours="~30h"
                     data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
-                    data-module="Stage en entreprise – Hall 32"
+                    data-module="Stage en entreprise BAC CIEL – Hall 32"
                     data-description="Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des machines industrielles."
-                    data-context="Lors de mon stage au sein de Hall 32, j'ai pu participer au projet de conception d'un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
+                    data-context="Lors de mon stage de BAC CIEL au sein de Hall 32, j'ai pu participer au projet de conception d'un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
                     data-client="Hall 32 — Société d'ingénierie et de maintenance industrielle."
                     data-needs="Affichage d'informations en temps réel|Fonctionnement autonome 24h/24 7j/7|Redémarrage automatique|Coût minimal (Raspberry Pi)"
                     data-docs-in="Cahier des charges"
@@ -207,7 +212,7 @@
                 <div id="projet-nagios" class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
                     data-status="Terminé" data-year="2024-2025" data-hours="~35h"
                     data-resources="Nagios Core|Linux (Debian)|SNMP|Serveur dédié|Postfix (alertes e-mail)"
-                    data-module="Stage en entreprise – Hall 32"
+                    data-module="Stage en entreprise BAC CIEL – Hall 32"
                     data-description="Installation et configuration de Nagios pour la supervision d'une infrastructure réseau."
                     data-context="J'ai été missionné pour mettre en place un système de supervision réseau chez Hall 32. Mon rôle était celui d'un technicien."
                     data-client="Hall 32 — Besoin de supervision de l'infrastructure réseau."
@@ -249,7 +254,7 @@
                 <div id="projet-hyperv" class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
                     data-status="Terminé" data-year="2024-2025" data-hours="~10h"
                     data-resources="Windows Server 2019|Hyper-V|vSwitch|Migration physique vers VM"
-                    data-module="Stage en entreprise – Hall 32"
+                    data-module="Stage en entreprise BAC CIEL – Hall 32"
                     data-description="Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle."
                     data-context="Mon rôle était de déployer une solution d'hyperviseur."
                     data-client="Hall 32 — Besoin de virtualisation des serveurs existants."
@@ -293,18 +298,45 @@
                     <span class="click-hint">Cliquez pour plus de détails</span>
                 </div>
 
+                <!-- Projet Stage BTS 1 : automates -->
+                <div id="projet-automates" class="project-card reveal delay-4" data-project="true" data-title="Communication automates / serveur (VLAN)"
+                    data-status="Terminé" data-year="2026"
+                    data-module="Stage en entreprise BTS SIO 1ère année – Hall 32"
+                    data-description="Les automates configurés sur un VLAN spécifique n'arrivaient pas tous à communiquer avec le serveur. Recherche des causes du problème de communication via des tests (ping, tracert, changement d'adressage IP)."
+                    data-context="Lors de mon stage de première année de BTS SIO chez Hall 32, des automates configurés sur un VLAN spécifique ne parvenaient pas tous à communiquer avec un serveur."
+                    data-client="Hall 32"
+                    data-needs="Rétablir la communication entre tous les automates et le serveur|Identifier l'origine du problème"
+                    data-tasks="Recherche des causes du problème de communication|Tests de connectivité (ping, tracert)|Changement d'adressage IP"
+                    data-tech="VLAN,Ping,Tracert,Adressage IP,Dépannage réseau">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="images/automates.svg" alt="Automates, switch et serveur sur un VLAN">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="8" height="5" rx="1" fill="currentColor" opacity="0.1"/><rect x="2" y="3" width="8" height="5" rx="1"/>
+                    <rect x="2" y="16" width="8" height="5" rx="1"/><rect x="14" y="9" width="8" height="6" rx="1"/>
+                    <path d="M10 5.5h2v6.5h2M10 18.5h2v-6.5" stroke-opacity="0.6"/></svg>
+                            Communication automates / serveur (VLAN)
+                        </h3>
+                        <p>Les automates configurés sur un VLAN spécifique n'arrivaient pas tous à communiquer avec le serveur : recherche des causes par des tests (ping, tracert, changement d'adressage IP).</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
                 <!-- Projet Alternance 1 -->
                 <div id="projet-hololens" class="project-card reveal delay-4" data-project="true" data-title="Hololens 2 &amp; Shift 89"
                     data-status="Terminé" data-year="2026" data-hours="~40h"
                     data-resources="Microsoft Intune|HoloLens 2|Shift89|Support éditeur (visio + mails)"
-                    data-module="Alternance – Hall 32"
-                    data-description="Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et mise à jour des licences. Échanges avec l'éditeur (visio + mails), mise en place des comptes génériques. Création de tutoriels."
-                    data-context="Lors de mon stage au sein de Hall 32, il y a eu un problème de licences introuvables au niveau des casques HoloLens 2 pour l'application Shift89."
+                    data-module="Alternance BTS SIO 2ème année – Hall 32"
+                    data-description="Mise à jour des licences Shift 89 sur des casques HoloLens 2. Licence introuvable, car liée à chaque compte : nombreux échanges avec le service client, création d'un compte générique et recréation de l'arborescence qui avait disparu."
+                    data-context="Lors de mon alternance au sein de Hall 32, il y a eu un problème de licence introuvable sur les casques HoloLens 2 pour l'application Shift89 : chaque licence est liée à un compte."
                     data-client="Hall 32 — Professeur"
                     data-needs="Remettre l'application disponible pour les utilisateurs|Séparer les comptes utilisateurs, formateur et administrateur"
-                    data-docs-in="Aucun"
-                    data-tasks="Prise de contact avec le service client de Shift 89|Réinstallation des casques de A à Z|Configuration de paramètres dans Intune|Installation de l'application PC et casque|Attribution des licences|Tests avec les utilisateurs"
-                    data-docs-out="Tutoriel utilisateur|Tutoriel d'installation"
+                    data-docs-in="TP / cahier des charges"
+                    data-tasks="Échanges avec le service client de Shift 89|Création d'un compte générique|Recréation de l'arborescence qui avait disparu|Réinstallation des casques de A à Z|Configuration de paramètres dans Intune|Installation de l'application PC et casque|Mise à jour des licences et des applicatifs|Tests avec les utilisateurs"
+                    data-docs-out="Documentation d'utilisation du casque et du compte|Documentation de mise à jour des licences et des applicatifs|Tutoriel utilisateur|Tutoriel d'installation"
                     data-difficulties="Manque de droits|Les utilisateurs pouvaient faire des modifications|La prise de contact avec Shift 89"
                     data-contributions="Prise en main d'une nouvelle application|Contact avec une autre entreprise"
                     data-tech="Microsoft Intune,HoloLens 2,Shift89"
@@ -329,8 +361,85 @@
                             </svg>
                             Hololens 2 &amp; Shift 89
                         </h3>
-                        <p>Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et
-                            mise à jour des licences.</p>
+                        <p>Mise à jour des licences Shift 89 sur des casques HoloLens 2. Licence introuvable, car liée à chaque compte : nombreux échanges avec le service client, création d'un compte générique et recréation de l'arborescence qui avait disparu.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
+                <div id="projet-bastion" class="project-card reveal delay-5" data-project="true" data-title="Bastion informatique (Apache Guacamole)"
+                    data-status="Terminé" data-year="2026"
+                    data-module="Alternance BTS SIO 2ème année – Hall 32 · Bloc 2 (D1, D2, D3)"
+                    data-description="Étude du projet, choix de la solution Apache Guacamole puis mise en place de celle-ci. Sécurisation de la VM et de l'accès web (reverse proxy, HTTPS, MFA). Étude d'une liaison entre le bastion et un coffre-fort, puis mise en place de celui-ci avec HashiCorp Vault."
+                    data-context="Lors de mon alternance chez Hall 32, j'ai étudié puis mis en place un bastion informatique afin de sécuriser l'accès aux machines, ainsi qu'un coffre-fort (HashiCorp Vault) relié au bastion (PAM)."
+                    data-client="Hall 32"
+                    data-needs="Mettre en place un bastion d'accès|Sécuriser la VM et l'accès web (reverse proxy, HTTPS, MFA)|Relier le bastion à un coffre-fort (HashiCorp Vault)"
+                    data-tasks="Étude du projet et choix de la solution Apache Guacamole|Mise en place de la solution|Sécurisation de la VM et de l'accès web (reverse proxy, HTTPS, MFA)|Étude d'une liaison entre le bastion et un coffre-fort|Mise en place du coffre-fort avec HashiCorp Vault|Création d'un planning prévisionnel et réel|Rédaction d'un cahier des charges"
+                    data-docs-out="Cahier des charges|Planning prévisionnel et réel|Tutoriel d'installation|Tutoriel d'utilisation|Étude et tutoriel de mise en place de la PAM (liaison bastion-coffre-fort)"
+    data-hours="~20h"
+    data-opinion="Ce travail en mode projet m'a permis de prendre du recul sur le monde de l'entreprise, et de comprendre pourquoi il faut détailler et prouver que le travail réalisé a une utilité."
+    data-difficulties="Trouver tout ce qu'il faut sécuriser"
+    data-contributions="Sécurisation d'une VM|Travail en mode projet"
+                    data-tech="Apache Guacamole,HashiCorp Vault,Reverse proxy,HTTPS,MFA,PAM">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="images/bastion.svg" alt="Bastion informatique et coffre-fort">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="11" rx="2" fill="currentColor" opacity="0.1"/><rect x="4" y="3" width="16" height="11" rx="2"/><rect x="9" y="16" width="6" height="5" rx="1"/><circle cx="12" cy="8.5" r="1.8"/></svg>
+                            Bastion informatique (Apache Guacamole)
+                        </h3>
+                        <p>Étude du projet, choix de la solution Apache Guacamole puis mise en place de celle-ci. Sécurisation de la VM et de l'accès web (reverse proxy, HTTPS, MFA). Étude d'une liaison entre le bastion et un coffre-fort, puis mise en place de celui-ci avec HashiCorp Vault.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
+                <div id="projet-resa-salle" class="project-card reveal delay-6" data-project="true" data-title="Automatisation de la réservation de salle"
+                    data-status="Terminé" data-year="2026"
+                    data-module="Alternance BTS SIO 2ème année – Hall 32 · Bloc 3 (D1, D2, D3)"
+                    data-description="Création d'un flux Power Automate et d'une application web pour automatiser la réservation de salle, avec planning, cahier des charges et tutoriels. Choix final : application web."
+                    data-context="Lors de mon alternance chez Hall 32, j'ai automatisé la réservation de salle grâce à un flux Power Automate et une application web."
+                    data-client="Hall 32"
+                    data-needs="Automatiser la réservation de salle|Disposer d'une application web d'utilisation simple"
+                    data-tasks="Création d'un flux Power Automate|Création d'une application web|Création d'un planning prévisionnel et réel|Rédaction d'un cahier des charges|Rédaction des tutoriels"
+                    data-docs-out="Flux Power Automate|Application web|Cahier des charges|Planning prévisionnel et réel|Tutoriel du flux Power Automate|Tutoriel d'installation de l'application|Tutoriel d'utilisation de l'application"
+    data-hours="~20h"
+    data-resources="Ancien flux Power Automate"
+    data-opinion="Avoir travaillé sur ce projet, pour lequel je n'avais aucune compétence, m'a permis de me former en autonomie. J'ai choisi l'application web car elle offre plus de liberté et de fonctionnalités."
+    data-difficulties="Comprendre le fonctionnement de Power Automate|Créer l'application web"
+    data-contributions="Montée en compétences sur Power Automate|Travail en mode projet"
+                    data-tech="Power Automate,Application web,Automatisation">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="images/resa-salle.svg" alt="Flux Power Automate et application web">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" fill="currentColor" opacity="0.1"/><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><polyline points="9 15 11 17 15 13"/></svg>
+                            Automatisation de la réservation de salle
+                        </h3>
+                        <p>Création d'un flux Power Automate et d'une application web pour automatiser la réservation de salle, avec planning, cahier des charges et tutoriels. Choix final : application web.</p>
+                    </div>
+                    <span class="click-hint">Cliquez pour plus de détails</span>
+                </div>
+
+                <div id="projet-zabbix" class="project-card reveal delay-7" data-project="true" data-title="Supervision Zabbix"
+                    data-status="En cours" data-year="2026"
+                    data-module="Alternance BTS SIO 2ème année – Hall 32 · Bloc 2 (D2)"
+                    data-description="Mise en place de l'outil de supervision Zabbix. Test avec un PC puis déploiement de différents modèles d'agent."
+                    data-context="Lors de mon alternance chez Hall 32, j'ai mis en place l'outil de supervision Zabbix."
+                    data-client="Hall 32"
+                    data-needs="Superviser les équipements avec Zabbix|Déployer des agents adaptés à chaque type de machine"
+                    data-tasks="Mise en place de l'outil de supervision|Test avec un PC|Déploiement de différents modèles d'agent"
+    data-hours="~5h"
+                    data-tech="Zabbix,Supervision,Agents">
+                    <div class="project-image" aria-hidden="true">
+                        <img src="images/zabbix.svg" alt="Supervision Zabbix et agents">
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" opacity="0.08"/><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="5 15 8 10 11 13 14 7 17 11 20 8" stroke-width="1.8"/></svg>
+                            Supervision Zabbix
+                        </h3>
+                        <p>Mise en place de l'outil de supervision Zabbix. Test avec un PC puis déploiement de différents modèles d'agent.</p>
                     </div>
                     <span class="click-hint">Cliquez pour plus de détails</span>
                 </div>
@@ -371,7 +480,9 @@
                     data-opinion="Projet essentiel pour ma future carrière. La rédaction du CV m'a forcé à prendre du recul sur mon parcours et à identifier mes points forts. La préparation à l'entretien est particulièrement utile pour les futurs stages."
                     data-difficulties="Se démarquer dans un domaine concurrentiel|Synthétiser mon parcours en une page de CV|Adapter le ton selon le destinataire du mail"
                     data-contributions="CV professionnel opérationnel|Techniques de recherche d'emploi dans l'IT|Capacité à présenter son projet professionnel à l'oral|Communication professionnelle écrite"
-                    data-tech="Recherche,CV,Mail motivé,Entretien,Diaporama">
+                   
+                data-image="images/metiers.svg"
+                data-image-caption="CV, lettre de motivation et préparation à l'entretien" data-tech="Recherche,CV,Mail motivé,Entretien,Diaporama">
                     <div class="project-status">
                         <span class="status-badge completed"><svg class="icon-svg"
                                 style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
@@ -469,7 +580,9 @@
                     data-opinion="Exercice formateur qui m'a appris à raisonner en termes de coût/performance et à argumenter mes choix techniques face à un client. La partie devis a été particulièrement instructive."
                     data-difficulties="Trouver le meilleur rapport qualité/prix dans les contraintes budgétaires|Justifier les choix techniques de manière professionnelle"
                     data-contributions="Capacité à répondre à un appel d'offres|Maîtrise des outils de devis|Argumentation technique|Communication professionnelle"
-                    data-tech="Recherche,Devis,Proposition technique">
+                   
+                data-image="images/appel-offres.svg"
+                data-image-caption="Réponse à l'appel d'offres : choix des postes et devis" data-tech="Recherche,Devis,Proposition technique">
                     <div class="project-status">
                         <span class="status-badge completed"><svg class="icon-svg"
                                 style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
@@ -517,7 +630,9 @@
                     data-opinion="Projet très concret qui m'a confronté aux réalités d'un chantier réseau. La partie dimensionnement et le respect des normes ont été les aspects les plus enrichissants."
                     data-difficulties="Respecter les normes de câblage structuré|Dimensionner correctement la baie de brassage|Optimiser les chemins de câbles"
                     data-contributions="Connaissance des normes de câblage|Dimensionnement d'infrastructure réseau|Capacité à réaliser des plans techniques"
-                    data-tech="Recherche,Devis,Proposition technique">
+                   
+                data-image="images/cablage.svg"
+                data-image-caption="Baie de brassage et câblage structuré RJ45" data-tech="Recherche,Devis,Proposition technique">
                     <div class="project-status">
                         <span class="status-badge completed"><svg class="icon-svg"
                                 style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
@@ -564,7 +679,7 @@
                     data-opinion="Projet très formateur sur l'administration Windows. La rédaction du tutoriel m'a obligé à approfondir mes connaissances pour pouvoir les expliquer clairement. C'est en expliquant qu'on apprend vraiment."
                     data-difficulties="Comprendre les différences entre permissions NTFS et autorisations de partage|Gérer les héritages de permissions complexes|Rédiger une documentation claire et utilisable"
                     data-contributions="Maîtrise de l'administration Windows 10|Compréhension des permissions NTFS et des partages|Capacité à rédiger de la documentation technique|Expérience du travail en binôme"
-                    data-image="https://res.cloudinary.com/dynbrtfxs/image/upload/v1775388654/windows_ql22kl.png"
+                    data-image="images/windows-p2p.svg"
                     data-image-caption="Windows 10 — au cœur du TP de gestion de droits et partage"
                     data-tech="Windows 10,Réseau P2P,NTFS,Partage">
                     <div class="project-status">
@@ -708,16 +823,18 @@
                     data-year="Du 01/09/2026 au 28/09/2026" data-hours="~24h"
                     data-module="AP3.1 Travail collaboratif"
                     data-description="Recherche de solutions répondant au cahier des charges, comparatif des solutions et note de choix de solution, mise en place de la solution Nextcloud, rédaction de tutoriel d'installation du serveur, de paramétrage des utilisateurs à partir de LDAP, tutoriels d'utilisation."
-                    data-context="L'entreprise veut mettre en place une solution de travail collaboratif, un cahier des charges à été donné.( Ldap, dmz, plusieurs critère comme gestion d'agenda, de fichier ect)"
+                    data-context="L'entreprise veut mettre en place une solution de travail collaboratif, un cahier des charges a été donné (LDAP, DMZ, plusieurs critères comme la gestion d'agenda, de fichiers, etc.)."
                     data-client="HSH-Nantes"
-                    data-needs="Avoir un document qui sert de base pour les autres AP|faire un document comparatif entre plusieurs logiciel de travail collaboratif|Rédiger une documentation technique sur la solution retenue|Rédiger une note technique indiquant notre choix"
+                    data-needs="Avoir un document qui sert de base pour les autres AP|Faire un document comparatif entre plusieurs logiciels de travail collaboratif|Rédiger une documentation technique sur la solution retenue|Rédiger une note technique indiquant notre choix"
                     data-docs-in="Cahier des charges"
                     data-tasks="Recherche de la solution de logiciel de travail collaboratif|Fiche comparative|Installation de Nextcloud|Configuration LDAP|Configuration gestion de fichier|Rédaction des tutoriels"
                     data-docs-out="Document comparatif|Documentation technique|Tutoriel d'installation de Nextcloud sous Fedora 44|Tutoriel de configuration de LDAP|Tutoriel de sauvegarde|Tutoriel d'utilisation de Nextcloud"
                     data-opinion="Bien se renseigner avant de commencer apporte une meilleure stabilité."
                     data-difficulties="Compatibilité de Nextcloud avec Nginx et PHP 8.1 (choix final apache)|Délai très court"
                     data-contributions="Utilisation de Fedora|Installation d'un logiciel de travail collaboratif"
-                    data-tech="Recherche de solutions,Installation de Nextcloud,Rédaction de tutoriel,Liaison LDAP">
+                   
+                data-image="images/collaboratif.svg"
+                data-image-caption="Nextcloud et annuaire LDAP sous Fedora" data-tech="Recherche de solutions,Installation de Nextcloud,Rédaction de tutoriel,Liaison LDAP">
                     <div class="project-status">
                         <span class="status-badge completed"><svg class="icon-svg"
                                 style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
@@ -755,19 +872,21 @@
                 <article id="projet-administration-windows" class="school-project-card reveal delay-10" data-project="true"
                     data-title="Administration Windows (contexte HSH)" data-status="Terminé"
                     data-year="Du 08/09/2026 au 25/09/2026" data-hours="~16 h"
-                    data-resources="Cahier des charges|Tutoriels d'installation"
+                    data-resources="TP / cahier des charges|Windows Server 2025|Tutoriels d'installation"
                     data-module="TP Windows serveur"
-                    data-description="Mise en place des services d'authentification de domaine, de gestion de fichiers et du service DHCP redondant (2 serveurs AD, DNS, DHCP et DFS), tests avec deux clients Windows 11."
-                    data-context="Mise en place d'un serveur Windows pour une nouvelle infrastructure."
+                    data-description="Mise en place, sur deux serveurs Windows Server 2025, des services d'authentification de domaine, de gestion de fichiers et du service DHCP redondant (2 serveurs AD, DNS, DHCP et DFS), tests avec deux clients Windows 11."
+                    data-context="Mise en place de deux serveurs Windows Server 2025 pour une nouvelle infrastructure : contrôleurs de domaine redondants (AD, DNS, DHCP) et partage de fichiers DFS entre les deux serveurs, testés avec deux clients Windows 11."
                     data-client="HSH-Nantes"
-                    data-needs="Gestion des utilisateurs|Gestion des fichiers et droits NTFS|DNS, DHCP"
-                    data-docs-in="Aucun"
-                    data-tasks="Installation du serveur et des services|AD, DHCP, DNS, DFS"
+                    data-needs="Gestion des utilisateurs|Gestion des fichiers et droits NTFS|Gestion des partages|DNS, DHCP|DFS (espace de noms et réplication)|Redondance des services (2 serveurs)"
+                    data-docs-in="TP / cahier des charges"
+                    data-tasks="Installation des deux serveurs Windows Server 2025|Configuration d'AD, DNS, DHCP redondant et DFS|Tests avec deux clients Windows 11"
                     data-docs-out="Tutoriel d'installation des différents services|Schéma visio représentant le réseau"
-                    data-opinion="Ayant déjà fait cette installation plusieurs fois, cela m'as permis d'approfondir mes connaissances."
+                    data-opinion="Ayant déjà fait cette installation plusieurs fois, cela m'a permis d'approfondir mes connaissances."
                     data-difficulties="Aucune"
                     data-contributions="Approche plus en détail"
-                    data-tech="Active Directory,DNS,DHCP redondant,DFS,Windows 11">
+                   
+                data-image="images/windows-server.svg"
+                data-image-caption="Deux serveurs Windows Server 2025 : AD, DNS, DHCP redondant et DFS" data-tech="Windows Server 2025,Active Directory,DNS,DHCP redondant,DFS,Windows 11">
                     <div class="project-status">
                         <span class="status-badge completed"><svg class="icon-svg"
                                 style="width:14px;height:14px;margin-right:.3rem;" xmlns="http://www.w3.org/2000/svg"
@@ -789,11 +908,9 @@
                         </svg>
                     </div>
                     <h3>Administration Windows (contexte HSH)</h3>
-                    <p>Mise en place des services d'authentification de domaine, de gestion de fichiers et du
-                        service DHCP redondant (2 serveurs AD, DNS, DHCP et DFS), tests avec deux clients Windows
-                        11.</p>
+                    <p>Mise en place, sur deux serveurs Windows Server 2025, des services d'authentification de domaine, de gestion de fichiers et du service DHCP redondant (2 serveurs AD, DNS, DHCP et DFS), tests avec deux clients Windows 11.</p>
                     <div class="project-tech">
-                        <span>Active Directory</span><span>DNS</span><span>DHCP redondant</span><span>DFS</span><span>Windows
+                        <span>Windows Server 2025</span><span>Active Directory</span><span>DNS</span><span>DHCP redondant</span><span>DFS</span><span>Windows
                             11</span>
                     </div>
                     <span class="card-hours-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"

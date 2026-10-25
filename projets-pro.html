@@ -74,12 +74,17 @@
                     <li><a href="projets-tous.html">Tous les Projets</a></li>
                     <li class="dropdown-category-divider"></li>
                     <li><a href="projets-pro.html" class="dropdown-category active">Projets Pro</a></li>
-                    <li class="dropdown-separator"><span>— Stage —</span></li>
+                    <li class="dropdown-separator"><span>— Stage BAC CIEL —</span></li>
                     <li><a href="projets-pro.html#projet-raspberry">Kiosque Raspberry Pi</a></li>
                     <li><a href="projets-pro.html#projet-nagios">Supervision Nagios</a></li>
                     <li><a href="projets-pro.html#projet-hyperv">Hyperviseur Hyper-V</a></li>
-                    <li class="dropdown-separator"><span>— Alternance —</span></li>
+                    <li class="dropdown-separator"><span>— Stage BTS 1ère année —</span></li>
+                    <li><a href="projets-pro.html#projet-automates">Communication automates</a></li>
+                    <li class="dropdown-separator"><span>— Alternance 2ème année —</span></li>
                     <li><a href="projets-pro.html#projet-hololens">Hololens 2 &amp; Shift 89</a></li>
+                    <li><a href="projets-pro.html#projet-bastion">Bastion Guacamole</a></li>
+                    <li><a href="projets-pro.html#projet-resa-salle">Réservation de salle</a></li>
+                    <li><a href="projets-pro.html#projet-zabbix">Supervision Zabbix</a></li>
                     <li class="dropdown-category-divider"></li>
                     <li><a href="projets-scolaires.html" class="dropdown-category">Projets Scolaires</a></li>
                     <li class="dropdown-separator"><span>— Semestre 1 —</span></li>
@@ -105,7 +110,7 @@
     <header id="projets-header" class="hero" style="min-height: 40vh; padding: 100px 20px 40px;">
         <a href="index.html" class="back-home">← Accueil</a>
         <h1 class="animated-text">Mes Projets Professionnels</h1>
-        <p class="page-subtitle">Des réalisations concrètes au service de l'infrastructure — Stage Hall 32</p>
+        <p class="page-subtitle">Des réalisations concrètes au service de l'infrastructure — Stages et alternance chez Hall 32</p>
     </header>
 
     <div class="page-content">
@@ -119,7 +124,7 @@
                     en partenariat avec l'Académie de Clermont-Ferrand et la Région Auvergne-Rhône-Alpes, ce lieu de
                     13 500 m² a pour mission d'informer, de former, d'innover et de connecter les acteurs de
                     l'industrie — de la startup aux grands groupes.</p>
-                <p>C'est dans cette structure que j'ai réalisé mon stage puis mon alternance, au sein d'un
+                <p>C'est dans cette structure que j'ai réalisé mes stages (BAC CIEL puis BTS SIO 1ère année) et j'effectue mon alternance de BTS SIO 2ème année, au sein d'un
                     environnement mêlant formation professionnelle, innovation industrielle et nouvelles
                     technologies.</p>
                 <a href="https://www.hall32.fr/" target="_blank" rel="noopener" class="company-link">Site officiel
@@ -145,8 +150,8 @@
             </div>
         </div>
 
-        <!-- Stage en entreprise -->
-        <div class="tous-projets-section">
+        <!-- Stage en entreprise BAC CIEL -->
+        <div class="tous-projets-section" id="stage-bac-ciel">
             <h2 class="tous-projets-section-title">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"
@@ -157,7 +162,7 @@
                     <line x1="2" y1="13" x2="22" y2="13" stroke-opacity="0.4" />
                     <circle cx="12" cy="13" r="1.5" fill="currentColor" stroke="none" />
                 </svg>
-                Stage en entreprise — Hall 32
+                Stage en entreprise BAC CIEL — Hall 32
             </h2>
         <div class="projects-grid">
 
@@ -165,9 +170,9 @@
             <div id="projet-raspberry" class="project-card reveal delay-1" data-project="true" data-title="Kiosque Raspberry Pi"
                 data-status="Terminé" data-year="2024-2025" data-hours="~30h"
                 data-resources="Raspberry Pi OS|Chromium (mode kiosque)|Scripts Shell|Documentation Raspberry Pi"
-                data-module="Stage en entreprise – Hall 32"
+                data-module="Stage en entreprise BAC CIEL – Hall 32"
                 data-description="Développement d'un système de kiosque sur Raspberry Pi pour l'affichage d'informations sur des machines industrielles."
-                data-context="Lors de mon stage au sein de Hall 32, j'ai pu participer au projet de conception d'un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
+                data-context="Lors de mon stage de BAC CIEL au sein de Hall 32, j'ai pu participer au projet de conception d'un système d'affichage autonome pour les machines de production. Mon rôle était celui de technicien, en autonomie partielle."
                 data-client="Hall 32 — Société d'ingénierie et de maintenance industrielle."
                 data-needs="Affichage d'informations en temps réel|Fonctionnement autonome 24h/24 7j/7|Redémarrage automatique|Coût minimal (Raspberry Pi)"
                 data-docs-in="Cahier des charges"
@@ -217,7 +222,7 @@
             <div id="projet-nagios" class="project-card reveal delay-2" data-project="true" data-title="Supervision Nagios"
                 data-status="Terminé" data-year="2024-2025" data-hours="~25h"
                 data-resources="Nagios Core|Linux (Debian)|SNMP|Serveur dédié|Postfix (alertes e-mail)"
-                data-module="Stage en entreprise – Hall 32"
+                data-module="Stage en entreprise BAC CIEL – Hall 32"
                 data-description="Installation et configuration de Nagios pour la supervision d'une infrastructure réseau."
                 data-context="J'ai été missionné pour mettre en place un système de supervision réseau chez Hall 32. Mon rôle était celui d'un technicien."
                 data-client="Hall 32 — Besoin de supervision de l'infrastructure réseau."
@@ -265,7 +270,7 @@
             <div id="projet-hyperv" class="project-card reveal delay-3" data-project="true" data-title="Hyperviseur Hyper-V"
                 data-status="Terminé" data-year="2024-2025" data-hours="~10h"
                 data-resources="Windows Server 2019|Hyper-V|vSwitch|Migration physique vers VM"
-                data-module="Stage en entreprise – Hall 32"
+                data-module="Stage en entreprise BAC CIEL – Hall 32"
                 data-description="Déploiement d'un hyperviseur Hyper-V dans une infrastructure professionnelle."
                 data-context="Mon rôle était de déployer une solution d'hyperviseur."
                 data-client="Hall 32 — Besoin de virtualisation des serveurs existants."
@@ -324,8 +329,56 @@
 
         <hr class="tous-projets-divider" aria-hidden="true">
 
+        <!-- Stage en entreprise BTS SIO 1ère année -->
+        <div class="tous-projets-section" id="stage-bts1">
+            <h2 class="tous-projets-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"
+                    style="vertical-align:middle;margin-right:.5rem;">
+                    <rect x="2" y="7" width="20" height="14" rx="2" fill="currentColor" opacity="0.15" />
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                    <line x1="2" y1="13" x2="22" y2="13" stroke-opacity="0.4" />
+                    <circle cx="12" cy="13" r="1.5" fill="currentColor" stroke="none" />
+                </svg>
+                Stage en entreprise BTS SIO 1ère année — Hall 32
+            </h2>
+        <div class="projects-grid">
+
+            <!-- Projet Stage BTS 1 : automates -->
+            <div id="projet-automates" class="project-card reveal delay-4" data-project="true" data-title="Communication automates / serveur (VLAN)"
+                data-status="Terminé" data-year="2026"
+                data-module="Stage en entreprise BTS SIO 1ère année – Hall 32"
+                data-description="Les automates configurés sur un VLAN spécifique n'arrivaient pas tous à communiquer avec le serveur. Recherche des causes du problème de communication via des tests (ping, tracert, changement d'adressage IP)."
+                data-context="Lors de mon stage de première année de BTS SIO chez Hall 32, des automates configurés sur un VLAN spécifique ne parvenaient pas tous à communiquer avec un serveur."
+                data-client="Hall 32"
+                data-needs="Rétablir la communication entre tous les automates et le serveur|Identifier l'origine du problème"
+                data-tasks="Recherche des causes du problème de communication|Tests de connectivité (ping, tracert)|Changement d'adressage IP"
+                data-tech="VLAN,Ping,Tracert,Adressage IP,Dépannage réseau">
+                <div class="project-image" aria-hidden="true">
+                    <img src="images/automates.svg" alt="Automates, switch et serveur sur un VLAN">
+                </div>
+                <div class="project-content">
+                    <h3>
+                        <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="8" height="5" rx="1" fill="currentColor" opacity="0.1"/><rect x="2" y="3" width="8" height="5" rx="1"/>
+                <rect x="2" y="16" width="8" height="5" rx="1"/><rect x="14" y="9" width="8" height="6" rx="1"/>
+                <path d="M10 5.5h2v6.5h2M10 18.5h2v-6.5" stroke-opacity="0.6"/></svg>
+                        Communication automates / serveur (VLAN)
+                    </h3>
+                    <p>Les automates configurés sur un VLAN spécifique n'arrivaient pas tous à communiquer avec le serveur : recherche des causes par des tests (ping, tracert, changement d'adressage IP).</p>
+                </div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </div>
+
+        </div>
+        </div>
+
+        <hr class="tous-projets-divider" aria-hidden="true">
+
         <!-- Alternance -->
-        <div class="tous-projets-section">
+        <div class="tous-projets-section" id="alternance">
             <h2 class="tous-projets-section-title">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"
@@ -336,7 +389,7 @@
                     <circle cx="8" cy="14" r="2" fill="currentColor" opacity="0.2" />
                     <circle cx="16" cy="14" r="2" fill="currentColor" opacity="0.2" />
                 </svg>
-                Alternance — Hall 32
+                Alternance BTS SIO 2ème année — Hall 32
             </h2>
         <div class="projects-grid">
 
@@ -344,14 +397,14 @@
             <div id="projet-hololens" class="project-card reveal delay-4" data-project="true" data-title="Hololens 2 &amp; Shift 89"
                 data-status="Terminé" data-year="2026" data-hours="~40h"
                 data-resources="Microsoft Intune|HoloLens 2|Shift89|Support éditeur (visio + mails)"
-                data-module="Alternance – Hall 32"
-                data-description="Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et mise à jour des licences. Échanges avec l'éditeur (visio + mails), mise en place des comptes génériques. Création de tutoriels."
-                data-context="Lors de mon stage au sein de Hall 32, il y a eu un problème de licences introuvables au niveau des casques HoloLens 2 pour l'application Shift89."
+                data-module="Alternance BTS SIO 2ème année – Hall 32"
+                data-description="Mise à jour des licences Shift 89 sur des casques HoloLens 2. Licence introuvable, car liée à chaque compte : nombreux échanges avec le service client, création d'un compte générique et recréation de l'arborescence qui avait disparu."
+                data-context="Lors de mon alternance au sein de Hall 32, il y a eu un problème de licence introuvable sur les casques HoloLens 2 pour l'application Shift89 : chaque licence est liée à un compte."
                 data-client="Hall 32 — Professeur"
                 data-needs="Remettre l'application disponible pour les utilisateurs|Séparer les comptes utilisateurs, formateur et administrateur"
                 data-docs-in="Aucun"
-                data-tasks="Prise de contact avec le service client de Shift 89|Réinstallation des casques de A à Z|Configuration de paramètres dans Intune|Installation de l'application PC et casque|Attribution des licences|Tests avec les utilisateurs"
-                data-docs-out="Tutoriel utilisateur|Tutoriel d'installation"
+                data-tasks="Échanges avec le service client de Shift 89|Création d'un compte générique|Recréation de l'arborescence qui avait disparu|Réinstallation des casques de A à Z|Configuration de paramètres dans Intune|Installation de l'application PC et casque|Mise à jour des licences et des applicatifs|Tests avec les utilisateurs"
+                data-docs-out="Documentation d'utilisation du casque et du compte|Documentation de mise à jour des licences et des applicatifs|Tutoriel utilisateur|Tutoriel d'installation"
                 data-difficulties="Manque de droits|Les utilisateurs pouvaient faire des modifications|La prise de contact avec Shift 89"
                 data-contributions="Prise en main d'une nouvelle application|Contact avec une autre entreprise"
                 data-tech="Microsoft Intune,HoloLens 2,Shift89"
@@ -381,8 +434,85 @@
                         </svg>
                         Hololens 2 &amp; Shift 89
                     </h3>
-                    <p>Réinstallation du casque HoloLens 2, paramétrage dans Intune, installation de Shift89 et
-                        mise à jour des licences.</p>
+                    <p>Mise à jour des licences Shift 89 sur des casques HoloLens 2. Licence introuvable, car liée à chaque compte : nombreux échanges avec le service client, création d'un compte générique et recréation de l'arborescence qui avait disparu.</p>
+                </div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </div>
+
+            <div id="projet-bastion" class="project-card reveal delay-5" data-project="true" data-title="Bastion informatique (Apache Guacamole)"
+                data-status="Terminé" data-year="2026"
+                data-module="Alternance BTS SIO 2ème année – Hall 32 · Bloc 2 (D1, D2, D3)"
+                data-description="Étude du projet, choix de la solution Apache Guacamole puis mise en place de celle-ci. Sécurisation de la VM et de l'accès web (reverse proxy, HTTPS, MFA). Étude d'une liaison entre le bastion et un coffre-fort, puis mise en place de celui-ci avec HashiCorp Vault."
+                data-context="Lors de mon alternance chez Hall 32, j'ai étudié puis mis en place un bastion informatique afin de sécuriser l'accès aux machines, ainsi qu'un coffre-fort (HashiCorp Vault) relié au bastion (PAM)."
+                data-client="Hall 32"
+                data-needs="Mettre en place un bastion d'accès|Sécuriser la VM et l'accès web (reverse proxy, HTTPS, MFA)|Relier le bastion à un coffre-fort (HashiCorp Vault)"
+                data-tasks="Étude du projet et choix de la solution Apache Guacamole|Mise en place de la solution|Sécurisation de la VM et de l'accès web (reverse proxy, HTTPS, MFA)|Étude d'une liaison entre le bastion et un coffre-fort|Mise en place du coffre-fort avec HashiCorp Vault|Création d'un planning prévisionnel et réel|Rédaction d'un cahier des charges"
+                data-docs-out="Cahier des charges|Planning prévisionnel et réel|Tutoriel d'installation|Tutoriel d'utilisation|Étude et tutoriel de mise en place de la PAM (liaison bastion-coffre-fort)"
+    data-hours="~20h"
+    data-opinion="Ce travail en mode projet m'a permis de prendre du recul sur le monde de l'entreprise, et de comprendre pourquoi il faut détailler et prouver que le travail réalisé a une utilité."
+    data-difficulties="Trouver tout ce qu'il faut sécuriser"
+    data-contributions="Sécurisation d'une VM|Travail en mode projet"
+                data-tech="Apache Guacamole,HashiCorp Vault,Reverse proxy,HTTPS,MFA,PAM">
+                <div class="project-image" aria-hidden="true">
+                    <img src="images/bastion.svg" alt="Bastion informatique et coffre-fort">
+                </div>
+                <div class="project-content">
+                    <h3>
+                        <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="11" rx="2" fill="currentColor" opacity="0.1"/><rect x="4" y="3" width="16" height="11" rx="2"/><rect x="9" y="16" width="6" height="5" rx="1"/><circle cx="12" cy="8.5" r="1.8"/></svg>
+                        Bastion informatique (Apache Guacamole)
+                    </h3>
+                    <p>Étude du projet, choix de la solution Apache Guacamole puis mise en place de celle-ci. Sécurisation de la VM et de l'accès web (reverse proxy, HTTPS, MFA). Étude d'une liaison entre le bastion et un coffre-fort, puis mise en place de celui-ci avec HashiCorp Vault.</p>
+                </div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </div>
+
+            <div id="projet-resa-salle" class="project-card reveal delay-6" data-project="true" data-title="Automatisation de la réservation de salle"
+                data-status="Terminé" data-year="2026"
+                data-module="Alternance BTS SIO 2ème année – Hall 32 · Bloc 3 (D1, D2, D3)"
+                data-description="Création d'un flux Power Automate et d'une application web pour automatiser la réservation de salle, avec planning, cahier des charges et tutoriels. Choix final : application web."
+                data-context="Lors de mon alternance chez Hall 32, j'ai automatisé la réservation de salle grâce à un flux Power Automate et une application web."
+                data-client="Hall 32"
+                data-needs="Automatiser la réservation de salle|Disposer d'une application web d'utilisation simple"
+                data-tasks="Création d'un flux Power Automate|Création d'une application web|Création d'un planning prévisionnel et réel|Rédaction d'un cahier des charges|Rédaction des tutoriels"
+                data-docs-out="Flux Power Automate|Application web|Cahier des charges|Planning prévisionnel et réel|Tutoriel du flux Power Automate|Tutoriel d'installation de l'application|Tutoriel d'utilisation de l'application"
+    data-hours="~20h"
+    data-resources="Ancien flux Power Automate"
+    data-opinion="Avoir travaillé sur ce projet, pour lequel je n'avais aucune compétence, m'a permis de me former en autonomie. J'ai choisi l'application web car elle offre plus de liberté et de fonctionnalités."
+    data-difficulties="Comprendre le fonctionnement de Power Automate|Créer l'application web"
+    data-contributions="Montée en compétences sur Power Automate|Travail en mode projet"
+                data-tech="Power Automate,Application web,Automatisation">
+                <div class="project-image" aria-hidden="true">
+                    <img src="images/resa-salle.svg" alt="Flux Power Automate et application web">
+                </div>
+                <div class="project-content">
+                    <h3>
+                        <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" fill="currentColor" opacity="0.1"/><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><polyline points="9 15 11 17 15 13"/></svg>
+                        Automatisation de la réservation de salle
+                    </h3>
+                    <p>Création d'un flux Power Automate et d'une application web pour automatiser la réservation de salle, avec planning, cahier des charges et tutoriels. Choix final : application web.</p>
+                </div>
+                <span class="click-hint">Cliquez pour plus de détails</span>
+            </div>
+
+            <div id="projet-zabbix" class="project-card reveal delay-7" data-project="true" data-title="Supervision Zabbix"
+                data-status="En cours" data-year="2026"
+                data-module="Alternance BTS SIO 2ème année – Hall 32 · Bloc 2 (D2)"
+                data-description="Mise en place de l'outil de supervision Zabbix. Test avec un PC puis déploiement de différents modèles d'agent."
+                data-context="Lors de mon alternance chez Hall 32, j'ai mis en place l'outil de supervision Zabbix."
+                data-client="Hall 32"
+                data-needs="Superviser les équipements avec Zabbix|Déployer des agents adaptés à chaque type de machine"
+                data-tasks="Mise en place de l'outil de supervision|Test avec un PC|Déploiement de différents modèles d'agent"
+    data-hours="~5h"
+                data-tech="Zabbix,Supervision,Agents">
+                <div class="project-image" aria-hidden="true">
+                    <img src="images/zabbix.svg" alt="Supervision Zabbix et agents">
+                </div>
+                <div class="project-content">
+                    <h3>
+                        <svg class="icon-svg" style="width:24px;height:24px;margin-right:.5rem;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" opacity="0.08"/><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="5 15 8 10 11 13 14 7 17 11 20 8" stroke-width="1.8"/></svg>
+                        Supervision Zabbix
+                    </h3>
+                    <p>Mise en place de l'outil de supervision Zabbix. Test avec un PC puis déploiement de différents modèles d'agent.</p>
                 </div>
                 <span class="click-hint">Cliquez pour plus de détails</span>
             </div>

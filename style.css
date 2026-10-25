@@ -5091,3 +5091,37 @@ html, body {
     .pf-admin-toolbar { right: 12px; bottom: 12px; width: 200px; }
     .pf-modal-box { padding: 1.3rem; }
 }
+
+
+/* === Ajouts : liens expériences -> projets, images de projet intégrées === */
+.experience-link {
+    display: inline-block;
+    margin-top: 0.9rem;
+    color: var(--accent-tertiary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.4);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.experience-link:hover {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+/* Toutes les images de projet (logos / schémas) sur un cadre clair homogène */
+.modal-project-image {
+    background: #f8fafc;
+    padding: 0.75rem;
+    border: 1px solid var(--glass-border);
+    box-sizing: border-box;
+}
+
+.dropdown-separator span {
+    white-space: nowrap;
+}
+
+.nav-dropdown .dropdown-menu {
+    min-width: 250px;
+}
