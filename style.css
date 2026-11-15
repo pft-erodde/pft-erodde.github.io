@@ -5125,3 +5125,63 @@ html, body {
 .nav-dropdown .dropdown-menu {
     min-width: 250px;
 }
+
+
+/* === Bouton de langue FR / EN === */
+.lang-toggle {
+    position: absolute;
+    top: 0.5rem;
+    left: calc(2rem + 38px + 0.6rem);
+    height: 38px;
+    padding: 0 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 19px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    z-index: 1010;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.lang-toggle:hover {
+    border-color: rgba(99, 102, 241, 0.6);
+    transform: translateY(-1px);
+}
+
+.lang-toggle .lang-opt {
+    padding: 0.28rem 0.5rem;
+    border-radius: 12px;
+    opacity: 0.6;
+    transition: all 0.25s ease;
+}
+
+.lang-toggle .lang-opt.active {
+    opacity: 1;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+}
+
+.lang-toggle .lang-sep {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .lang-toggle {
+        position: static;
+        order: 0;
+        margin-right: auto;
+        flex-shrink: 0;
+        z-index: 1010;
+    }
+
+    #theme-toggle {
+        margin-right: 0.5rem !important;
+    }
+}
