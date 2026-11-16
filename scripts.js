@@ -10,6 +10,9 @@
 // Animations, Interactions & UX
 // ===================================
 
+// Traduction (voir i18n.js) : renvoie le texte tel quel si l'anglais n'est pas actif
+const tt = (s) => (window.I18N ? window.I18N.t(s) : s);
+
 // ===================================
 // CURSEUR PERSONNALISÉ
 // ===================================
@@ -61,7 +64,7 @@ if (menuToggle && navMenu) {
 
     function closeMobileMenu() {
         menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        menuToggle.setAttribute('aria-label', tt('Ouvrir le menu'));
         menuToggle.classList.remove('active');
         navMenu.classList.remove('nav-active');
         document.body.style.overflow = '';
@@ -70,7 +73,7 @@ if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         menuToggle.setAttribute('aria-expanded', !isExpanded);
-        menuToggle.setAttribute('aria-label', isExpanded ? 'Ouvrir le menu' : 'Fermer le menu');
+        menuToggle.setAttribute('aria-label', isExpanded ? tt('Ouvrir le menu') : tt('Fermer le menu'));
         menuToggle.classList.toggle('active');
         navMenu.classList.toggle('nav-active');
         document.body.style.overflow = navMenu.classList.contains('nav-active') ? 'hidden' : '';
@@ -298,12 +301,21 @@ if (aboutStats) statsObserver.observe(aboutStats);
 // ===================================
 // EFFET DE FRAPPE POUR LE HERO
 // ===================================
-const heroTypingText = "Étudiant en BTS SIO — Spécialité SISR | Infrastructure, Réseaux & Cybersécurité";
+const heroTypingTexts = {
+    fr: "Étudiant en BTS SIO — Spécialité SISR | Infrastructure, Réseaux & Cybersécurité",
+    en: "Student in BTS SIO — SISR Specialty | Infrastructure, Networks & Cybersecurity"
+};
+function currentHeroText() {
+    const l = (window.I18N && window.I18N.lang) || 'fr';
+    return heroTypingTexts[l] || heroTypingTexts.fr;
+}
+let heroTypingTimer = null;
 const typingElement = document.getElementById('typing-text');
 const typingCursor = document.querySelector('.typing-cursor');
 
 function typeHeroText() {
     if (!typingElement) return;
+    const heroTypingText = currentHeroText();
     let charIndex = 0;
     const baseSpeed = 50;
 
@@ -317,15 +329,22 @@ function typeHeroText() {
             else if (char === '—' || char === '|') delay = baseSpeed * 3;
             else if (char === ',') delay = baseSpeed * 2;
             else delay = baseSpeed + Math.random() * 30;
-            setTimeout(type, delay);
+            heroTypingTimer = setTimeout(type, delay);
         } else {
-            setTimeout(() => {
+            heroTypingTimer = setTimeout(() => {
                 if (typingCursor) { typingCursor.style.animation = 'none'; typingCursor.style.opacity = '0'; }
             }, 2000);
         }
     }
-    setTimeout(type, 800);
+    heroTypingTimer = setTimeout(type, 800);
 }
+
+// Changement de langue : on affiche directement la phrase d'accroche dans la nouvelle langue
+window.addEventListener('langchange', () => {
+    if (!typingElement) return;
+    clearTimeout(heroTypingTimer);
+    typingElement.textContent = currentHeroText();
+});
 
 // ===================================
 // INITIALISATION AU CHARGEMENT
@@ -341,7 +360,7 @@ window.addEventListener('load', () => {
 const pageIllustrations = {
     'formation.html': {
         src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Baie de serveurs et infrastructure reseau'
+        alt: tt('Baie de serveurs et infrastructure reseau')
     },
     'parcours.html': {
         src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
@@ -361,11 +380,11 @@ const pageIllustrations = {
     },
     'competences.html': {
         src: 'https://res.cloudinary.com/dynbrtfxs/image/upload/v1778071401/Gemini_Generated_Image_o8fn49o8fn49o8fn_ckaydp.png',
-        alt: 'Developpement et competences techniques'
+        alt: tt('Developpement et competences techniques')
     },
     'qualifications-professionnelles.html': {
         src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Certifications et qualifications professionnelles'
+        alt: tt('Certifications et qualifications professionnelles')
     }
 };
 
@@ -497,11 +516,11 @@ function openProjectModal(card) {
 
     if (imageUrl && imageContainer && modalImage) {
         modalImage.src = imageUrl;
-        modalImage.alt = imageCaption || 'Image du projet';
+        modalImage.alt = tt(imageCaption) || tt('Image du projet');
         
         if (imageUrl2 && modalImage2) {
             modalImage2.src = imageUrl2;
-            modalImage2.alt = 'Image secondaire';
+            modalImage2.alt = tt('Image secondaire');
             modalImage2.style.display = 'block';
         } else if (modalImage2) {
             modalImage2.style.display = 'none';
