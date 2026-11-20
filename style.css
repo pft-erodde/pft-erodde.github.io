@@ -3162,6 +3162,10 @@ footer::before {
     margin-bottom: 0.9rem;
 }
 
+.sisr-reveal-gallery-single {
+    grid-template-columns: 1fr;
+}
+
 @keyframes fadeSlideIn {
     from {
         opacity: 0;
@@ -3222,7 +3226,8 @@ footer::before {
     transition: var(--transition-fast);
 }
 
-.sisr-card:hover .sisr-click-hint {
+.sisr-card:hover .sisr-click-hint,
+.slam-card:hover .sisr-click-hint {
     opacity: 1;
 }
 

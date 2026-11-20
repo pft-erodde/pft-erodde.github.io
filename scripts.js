@@ -563,19 +563,19 @@ document.addEventListener('keydown', (e) => {
 // ===================================
 // SISR CARD - CLICK TO REVEAL IMAGE
 // ===================================
-const sisrCard = document.querySelector('.sisr-card');
-const sisrReveal = document.getElementById('sisr-reveal');
-
-if (sisrCard && sisrReveal) {
-    sisrCard.style.cursor = 'pointer';
-    sisrCard.addEventListener('click', (e) => {
+[['.sisr-card', 'sisr-reveal'], ['.slam-card', 'slam-reveal']].forEach(([cardSel, revealId]) => {
+    const card = document.querySelector(cardSel);
+    const reveal = document.getElementById(revealId);
+    if (!card || !reveal) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
         if (e.target.closest('img')) return;
-        const isVisible = sisrReveal.style.display !== 'none';
-        sisrReveal.style.display = isVisible ? 'none' : 'block';
-        const hint = sisrCard.querySelector('.sisr-click-hint');
+        const isVisible = reveal.style.display !== 'none';
+        reveal.style.display = isVisible ? 'none' : 'block';
+        const hint = card.querySelector('.sisr-click-hint');
         if (hint) hint.textContent = isVisible ? 'Cliquez pour voir la salle' : 'Cliquez pour masquer';
     });
-}
+});
 
 // ===================================
 // CERTIFICATION CARDS - CLICK TO REVEAL
